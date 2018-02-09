@@ -1,0 +1,13 @@
+$mat-background-color: #303030; // #fafafa|EEEEEE for a light and #303030 for a dark theme
+
+@import "../themedefault/themedefault.scss";
+// (You can find colors at materialpalette.com) $v-focus-color is supposed to be your accent color
+
+@mixin themedark {
+  @include themedefault;
+
+	  .search-bg-color, .search-bg-color td {
+   		background-color: #3d3d3d !important; //black
+   		color: white !important;
+   }
+}

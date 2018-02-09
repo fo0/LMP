@@ -1,0 +1,130 @@
+// If you edit this file you need to compile the theme. See README.md for details.
+
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+//$mat-background-color: #303030; // #fafafa for a light and #303030 for a dark theme
+$v-focus-color: #00BCD4; 
+// (You can find colors at materialpalette.com) $v-focus-color is supposed to be your accent color
+@import "../material/material.scss"; 
+
+@mixin themedefault {
+  @include material;
+
+	.noborder {
+		border: none !important;	
+	}
+
+	.panelcenter .v-panel-caption {
+		text-align: center;
+	}
+	
+	.notification_blue .v-Notification-caption {
+   		color: #2196F3 !important;
+   }
+   
+   .padding_all_80_px  {
+		padding: 80px !important;   
+   }
+   
+    .padding_all_40_px  {
+		padding: 40px !important;   
+   }
+   
+    .padding_all_20_px  {
+		padding: 20px !important;   
+   }
+   
+   .bg-color-red, .bg-color-red td {
+   		background-color: #F44336 !important;
+   }
+  
+   .bg-color-blue, .bg-color-blue td {
+  		 background-color: #2196F3 !important;
+   }
+   
+   .bg-color-green, .bg-color-green td {
+  		 background-color: #4CAF50 !important;
+   }
+  
+  .search-bg-color, .search-bg-color td {
+   }
+  
+      .redIcon .v-icon,
+    .v-caption-redIcon .v-icon {
+        border: none;
+        color: red;
+        font-size: 20px;
+    }
+
+    .greenIcon .v-icon,
+    .v-caption-greenIcon .v-icon {
+        border: none;
+        color: #4caf50;
+        font-size: 20px;
+    }
+
+    .orangeIcon .v-icon,
+    .v-caption-orangeIcon .v-icon {
+        border: none;
+        color: orange !important;
+        font-size: 20px;
+    }
+   
+ 	.invisFileChooserButton {
+        margin: 0;
+        padding: 0;
+        height: auto;
+
+        .gwt-FileUpload {
+            color: transparent;
+            width: 112px;
+        }
+    }
+
+    .invisible .gwt-FileUpload {
+        color: transparent;
+        width: 112px;
+        visibility: hidden !important;
+    }
+
+    .visible .gwt-FileUpload {
+        color: transparent;
+        width: 112px;
+        visibility: visible !important;
+    }
+    
+       div.v-progressbar-dynamic_progress_bar {
+        div.v-progressbar-wrapper div.v-progressbar-indicator,
+        div.v-progressbar-wrapper {
+            height: 30px;
+        }
+    }
+    
+}

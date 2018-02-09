@@ -5,7 +5,6 @@ import java.util.concurrent.Future;
 import org.vaadin.viritin.layouts.MVerticalLayout;
 
 import com.fo0.lmp.ui.controller.Controller;
-import com.fo0.lmp.ui.data.AccountManager;
 import com.fo0.lmp.ui.interfaces.IView;
 import com.fo0.lmp.ui.model.Account;
 import com.fo0.lmp.ui.views.menu.MenuView;

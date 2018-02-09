@@ -2,7 +2,6 @@ package com.fo0.lmp.ui.views.settings;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
-import org.vaadin.viritin.fields.MTextField;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;

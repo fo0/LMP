@@ -2,7 +2,6 @@ package com.fo0.lmp.ui.abstracts;
 
 import java.util.concurrent.Future;
 
-import org.vaadin.viritin.layouts.MCssLayout;
 import org.vaadin.viritin.layouts.MGridLayout;
 
 import com.fo0.lmp.ui.controller.Controller;

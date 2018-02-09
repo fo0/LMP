@@ -1,7 +1,6 @@
 package com.fo0.lmp.ui.model;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

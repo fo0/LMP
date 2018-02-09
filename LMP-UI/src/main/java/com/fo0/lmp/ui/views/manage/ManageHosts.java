@@ -17,8 +17,6 @@ import com.fo0.lmp.ui.utils.ETheme;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
 import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
-import com.github.appreciated.material.MaterialTheme;
-import com.vaadin.server.BrowserWindowOpener;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.Button.ClickListener;
 

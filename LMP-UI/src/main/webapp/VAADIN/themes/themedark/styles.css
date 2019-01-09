@@ -1017,10 +1017,6 @@
  */
 
 /**
- *
- */
-
-/**
  * @group window
  */
 
@@ -1081,7 +1077,7 @@
  */
 
 .v-vaadin-version:after {
-	content: "8.3.0";
+	content: "8.6.3";
 }
 
 .v-widget {
@@ -2452,7 +2448,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
-.themedark .app-drawer-1 {
+.themedark [persistent].app-drawer-1 {
 	width: 256px;
 }
 
@@ -2470,11 +2466,6 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark .app-drawer-layout-1.small app-drawer[opened] .drawer-content {
 	width: 64px;
-}
-
-.themedark .app-drawer-1 .app-drawer#scrim {
-	background: transparent !important;
-	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .themedark .app-toolbar-1 {
@@ -2851,6 +2842,14 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: #494949;
 }
 
+.themedark .v-window.translucent .v-window.translucent .v-window-outerheader {
+	border-bottom: none !important;
+}
+
+.themedark .v-window.translucent .v-window.translucent .v-window-contents {
+	padding: 0px !important;
+}
+
 .themedark .v-window.translucent .v-window-contents {
 	animation: valo-animate-in-fade 0.4s;
 }
@@ -3065,6 +3064,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: #cfcfcf !important;
 }
 
+.themedark .app-layout-behaviour-left .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-hybrid {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3241,6 +3244,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	pointer-events: none;
 }
 
+.themedark .app-layout-behaviour-left-hybrid .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-responsive-hybrid {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3333,6 +3340,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	pointer-events: none;
 }
 
+.themedark .app-layout-behaviour-left-responsive-hybrid .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-responsive-hybrid-no-app-bar {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3419,6 +3430,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	right: 0px;
 	left: 0px;
 	pointer-events: none;
+}
+
+.themedark .app-layout-behaviour-left-responsive-hybrid-no-app-bar .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-left-responsive-hybrid-overlay-no-app-bar {
@@ -3508,6 +3523,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	pointer-events: none;
 }
 
+.themedark .app-layout-behaviour-left-responsive-hybrid-overlay-no-app-bar .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-overlay {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3543,6 +3562,11 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: visible;
 	background: #545454;
 	color: #cfcfcf !important;
+	width: 256px;
+}
+
+.themedark .app-layout-behaviour-left-overlay .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-left-responsive {
@@ -3613,6 +3637,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	right: 0px;
 	left: 0px;
 	pointer-events: none;
+}
+
+.themedark .app-layout-behaviour-left-responsive .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-left-responsive-overlay {
@@ -3796,6 +3824,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding-left: 0px;
 }
 
+.themedark .app-layout-behaviour-left-responsive-small .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-responsive-small-no-app-bar {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3890,6 +3922,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark .app-layout-behaviour-left-responsive-small-no-app-bar .app-layout-submenu-container {
 	padding-left: 0px;
+}
+
+.themedark .app-layout-behaviour-left-responsive-small-no-app-bar .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-top {
@@ -6284,6 +6320,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	left: 0;
 }
 
+.themedark .v-grid-body .v-grid-header > .v-grid-row {
+	position: relative;
+}
+
 .themedark .v-grid-row {
 	display: block;
 }
@@ -6459,6 +6499,8 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	-webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	border-right: 0 solid #323232;
+	position: relative;
+	z-index: 11;
 }
 
 .themedark .v-grid-cell.frozen  + th, .themedark .v-grid-cell.frozen  + td {
@@ -10837,6 +10879,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	left: 0;
 }
 
+.themedark .v-tree8-body .v-tree8-header > .v-tree8-row {
+	position: relative;
+}
+
 .themedark .v-tree8-row {
 	display: block;
 }
@@ -11012,6 +11058,8 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	-webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	border-right: 0 solid #323232;
+	position: relative;
+	z-index: 11;
 }
 
 .themedark .v-tree8-cell.frozen  + th, .themedark .v-tree8-cell.frozen  + td {
@@ -11897,6 +11945,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	left: 0;
 }
 
+.themedark .v-treegrid-body .v-treegrid-header > .v-treegrid-row {
+	position: relative;
+}
+
 .themedark .v-treegrid-row {
 	display: block;
 }
@@ -12072,6 +12124,8 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	-webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	border-right: 0 solid #323232;
+	position: relative;
+	z-index: 11;
 }
 
 .themedark .v-treegrid-cell.frozen  + th, .themedark .v-treegrid-cell.frozen  + td {
@@ -14198,6 +14252,14 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	text-align: right;
 }
 
+.themedark .v-tabsheet-right-aligned-tabs .v-tabsheet-spacertd {
+	display: inline-block !important;
+}
+
+.themedark .v-tabsheet-right-aligned-tabs .v-tabsheet-scroller {
+	padding-left: 9px;
+}
+
 .themedark .v-tabsheet-padded-tabbar  > .v-tabsheet-tabcontainer .v-tabsheet-tabs {
 	padding: 0 11px;
 }
@@ -14334,6 +14396,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	width: 100% !important;
 	height: auto !important;
 	padding: 11px;
+	display: inline-flex;
 }
 
 .themedark .v-colorpicker-preview-textfield {

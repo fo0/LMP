@@ -12,10 +12,10 @@ import com.fo0.lmp.ui.views.manage.ManageHosts;
 import com.fo0.lmp.ui.views.platform.BackupView;
 import com.fo0.lmp.ui.views.register.RegisterView;
 import com.fo0.lmp.ui.views.settings.SettingsView;
+import com.github.appreciated.app.layout.AppLayout;
 import com.github.appreciated.app.layout.behaviour.AppLayoutComponent;
 import com.github.appreciated.app.layout.behaviour.Behaviour;
-import com.github.appreciated.app.layout.builder.AppLayout;
-import com.github.appreciated.app.layout.builder.design.AppBarDesign;
+import com.github.appreciated.app.layout.builder.design.AppLayoutDesign;
 import com.github.appreciated.app.layout.builder.entities.DefaultNotification;
 import com.github.appreciated.app.layout.builder.entities.DefaultNotificationHolder;
 import com.github.appreciated.app.layout.component.MenuHeader;
@@ -51,7 +51,7 @@ public class MenuView extends AVerticalView {
 		// workaround
 
 		menu = AppLayout.getDefaultBuilder(Behaviour.LEFT_HYBRID).withTitle(MainUI.NAME)
-				.withDesign(AppBarDesign.MATERIAL)
+				.withDesign(AppLayoutDesign.MATERIAL)
 				.add(new MenuHeader(MainUI.NAME, MainUI.VERSION, new ThemeResource("img/GP-Logo_q.png")))
 				.withDefaultNavigationView(DashboardView.class).add("Home", VaadinIcons.HOME, DashboardView.class)
 				.add("Hosts", VaadinIcons.GLOBE, ManageHosts.class)

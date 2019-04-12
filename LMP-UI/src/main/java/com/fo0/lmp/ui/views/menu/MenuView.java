@@ -19,6 +19,7 @@ import com.github.appreciated.app.layout.builder.design.AppLayoutDesign;
 import com.github.appreciated.app.layout.builder.entities.DefaultNotification;
 import com.github.appreciated.app.layout.builder.entities.DefaultNotificationHolder;
 import com.github.appreciated.app.layout.component.MenuHeader;
+import com.kevkev.lmp.views.certificate.CertificateView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.UI;
@@ -56,6 +57,7 @@ public class MenuView extends AVerticalView {
 				.withDefaultNavigationView(DashboardView.class).add("Home", VaadinIcons.HOME, DashboardView.class)
 				.add("Hosts", VaadinIcons.GLOBE, ManageHosts.class)
 				.add("Action", MaterialIcons.LIST, ActionListView.class)
+				.add("Certificate", MaterialIcons.LOCK, CertificateView.class)
 				.add("Backup", MaterialIcons.SETTINGS, BackupView.class)
 				.add("Account", VaadinIcons.USER, RegisterView.class).withNavigatorConsumer(e -> {
 					e.setErrorView(ErrorView.class);

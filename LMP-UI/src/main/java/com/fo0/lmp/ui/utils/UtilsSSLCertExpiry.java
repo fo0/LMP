@@ -18,12 +18,6 @@ public class UtilsSSLCertExpiry {
 	// does a http://host request.
 	// takes an optional cn variable (which defaults to host)
 
-	public static void main(String[] args) throws Exception {
-
-		System.out.println(check("service.bertaplus.de"));
-
-	}
-
 	public static int check(String cn) throws IOException {
 
 		// without a trust manager, i was having problems of

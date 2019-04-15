@@ -1788,88 +1788,88 @@ body.v-gecko .v-grid-scroller.v-grid-scroller-horizontal > div {
 	margin: 0 -17px !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.primary):not(.border):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):not(.danger):hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.primary):not(.border):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):not(.danger):hover {
 	background: #e6e6e6 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):hover, body.v-touch:not(.v-component-group) > .v-upload:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):active {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):hover, body.v-touch:not(.v-component-group) > .v-upload-immediate:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):active {
 	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2) !important;
 }
 
-body:not(.v-touch) .friendly.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .friendly.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #41d447;
 }
 
-body:not(.v-touch) .custom.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .custom.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .danger.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .danger.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #f12a2a;
 }
 
-body:not(.v-touch) .primary.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .primary.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .v-upload.borderless:not(.v-disabled):not(.borderless-colored):not(.primary):not(.friendly):not(.danger):not(.custom):hover {
+body:not(.v-touch) .v-upload-immediate.borderless:not(.v-disabled):not(.borderless-colored):not(.primary):not(.friendly):not(.danger):not(.custom):hover {
 	background: #e1e1e1 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat):hover, body.v-touch .v-upload.floating-action-upload:not(.flat):active {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat):hover, body.v-touch .v-upload-immediate.floating-action-upload:not(.flat):active {
 	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat).friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat).friendly:hover {
 	background: #41d447;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat).danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat).danger:hover {
 	background: #f12a2a;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border:hover {
 	color: white;
 	background: black !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.custom:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.custom:hover {
 	color: white;
 	background: #00BCD4 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.primary:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.primary:hover {
 	color: white;
 	background: #00BCD4 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.friendly:hover {
 	color: white;
 	background: #4caf50 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.danger:hover {
 	color: white;
 	background: #d32f2f !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.primary:hover, body:not(.v-touch) .v-upload:not(.v-disabled).borderless-colored:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.primary:hover, body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless-colored:hover {
 	background: rgba(0, 214, 242, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.friendly:hover {
 	background: rgba(65, 212, 71, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.danger:hover {
 	background: rgba(241, 42, 42, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.custom:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.custom:hover {
 	background: rgba(0, 214, 242, 0.2) !important;
 }
 
@@ -16711,7 +16711,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
-.themedefault .z-depth-0, .themedefault .card-0, .themedefault :not(.v-upload) > * > .v-button:not(.v-disabled), .themedefault .v-textarea-borderless, .themedefault .v-upload, .themedefault .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
+.themedefault .z-depth-0, .themedefault .card-0, .themedefault :not(.v-upload) > * > .v-button:not(.v-disabled), .themedefault .v-textarea-borderless, .themedefault .v-upload-immediate, .themedefault .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
 	box-shadow: 0 0px 0px 0 transparent, 0 0px 0px 0 transparent, 0 0px 0px 0px transparent;
 }
 
@@ -16719,7 +16719,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 3px 1px -3px rgba(0, 0, 0, 0.15);
 }
 
-.themedefault .z-depth-1, .themedefault .floating-border, .themedefault .card-1, .themedefault .v-label-success:not(.borderless), .themedefault .v-label-failure:not(.borderless), .themedefault .v-table:not(.borderless) .v-table-footer, .themedefault .v-select-twincol-buttons:not(.borderless) .v-button, .themedefault .v-upload:not(.v-disabled):not(.floating-action-upload):not(.flat):not(.borderless):not(.border):not(.borderless-colored):not(.quiet):not(.link), .themedefault :not(.v-component-group) > .v-textfield.floating, .themedefault .v-filterselect.floating, .themedefault .v-datefield.floating, .themedefault .v-inline-datefield:not(.borderless), .themedefault .v-textarea:not(.borderless), .themedefault .v-richtextarea:not(.borderless), .themedefault .v-table:not(.borderless), .themedefault .v-grid:not(.borderless), .themedefault .v-grid-editor, .themedefault .v-select-twincol select:not(.borderless), .themedefault select.v-select-select:not(.borderless), .themedefault .v-splitpanel-horizontal:not(.borderless), .themedefault .v-splitpanel-vertical:not(.borderless), .themedefault .v-component-group.material, .themedefault .v-Notification, .themedefault .v-tooltip {
+.themedefault .z-depth-1, .themedefault .floating-border, .themedefault .card-1, .themedefault .v-label-success:not(.borderless), .themedefault .v-label-failure:not(.borderless), .themedefault .v-table:not(.borderless) .v-table-footer, .themedefault .v-grid-sidebar-content, .themedefault .v-select-twincol-buttons:not(.borderless) .v-button, .themedefault .v-upload-immediate:not(.v-disabled):not(.floating-action-upload):not(.flat):not(.borderless):not(.border):not(.borderless-colored):not(.quiet):not(.link), .themedefault :not(.v-component-group) > .v-textfield.floating, .themedefault .v-filterselect.floating, .themedefault .v-datefield.floating, .themedefault .v-inline-datefield:not(.borderless), .themedefault .v-textarea:not(.borderless), .themedefault .v-richtextarea:not(.borderless), .themedefault .v-table:not(.borderless), .themedefault .v-grid:not(.borderless), .themedefault .v-grid-editor, .themedefault .v-select-twincol select:not(.borderless), .themedefault select.v-select-select:not(.borderless), .themedefault .v-splitpanel-horizontal:not(.borderless), .themedefault .v-splitpanel-vertical:not(.borderless), .themedefault .v-component-group.material, .themedefault .v-Notification, .themedefault .v-tooltip {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -16731,7 +16731,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-.themedefault .z-depth-3, .themedefault .card-3, .themedefault .v-upload.floating-action-upload:not(.v-disabled):not(.flat), .themedefault .valo-menu-responsive[width-range~="801px-"] .valo-menu-part, .themedefault .valo-menu-responsive[width-range~="0-800px"] .valo-menu-title, .themedefault .valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
+.themedefault .z-depth-3, .themedefault .card-3, .themedefault .v-upload-immediate.floating-action-upload:not(.v-disabled):not(.flat), .themedefault .valo-menu-responsive[width-range~="801px-"] .valo-menu-part, .themedefault .valo-menu-responsive[width-range~="0-800px"] .valo-menu-title, .themedefault .valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }
 
@@ -16828,12 +16828,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	cursor: pointer;
 }
 
-.themedefault :not(.v-upload) > * > .v-button:not(.v-disabled):not(.valo-menu-toggle), .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled), .themedefault .ripple, .themedefault .v-upload:not(.v-disabled), .themedefault .valo-menu-item:not(.v-disabled), .themedefault .v-accordion-item-caption:not(.v-disabled) {
+.themedefault :not(.v-upload) > * > .v-button:not(.v-disabled):not(.valo-menu-toggle), .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled), .themedefault .ripple, .themedefault .v-upload-immediate:not(.v-disabled), .themedefault .valo-menu-item:not(.v-disabled), .themedefault .v-accordion-item-caption:not(.v-disabled) {
 	position: relative;
 	transform: translate3d(0, 0, 0);
 }
 
-.themedefault :not(.v-upload) > * > .v-button:not(.v-disabled):after, .themedefault .v-upload:not(.v-disabled):after, .themedefault .valo-menu-item:after, .themedefault .ripple:after, .themedefault .v-tabsheet-tabitem:after, .themedefault .v-tabsheet-tabitem-focus:after, .themedefault .v-datefield [class*="button"]:after, .themedefault .v-filterselect .v-filterselect-button:after, .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedefault .v-accordion-item-caption:not(.v-disabled):after {
+.themedefault :not(.v-upload) > * > .v-button:not(.v-disabled):after, .themedefault .v-upload-immediate:not(.v-disabled):after, .themedefault .valo-menu-item:after, .themedefault .ripple:after, .themedefault .v-tabsheet-tabitem:after, .themedefault .v-tabsheet-tabitem-focus:after, .themedefault .v-datefield [class*="button"]:after, .themedefault .v-filterselect .v-filterselect-button:after, .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedefault .v-accordion-item-caption:not(.v-disabled):after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -16849,31 +16849,31 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	transition: background 0.5s, opacity 1s;
 }
 
-.themedefault :not(.v-upload) > * > .v-button:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action):after, .themedefault .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):after, .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedefault .valo-menu-item:not(.v-disabled):after, .themedefault .v-datefield [class*="button"]:after, .themedefault .v-tabsheet-tabitem:after, .themedefault .v-tabsheet-tabitem-focus:after, .themedefault .ripple:after, .themedefault .v-accordion-item-caption:not(.v-disabled):after {
+.themedefault :not(.v-upload) > * > .v-button:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action):after, .themedefault .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):after, .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedefault .valo-menu-item:not(.v-disabled):after, .themedefault .v-datefield [class*="button"]:after, .themedefault .v-tabsheet-tabitem:after, .themedefault .v-tabsheet-tabitem-focus:after, .themedefault .ripple:after, .themedefault .v-accordion-item-caption:not(.v-disabled):after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themedefault .v-button.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedefault .v-upload.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedefault .v-filterselect .v-filterselect-button:after {
+.themedefault .v-button.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedefault .v-upload-immediate.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedefault .v-filterselect .v-filterselect-button:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themedefault .v-button.border:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedefault .v-upload.border:not(.primary):not(.friendly):not(.danger):not(.custom):after {
+.themedefault .v-button.border:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedefault .v-upload-immediate .border:not(.primary):not(.friendly):not(.danger):not(.custom):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedefault .v-button.primary:not(.borderless):after, .themedefault .v-button.floating-action:after, .themedefault .v-upload.floating-action-upload:after, .themedefault .v-upload.primary:after {
+.themedefault .v-button.primary:not(.borderless):after, .themedefault .v-button.floating-action:after, .themedefault .v-upload-immediate .floating-action-upload:after, .themedefault .v-upload-immediate .primary:after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedefault :not(.v-component-group) > .v-button:not(.no-border-radius):not(.floating-action):not(.round):after, .themedefault .v-upload:not(.no-border-radius):not(.floating-action-upload):not(.round):after {
+.themedefault :not(.v-component-group) > .v-button:not(.no-border-radius):not(.floating-action):not(.round):after, .themedefault .v-upload-immediate :not(.no-border-radius):not(.floating-action-upload):not(.round):after {
 	border-radius: 2px;
 }
 
@@ -16884,51 +16884,51 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	border-radius: 2px;
 }
 
-.themedefault .v-button:not(.no-border-radius).floating-action:after, .themedefault .v-upload:not(.no-border-radius).floating-action-upload:after {
+.themedefault .v-button:not(.no-border-radius).floating-action:after, .themedefault .v-upload-immediate :not(.no-border-radius).floating-action-upload:after {
 	border-radius: 100%;
 }
 
-.themedefault .v-button.friendly:not(.borderless):after, .themedefault .v-upload.friendly:not(.borderless):after {
+.themedefault .v-button.friendly:not(.borderless):after, .themedefault .v-upload-immediate .friendly:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedefault .v-button.danger:not(.borderless):after, .themedefault .v-upload.danger:not(.borderless):after {
+.themedefault .v-button.danger:not(.borderless):after, .themedefault .v-upload-immediate .danger:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedefault .v-button.custom:not(.borderless):after, .themedefault .v-upload.custom:not(.borderless):after {
+.themedefault .v-button.custom:not(.borderless):after, .themedefault .v-upload-immediate .custom:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedefault .v-button.friendly.borderless:after, .themedefault .v-upload.friendly.borderless:after {
+.themedefault .v-button.friendly.borderless:after, .themedefault .v-upload-immediate .friendly.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themedefault .v-button.danger.borderless:after, .themedefault .v-upload.danger.borderless:after {
+.themedefault .v-button.danger.borderless:after, .themedefault .v-upload-immediate .danger.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themedefault .v-button.custom.borderless:after, .themedefault .v-upload.custom.borderless:after {
+.themedefault .v-button.custom.borderless:after, .themedefault .v-upload-immediate .custom.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themedefault .v-button.round:after, .themedefault .v-upload.round:after {
+.themedefault .v-button.round:after, .themedefault .v-upload-immediate .round:after {
 	border-radius: 30px;
 }
 
-.themedefault .v-button:not(.v-disabled):active:after, .themedefault .ripple:active:after, .themedefault .v-datefield [class*="button"]:active:after, .themedefault .v-upload:not(.v-disabled):active:after, .themedefault .v-tabsheet-tabitem:active:after, .themedefault .v-tabsheet-tabitem-focus:active:after, .themedefault .v-filterselect .v-filterselect-button:active:after, .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):active:after, .themedefault .valo-menu-item:not(.v-disabled):active:after, .themedefault .v-accordion-item-caption:not(.v-disabled):active:after {
+.themedefault .v-button:not(.v-disabled):active:after, .themedefault .ripple:active:after, .themedefault .v-datefield [class*="button"]:active:after, .themedefault .v-upload-immediate :not(.v-disabled):active:after, .themedefault .v-tabsheet-tabitem:active:after, .themedefault .v-tabsheet-tabitem-focus:active:after, .themedefault .v-filterselect .v-filterselect-button:active:after, .themedefault .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):active:after, .themedefault .valo-menu-item:not(.v-disabled):active:after, .themedefault .v-accordion-item-caption:not(.v-disabled):active:after {
 	opacity: 0.2;
 	background-size: 0% 0%;
 	transition: 0s;
@@ -17777,6 +17777,15 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
+.themedefault .v-grid-sidebar-content {
+	border-radius: 2px;
+	padding: 4px 0 !important;
+}
+
+.themedefault .v-grid-sidebar.v-contextmenu {
+	z-index: 10;
+}
+
 .themedefault .v-grid-row-selected > .v-grid-cell {
 	color: inherit;
 	border-top: 1px solid #d9d9d9;
@@ -18022,6 +18031,69 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedefault .v-checkbox > input ~ label:after {
 	transition: all 0.1s ease !important;
+}
+
+.themedefault .v-checkbox.switch {
+	padding-left: 0;
+	padding-right: 48px;
+}
+
+.themedefault .v-checkbox.switch  > input ~ label:after {
+	content: "";
+	left: auto;
+	right: 0 !important;
+	z-index: 1;
+	border-radius: 16px;
+	width: 32px;
+	height: 16px;
+	border: 0 solid;
+	background-color: #e1e1e1;
+	opacity: 1;
+	transition: background-color 0.3s;
+}
+
+.themedefault .v-checkbox.switch  > input:checked ~ label:after {
+	background: #3be9ff;
+	transition: background-color 0.3s;
+}
+
+.themedefault .v-checkbox.switch  > input ~ label:before {
+	position: absolute;
+	z-index: 2;
+	left: auto;
+	top: -2px;
+	width: 20px;
+	height: 20px;
+	display: block;
+	padding: 0 0 0 0;
+	border: none !important;
+	border-radius: 100%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.themedefault .v-checkbox.switch  > input:not(:checked) ~ label:before {
+	background-color: white !important;
+	right: 16px;
+	transition: right 0.3s, background 0.3s;
+}
+
+.themedefault .v-checkbox.switch  > input:checked ~ label:before {
+	background-color: #00d3ee !important;
+	right: -4px;
+	transition: right 0.3s, background 0.3s;
+}
+
+.themedefault .v-checkbox.switch.v-readonly, .themedefault .v-checkbox.switch.v-checkbox-disabled {
+	pointer-events: none;
+}
+
+.themedefault .v-checkbox.switch.v-readonly input:checked ~ label:before, .themedefault .v-checkbox.switch.v-checkbox-disabled input:checked ~ label:before {
+	background-color: #3be9ff !important;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.themedefault .v-checkbox.switch.v-readonly input:checked ~ label:after, .themedefault .v-checkbox.switch.v-checkbox-disabled input:checked ~ label:after {
+	background: #6eefff;
 }
 
 .themedefault .v-radiobutton > input ~ label:before {
@@ -18356,7 +18428,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	content: "\E707";
 }
 
-.themedefault .v-upload {
+.themedefault .v-upload-immediate {
 	text-transform: uppercase;
 	transition: box-shadow 0.3s ease-out, background 0.3s;
 	height: 45px;
@@ -18367,7 +18439,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	cursor: pointer;
 }
 
-.themedefault .v-upload.no-border-radius {
+.themedefault .v-upload:not(.v-upload-immediate) {
+	padding: 12px;
+	border-radius: 2px;
+}
+
+.themedefault .v-upload-immediate.no-border-radius {
 	border-radius: 0px !important;
 }
 
@@ -18378,7 +18455,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding: 0 20px;
 }
 
-.themedefault .v-upload .v-button:before {
+.themedefault .v-upload-immediate .v-button:before {
 	content: "";
 	display: inline-block;
 	width: 0;
@@ -18390,7 +18467,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	width: 100%;
 }
 
-.themedefault .v-upload .v-button.v-disabled {
+.themedefault .v-upload-immediate .v-button.v-disabled {
 	background: transparent;
 	color: #3d3d3d;
 	opacity: 1;
@@ -18400,7 +18477,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: #3d3d3d;
 }
 
-.themedefault .v-upload.floating-action-upload .v-button.v-disabled .v-button-caption {
+.themedefault .v-upload-immediate.floating-action-upload .v-button.v-disabled .v-button-caption {
 	color: transparent;
 }
 
@@ -18411,19 +18488,19 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	height: 56px;
 }
 
-.themedefault .v-upload {
+.themedefault .v-upload-immediate {
 	height: 45px;
 }
 
-.themedefault .v-upload.tiny {
+.themedefault .v-upload-immediate.tiny {
 	height: 34px;
 }
 
-.themedefault .v-upload.small {
+.themedefault .v-upload-immediate.small {
 	height: 38px;
 }
 
-.themedefault .v-upload.large {
+.themedefault .v-upload-immediate.large {
 	height: 54px;
 }
 
@@ -18472,98 +18549,98 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding-left: 19px;
 }
 
-.themedefault .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
+.themedefault .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
 	background: white;
 }
 
-.themedefault .v-upload:not(.borderless):not(.border).primary {
+.themedefault .v-upload-immediate:not(.borderless):not(.border).primary {
 	background: #00BCD4;
 	color: white;
 }
 
-.themedefault .v-upload:not(.borderless):not(.border).friendly {
+.themedefault .v-upload-immediate:not(.borderless):not(.border).friendly {
 	background: #4caf50;
 	color: white;
 }
 
-.themedefault .v-upload:not(.borderless):not(.border).danger {
+.themedefault .v-upload-immediate:not(.borderless):not(.border).danger {
 	background: #d32f2f;
 	color: white;
 }
 
-.themedefault .v-upload:not(.borderless):not(.border).custom {
+.themedefault .v-upload-immediate:not(.borderless):not(.border).custom {
 	background: #00BCD4;
 	color: white;
 }
 
-.themedefault .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
+.themedefault .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
 	background: white;
 }
 
-.themedefault .v-upload:not(.borderless):not(.border).primary {
+.themedefault .v-upload-immediate:not(.borderless):not(.border).primary {
 	background: #00BCD4;
 	color: white;
 }
 
-.themedefault .v-upload.borderless-colored, .themedefault .v-upload.link {
+.themedefault .v-upload-immediate.borderless-colored, .themedefault .v-upload-immediate.link {
 	color: #00BCD4;
 }
 
-.themedefault .v-upload.round {
+.themedefault .v-upload-immediate.round {
 	border-radius: 30px;
 }
 
-.themedefault .v-upload.border {
+.themedefault .v-upload-immediate.border {
 	border: 1px solid #464646;
 	background: transparent;
 	color: #464646;
 }
 
-.themedefault .v-upload.border.primary {
+.themedefault .v-upload-immediate.border.primary {
 	border: 1px solid #00BCD4;
 	color: #00BCD4;
 }
 
-.themedefault .v-upload.border:after {
+.themedefault .v-upload-immediate.border:after {
 	border: 0px solid #00BCD4;
 }
 
-.themedefault .v-upload.border.friendly {
+.themedefault .v-upload-immediate.border.friendly {
 	border: 1px solid #4caf50;
 	color: #4caf50;
 }
 
-.themedefault .v-upload.border.danger {
+.themedefault .v-upload-immediate.border.danger {
 	border: 1px solid #d32f2f;
 	color: #d32f2f;
 }
 
-.themedefault .v-upload.border.custom {
+.themedefault .v-upload-immediate.border.custom {
 	border: 1px solid #00BCD4;
 	color: #00BCD4;
 }
 
-.themedefault .v-upload.borderless {
+.themedefault .v-upload-immediate.borderless {
 	color: #464646;
 }
 
-.themedefault .v-upload.borderless.primary {
+.themedefault .v-upload-immediate.borderless.primary {
 	color: #00BCD4;
 }
 
-.themedefault .v-upload.borderless.friendly {
+.themedefault .v-upload-immediate.borderless.friendly {
 	color: #4caf50;
 }
 
-.themedefault .v-upload.borderless.danger {
+.themedefault .v-upload-immediate.borderless.danger {
 	color: #d32f2f;
 }
 
-.themedefault .v-upload.borderless.custom {
+.themedefault .v-upload-immediate.borderless.custom {
 	color: #00BCD4;
 }
 
-.themedefault .v-upload.floating-action-upload {
+.themedefault .v-upload-immediate.floating-action-upload {
 	width: 56px;
 	height: 56px;
 	padding: 0px;
@@ -18572,28 +18649,28 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: white;
 }
 
-.themedefault .v-upload.floating-action-upload .v-icon {
+.themedefault .v-upload-immediate.floating-action-upload .v-icon {
 	line-height: 56px;
 	width: 56px;
 	text-align: center;
 }
 
-.themedefault .v-upload.floating-action-upload.friendly {
+.themedefault .v-upload-immediate.floating-action-upload.friendly {
 	background: #4caf50;
 	color: white;
 }
 
-.themedefault .v-upload.floating-action-upload.danger {
+.themedefault .v-upload-immediate.floating-action-upload.danger {
 	background: #d32f2f;
 	color: white;
 }
 
-.themedefault .v-upload.floating-action-upload.custom {
+.themedefault .v-upload-immediate.floating-action-upload.custom {
 	color: white;
 	background: #00BCD4;
 }
 
-.themedefault .v-upload.v-disabled {
+.themedefault .v-upload-immediate.v-disabled {
 	background: #cccccc;
 	color: #3d3d3d;
 	opacity: 0.7;

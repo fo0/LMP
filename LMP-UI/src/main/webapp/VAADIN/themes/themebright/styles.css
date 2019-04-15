@@ -1788,88 +1788,88 @@ body.v-gecko .v-grid-scroller.v-grid-scroller-horizontal > div {
 	margin: 0 -17px !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.primary):not(.border):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):not(.danger):hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.primary):not(.border):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):not(.danger):hover {
 	background: #e6e6e6 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):hover, body.v-touch:not(.v-component-group) > .v-upload:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):active {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):hover, body.v-touch:not(.v-component-group) > .v-upload-immediate:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):active {
 	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2) !important;
 }
 
-body:not(.v-touch) .friendly.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .friendly.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #41d447;
 }
 
-body:not(.v-touch) .custom.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .custom.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .danger.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .danger.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #f12a2a;
 }
 
-body:not(.v-touch) .primary.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .primary.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .v-upload.borderless:not(.v-disabled):not(.borderless-colored):not(.primary):not(.friendly):not(.danger):not(.custom):hover {
+body:not(.v-touch) .v-upload-immediate.borderless:not(.v-disabled):not(.borderless-colored):not(.primary):not(.friendly):not(.danger):not(.custom):hover {
 	background: #e1e1e1 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat):hover, body.v-touch .v-upload.floating-action-upload:not(.flat):active {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat):hover, body.v-touch .v-upload-immediate.floating-action-upload:not(.flat):active {
 	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat).friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat).friendly:hover {
 	background: #41d447;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat).danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat).danger:hover {
 	background: #f12a2a;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border:hover {
 	color: white;
 	background: black !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.custom:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.custom:hover {
 	color: white;
 	background: #00BCD4 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.primary:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.primary:hover {
 	color: white;
 	background: #00BCD4 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.friendly:hover {
 	color: white;
 	background: #4caf50 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.danger:hover {
 	color: white;
 	background: #d32f2f !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.primary:hover, body:not(.v-touch) .v-upload:not(.v-disabled).borderless-colored:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.primary:hover, body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless-colored:hover {
 	background: rgba(0, 214, 242, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.friendly:hover {
 	background: rgba(65, 212, 71, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.danger:hover {
 	background: rgba(241, 42, 42, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.custom:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.custom:hover {
 	background: rgba(0, 214, 242, 0.2) !important;
 }
 
@@ -16711,7 +16711,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
-.themebright .z-depth-0, .themebright .card-0, .themebright :not(.v-upload) > * > .v-button:not(.v-disabled), .themebright .v-textarea-borderless, .themebright .v-upload, .themebright .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
+.themebright .z-depth-0, .themebright .card-0, .themebright :not(.v-upload) > * > .v-button:not(.v-disabled), .themebright .v-textarea-borderless, .themebright .v-upload-immediate, .themebright .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
 	box-shadow: 0 0px 0px 0 transparent, 0 0px 0px 0 transparent, 0 0px 0px 0px transparent;
 }
 
@@ -16719,7 +16719,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 3px 1px -3px rgba(0, 0, 0, 0.15);
 }
 
-.themebright .z-depth-1, .themebright .floating-border, .themebright .card-1, .themebright .v-label-success:not(.borderless), .themebright .v-label-failure:not(.borderless), .themebright .v-table:not(.borderless) .v-table-footer, .themebright .v-select-twincol-buttons:not(.borderless) .v-button, .themebright .v-upload:not(.v-disabled):not(.floating-action-upload):not(.flat):not(.borderless):not(.border):not(.borderless-colored):not(.quiet):not(.link), .themebright :not(.v-component-group) > .v-textfield.floating, .themebright .v-filterselect.floating, .themebright .v-datefield.floating, .themebright .v-inline-datefield:not(.borderless), .themebright .v-textarea:not(.borderless), .themebright .v-richtextarea:not(.borderless), .themebright .v-table:not(.borderless), .themebright .v-grid:not(.borderless), .themebright .v-grid-editor, .themebright .v-select-twincol select:not(.borderless), .themebright select.v-select-select:not(.borderless), .themebright .v-splitpanel-horizontal:not(.borderless), .themebright .v-splitpanel-vertical:not(.borderless), .themebright .v-component-group.material, .themebright .v-Notification, .themebright .v-tooltip {
+.themebright .z-depth-1, .themebright .floating-border, .themebright .card-1, .themebright .v-label-success:not(.borderless), .themebright .v-label-failure:not(.borderless), .themebright .v-table:not(.borderless) .v-table-footer, .themebright .v-grid-sidebar-content, .themebright .v-select-twincol-buttons:not(.borderless) .v-button, .themebright .v-upload-immediate:not(.v-disabled):not(.floating-action-upload):not(.flat):not(.borderless):not(.border):not(.borderless-colored):not(.quiet):not(.link), .themebright :not(.v-component-group) > .v-textfield.floating, .themebright .v-filterselect.floating, .themebright .v-datefield.floating, .themebright .v-inline-datefield:not(.borderless), .themebright .v-textarea:not(.borderless), .themebright .v-richtextarea:not(.borderless), .themebright .v-table:not(.borderless), .themebright .v-grid:not(.borderless), .themebright .v-grid-editor, .themebright .v-select-twincol select:not(.borderless), .themebright select.v-select-select:not(.borderless), .themebright .v-splitpanel-horizontal:not(.borderless), .themebright .v-splitpanel-vertical:not(.borderless), .themebright .v-component-group.material, .themebright .v-Notification, .themebright .v-tooltip {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -16731,7 +16731,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-.themebright .z-depth-3, .themebright .card-3, .themebright .v-upload.floating-action-upload:not(.v-disabled):not(.flat), .themebright .valo-menu-responsive[width-range~="801px-"] .valo-menu-part, .themebright .valo-menu-responsive[width-range~="0-800px"] .valo-menu-title, .themebright .valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
+.themebright .z-depth-3, .themebright .card-3, .themebright .v-upload-immediate.floating-action-upload:not(.v-disabled):not(.flat), .themebright .valo-menu-responsive[width-range~="801px-"] .valo-menu-part, .themebright .valo-menu-responsive[width-range~="0-800px"] .valo-menu-title, .themebright .valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }
 
@@ -16828,12 +16828,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	cursor: pointer;
 }
 
-.themebright :not(.v-upload) > * > .v-button:not(.v-disabled):not(.valo-menu-toggle), .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled), .themebright .ripple, .themebright .v-upload:not(.v-disabled), .themebright .valo-menu-item:not(.v-disabled), .themebright .v-accordion-item-caption:not(.v-disabled) {
+.themebright :not(.v-upload) > * > .v-button:not(.v-disabled):not(.valo-menu-toggle), .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled), .themebright .ripple, .themebright .v-upload-immediate:not(.v-disabled), .themebright .valo-menu-item:not(.v-disabled), .themebright .v-accordion-item-caption:not(.v-disabled) {
 	position: relative;
 	transform: translate3d(0, 0, 0);
 }
 
-.themebright :not(.v-upload) > * > .v-button:not(.v-disabled):after, .themebright .v-upload:not(.v-disabled):after, .themebright .valo-menu-item:after, .themebright .ripple:after, .themebright .v-tabsheet-tabitem:after, .themebright .v-tabsheet-tabitem-focus:after, .themebright .v-datefield [class*="button"]:after, .themebright .v-filterselect .v-filterselect-button:after, .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themebright .v-accordion-item-caption:not(.v-disabled):after {
+.themebright :not(.v-upload) > * > .v-button:not(.v-disabled):after, .themebright .v-upload-immediate:not(.v-disabled):after, .themebright .valo-menu-item:after, .themebright .ripple:after, .themebright .v-tabsheet-tabitem:after, .themebright .v-tabsheet-tabitem-focus:after, .themebright .v-datefield [class*="button"]:after, .themebright .v-filterselect .v-filterselect-button:after, .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themebright .v-accordion-item-caption:not(.v-disabled):after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -16849,31 +16849,31 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	transition: background 0.5s, opacity 1s;
 }
 
-.themebright :not(.v-upload) > * > .v-button:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action):after, .themebright .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):after, .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themebright .valo-menu-item:not(.v-disabled):after, .themebright .v-datefield [class*="button"]:after, .themebright .v-tabsheet-tabitem:after, .themebright .v-tabsheet-tabitem-focus:after, .themebright .ripple:after, .themebright .v-accordion-item-caption:not(.v-disabled):after {
+.themebright :not(.v-upload) > * > .v-button:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action):after, .themebright .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):after, .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themebright .valo-menu-item:not(.v-disabled):after, .themebright .v-datefield [class*="button"]:after, .themebright .v-tabsheet-tabitem:after, .themebright .v-tabsheet-tabitem-focus:after, .themebright .ripple:after, .themebright .v-accordion-item-caption:not(.v-disabled):after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themebright .v-button.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themebright .v-upload.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themebright .v-filterselect .v-filterselect-button:after {
+.themebright .v-button.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themebright .v-upload-immediate.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themebright .v-filterselect .v-filterselect-button:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themebright .v-button.border:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themebright .v-upload.border:not(.primary):not(.friendly):not(.danger):not(.custom):after {
+.themebright .v-button.border:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themebright .v-upload-immediate .border:not(.primary):not(.friendly):not(.danger):not(.custom):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themebright .v-button.primary:not(.borderless):after, .themebright .v-button.floating-action:after, .themebright .v-upload.floating-action-upload:after, .themebright .v-upload.primary:after {
+.themebright .v-button.primary:not(.borderless):after, .themebright .v-button.floating-action:after, .themebright .v-upload-immediate .floating-action-upload:after, .themebright .v-upload-immediate .primary:after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themebright :not(.v-component-group) > .v-button:not(.no-border-radius):not(.floating-action):not(.round):after, .themebright .v-upload:not(.no-border-radius):not(.floating-action-upload):not(.round):after {
+.themebright :not(.v-component-group) > .v-button:not(.no-border-radius):not(.floating-action):not(.round):after, .themebright .v-upload-immediate :not(.no-border-radius):not(.floating-action-upload):not(.round):after {
 	border-radius: 2px;
 }
 
@@ -16884,51 +16884,51 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	border-radius: 2px;
 }
 
-.themebright .v-button:not(.no-border-radius).floating-action:after, .themebright .v-upload:not(.no-border-radius).floating-action-upload:after {
+.themebright .v-button:not(.no-border-radius).floating-action:after, .themebright .v-upload-immediate :not(.no-border-radius).floating-action-upload:after {
 	border-radius: 100%;
 }
 
-.themebright .v-button.friendly:not(.borderless):after, .themebright .v-upload.friendly:not(.borderless):after {
+.themebright .v-button.friendly:not(.borderless):after, .themebright .v-upload-immediate .friendly:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themebright .v-button.danger:not(.borderless):after, .themebright .v-upload.danger:not(.borderless):after {
+.themebright .v-button.danger:not(.borderless):after, .themebright .v-upload-immediate .danger:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themebright .v-button.custom:not(.borderless):after, .themebright .v-upload.custom:not(.borderless):after {
+.themebright .v-button.custom:not(.borderless):after, .themebright .v-upload-immediate .custom:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themebright .v-button.friendly.borderless:after, .themebright .v-upload.friendly.borderless:after {
+.themebright .v-button.friendly.borderless:after, .themebright .v-upload-immediate .friendly.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themebright .v-button.danger.borderless:after, .themebright .v-upload.danger.borderless:after {
+.themebright .v-button.danger.borderless:after, .themebright .v-upload-immediate .danger.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themebright .v-button.custom.borderless:after, .themebright .v-upload.custom.borderless:after {
+.themebright .v-button.custom.borderless:after, .themebright .v-upload-immediate .custom.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themebright .v-button.round:after, .themebright .v-upload.round:after {
+.themebright .v-button.round:after, .themebright .v-upload-immediate .round:after {
 	border-radius: 30px;
 }
 
-.themebright .v-button:not(.v-disabled):active:after, .themebright .ripple:active:after, .themebright .v-datefield [class*="button"]:active:after, .themebright .v-upload:not(.v-disabled):active:after, .themebright .v-tabsheet-tabitem:active:after, .themebright .v-tabsheet-tabitem-focus:active:after, .themebright .v-filterselect .v-filterselect-button:active:after, .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):active:after, .themebright .valo-menu-item:not(.v-disabled):active:after, .themebright .v-accordion-item-caption:not(.v-disabled):active:after {
+.themebright .v-button:not(.v-disabled):active:after, .themebright .ripple:active:after, .themebright .v-datefield [class*="button"]:active:after, .themebright .v-upload-immediate :not(.v-disabled):active:after, .themebright .v-tabsheet-tabitem:active:after, .themebright .v-tabsheet-tabitem-focus:active:after, .themebright .v-filterselect .v-filterselect-button:active:after, .themebright .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):active:after, .themebright .valo-menu-item:not(.v-disabled):active:after, .themebright .v-accordion-item-caption:not(.v-disabled):active:after {
 	opacity: 0.2;
 	background-size: 0% 0%;
 	transition: 0s;
@@ -17777,6 +17777,15 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
+.themebright .v-grid-sidebar-content {
+	border-radius: 2px;
+	padding: 4px 0 !important;
+}
+
+.themebright .v-grid-sidebar.v-contextmenu {
+	z-index: 10;
+}
+
 .themebright .v-grid-row-selected > .v-grid-cell {
 	color: inherit;
 	border-top: 1px solid #d9d9d9;
@@ -18022,6 +18031,69 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themebright .v-checkbox > input ~ label:after {
 	transition: all 0.1s ease !important;
+}
+
+.themebright .v-checkbox.switch {
+	padding-left: 0;
+	padding-right: 48px;
+}
+
+.themebright .v-checkbox.switch  > input ~ label:after {
+	content: "";
+	left: auto;
+	right: 0 !important;
+	z-index: 1;
+	border-radius: 16px;
+	width: 32px;
+	height: 16px;
+	border: 0 solid;
+	background-color: #e1e1e1;
+	opacity: 1;
+	transition: background-color 0.3s;
+}
+
+.themebright .v-checkbox.switch  > input:checked ~ label:after {
+	background: #3be9ff;
+	transition: background-color 0.3s;
+}
+
+.themebright .v-checkbox.switch  > input ~ label:before {
+	position: absolute;
+	z-index: 2;
+	left: auto;
+	top: -2px;
+	width: 20px;
+	height: 20px;
+	display: block;
+	padding: 0 0 0 0;
+	border: none !important;
+	border-radius: 100%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.themebright .v-checkbox.switch  > input:not(:checked) ~ label:before {
+	background-color: white !important;
+	right: 16px;
+	transition: right 0.3s, background 0.3s;
+}
+
+.themebright .v-checkbox.switch  > input:checked ~ label:before {
+	background-color: #00d3ee !important;
+	right: -4px;
+	transition: right 0.3s, background 0.3s;
+}
+
+.themebright .v-checkbox.switch.v-readonly, .themebright .v-checkbox.switch.v-checkbox-disabled {
+	pointer-events: none;
+}
+
+.themebright .v-checkbox.switch.v-readonly input:checked ~ label:before, .themebright .v-checkbox.switch.v-checkbox-disabled input:checked ~ label:before {
+	background-color: #3be9ff !important;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.themebright .v-checkbox.switch.v-readonly input:checked ~ label:after, .themebright .v-checkbox.switch.v-checkbox-disabled input:checked ~ label:after {
+	background: #6eefff;
 }
 
 .themebright .v-radiobutton > input ~ label:before {
@@ -18356,7 +18428,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	content: "\E707";
 }
 
-.themebright .v-upload {
+.themebright .v-upload-immediate {
 	text-transform: uppercase;
 	transition: box-shadow 0.3s ease-out, background 0.3s;
 	height: 45px;
@@ -18367,7 +18439,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	cursor: pointer;
 }
 
-.themebright .v-upload.no-border-radius {
+.themebright .v-upload:not(.v-upload-immediate) {
+	padding: 12px;
+	border-radius: 2px;
+}
+
+.themebright .v-upload-immediate.no-border-radius {
 	border-radius: 0px !important;
 }
 
@@ -18378,7 +18455,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding: 0 20px;
 }
 
-.themebright .v-upload .v-button:before {
+.themebright .v-upload-immediate .v-button:before {
 	content: "";
 	display: inline-block;
 	width: 0;
@@ -18390,7 +18467,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	width: 100%;
 }
 
-.themebright .v-upload .v-button.v-disabled {
+.themebright .v-upload-immediate .v-button.v-disabled {
 	background: transparent;
 	color: #3d3d3d;
 	opacity: 1;
@@ -18400,7 +18477,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: #3d3d3d;
 }
 
-.themebright .v-upload.floating-action-upload .v-button.v-disabled .v-button-caption {
+.themebright .v-upload-immediate.floating-action-upload .v-button.v-disabled .v-button-caption {
 	color: transparent;
 }
 
@@ -18411,19 +18488,19 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	height: 56px;
 }
 
-.themebright .v-upload {
+.themebright .v-upload-immediate {
 	height: 45px;
 }
 
-.themebright .v-upload.tiny {
+.themebright .v-upload-immediate.tiny {
 	height: 34px;
 }
 
-.themebright .v-upload.small {
+.themebright .v-upload-immediate.small {
 	height: 38px;
 }
 
-.themebright .v-upload.large {
+.themebright .v-upload-immediate.large {
 	height: 54px;
 }
 
@@ -18472,98 +18549,98 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding-left: 19px;
 }
 
-.themebright .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
+.themebright .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
 	background: white;
 }
 
-.themebright .v-upload:not(.borderless):not(.border).primary {
+.themebright .v-upload-immediate:not(.borderless):not(.border).primary {
 	background: #00BCD4;
 	color: white;
 }
 
-.themebright .v-upload:not(.borderless):not(.border).friendly {
+.themebright .v-upload-immediate:not(.borderless):not(.border).friendly {
 	background: #4caf50;
 	color: white;
 }
 
-.themebright .v-upload:not(.borderless):not(.border).danger {
+.themebright .v-upload-immediate:not(.borderless):not(.border).danger {
 	background: #d32f2f;
 	color: white;
 }
 
-.themebright .v-upload:not(.borderless):not(.border).custom {
+.themebright .v-upload-immediate:not(.borderless):not(.border).custom {
 	background: #00BCD4;
 	color: white;
 }
 
-.themebright .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
+.themebright .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
 	background: white;
 }
 
-.themebright .v-upload:not(.borderless):not(.border).primary {
+.themebright .v-upload-immediate:not(.borderless):not(.border).primary {
 	background: #00BCD4;
 	color: white;
 }
 
-.themebright .v-upload.borderless-colored, .themebright .v-upload.link {
+.themebright .v-upload-immediate.borderless-colored, .themebright .v-upload-immediate.link {
 	color: #00BCD4;
 }
 
-.themebright .v-upload.round {
+.themebright .v-upload-immediate.round {
 	border-radius: 30px;
 }
 
-.themebright .v-upload.border {
+.themebright .v-upload-immediate.border {
 	border: 1px solid #464646;
 	background: transparent;
 	color: #464646;
 }
 
-.themebright .v-upload.border.primary {
+.themebright .v-upload-immediate.border.primary {
 	border: 1px solid #00BCD4;
 	color: #00BCD4;
 }
 
-.themebright .v-upload.border:after {
+.themebright .v-upload-immediate.border:after {
 	border: 0px solid #00BCD4;
 }
 
-.themebright .v-upload.border.friendly {
+.themebright .v-upload-immediate.border.friendly {
 	border: 1px solid #4caf50;
 	color: #4caf50;
 }
 
-.themebright .v-upload.border.danger {
+.themebright .v-upload-immediate.border.danger {
 	border: 1px solid #d32f2f;
 	color: #d32f2f;
 }
 
-.themebright .v-upload.border.custom {
+.themebright .v-upload-immediate.border.custom {
 	border: 1px solid #00BCD4;
 	color: #00BCD4;
 }
 
-.themebright .v-upload.borderless {
+.themebright .v-upload-immediate.borderless {
 	color: #464646;
 }
 
-.themebright .v-upload.borderless.primary {
+.themebright .v-upload-immediate.borderless.primary {
 	color: #00BCD4;
 }
 
-.themebright .v-upload.borderless.friendly {
+.themebright .v-upload-immediate.borderless.friendly {
 	color: #4caf50;
 }
 
-.themebright .v-upload.borderless.danger {
+.themebright .v-upload-immediate.borderless.danger {
 	color: #d32f2f;
 }
 
-.themebright .v-upload.borderless.custom {
+.themebright .v-upload-immediate.borderless.custom {
 	color: #00BCD4;
 }
 
-.themebright .v-upload.floating-action-upload {
+.themebright .v-upload-immediate.floating-action-upload {
 	width: 56px;
 	height: 56px;
 	padding: 0px;
@@ -18572,28 +18649,28 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: white;
 }
 
-.themebright .v-upload.floating-action-upload .v-icon {
+.themebright .v-upload-immediate.floating-action-upload .v-icon {
 	line-height: 56px;
 	width: 56px;
 	text-align: center;
 }
 
-.themebright .v-upload.floating-action-upload.friendly {
+.themebright .v-upload-immediate.floating-action-upload.friendly {
 	background: #4caf50;
 	color: white;
 }
 
-.themebright .v-upload.floating-action-upload.danger {
+.themebright .v-upload-immediate.floating-action-upload.danger {
 	background: #d32f2f;
 	color: white;
 }
 
-.themebright .v-upload.floating-action-upload.custom {
+.themebright .v-upload-immediate.floating-action-upload.custom {
 	color: white;
 	background: #00BCD4;
 }
 
-.themebright .v-upload.v-disabled {
+.themebright .v-upload-immediate.v-disabled {
 	background: #cccccc;
 	color: #3d3d3d;
 	opacity: 0.7;

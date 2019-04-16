@@ -1,4 +1,4 @@
-package com.fo0.lmp.ui.views.platform;
+package com.fo0.lmp.ui.views.backup;
 
 import java.util.Set;
 
@@ -10,8 +10,10 @@ import org.vaadin.viritin.layouts.MPanel;
 import com.fo0.lmp.ui.abstracts.AVerticalView;
 import com.fo0.lmp.ui.data.ActionManager;
 import com.fo0.lmp.ui.data.LinuxHostManager;
+import com.fo0.lmp.ui.data.WebsiteCertChecker;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Action;
+import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.templates.BackupExportConfigView;
 import com.fo0.lmp.ui.templates.BackupImportConfigView;
@@ -31,6 +33,34 @@ public class BackupView extends AVerticalView {
 	public void build() {
 		addComponent(createActionConfigayout());
 		addComponent(createHostConfigLayout());
+		addComponent(createCertConfigayout());
+	}
+
+	public MPanel createCertConfigayout() {
+		MHorizontalLayout layout = new MHorizontalLayout().withMargin(true).withSpacing(true);
+		layout.add(createButton("Export", MaterialIcons.BACKUP, e -> {
+			String s = "";
+			Set<CertWebsite> actions = WebsiteCertChecker.load();
+			if (actions != null && !actions.isEmpty()) {
+				s = new GsonBuilder().setPrettyPrinting().create().toJson(actions);
+			}
+			UtilsWindow.createWindow("Export Cert-Website Config", new BackupExportConfigView(s, "website.json.cfg"),
+					EWindowSize.Normal, true);
+		}));
+
+		layout.add(createButton("Import", MaterialIcons.IMPORTANT_DEVICES, e -> {
+			UtilsWindow.createWindow("Import Cert-Website Config", new BackupImportConfigView((config, override) -> {
+				Set<CertWebsite> hosts = Parser.parseSet(config, CertWebsite.class);
+				if (!override) {
+					Set<CertWebsite> existingHosts = WebsiteCertChecker.load();
+					if (existingHosts != null && !existingHosts.isEmpty())
+						hosts.addAll(existingHosts);
+				}
+				WebsiteCertChecker.save(hosts);
+				UtilsNotification.saved("Imported Cert-Website Config");
+			}), EWindowSize.Normal, true);
+		}));
+		return new MPanel(layout).withCaption("Cert-Website").withStyleName(MaterialTheme.CARD_1);
 	}
 
 	public MPanel createActionConfigayout() {

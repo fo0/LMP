@@ -1017,10 +1017,6 @@
  */
 
 /**
- *
- */
-
-/**
  * @group window
  */
 
@@ -1081,7 +1077,7 @@
  */
 
 .v-vaadin-version:after {
-	content: "8.3.0";
+	content: "8.6.3";
 }
 
 .v-widget {
@@ -1792,88 +1788,88 @@ body.v-gecko .v-grid-scroller.v-grid-scroller-horizontal > div {
 	margin: 0 -17px !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.primary):not(.border):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):not(.danger):hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.primary):not(.border):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):not(.danger):hover {
 	background: #595959 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):hover, body.v-touch:not(.v-component-group) > .v-upload:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):active {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):hover, body.v-touch:not(.v-component-group) > .v-upload-immediate:not(.v-disabled):not(.borderless):not(.flat):not(.borderless-colored):not(.floating-action-upload):active {
 	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2) !important;
 }
 
-body:not(.v-touch) .friendly.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .friendly.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #41d447;
 }
 
-body:not(.v-touch) .custom.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .custom.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .danger.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .danger.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #f12a2a;
 }
 
-body:not(.v-touch) .primary.v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
+body:not(.v-touch) .primary.v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .v-upload.borderless:not(.v-disabled):not(.borderless-colored):not(.primary):not(.friendly):not(.danger):not(.custom):hover {
+body:not(.v-touch) .v-upload-immediate.borderless:not(.v-disabled):not(.borderless-colored):not(.primary):not(.friendly):not(.danger):not(.custom):hover {
 	background: #454545 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:hover {
 	background: #00d6f2;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat):hover, body.v-touch .v-upload.floating-action-upload:not(.flat):active {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat):hover, body.v-touch .v-upload-immediate.floating-action-upload:not(.flat):active {
 	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat).friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat).friendly:hover {
 	background: #41d447;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).floating-action-upload:not(.flat).danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).floating-action-upload:not(.flat).danger:hover {
 	background: #f12a2a;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border:hover {
 	color: black;
 	background: white !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.custom:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.custom:hover {
 	color: white;
 	background: #00BCD4 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.primary:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.primary:hover {
 	color: white;
 	background: #00BCD4 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.friendly:hover {
 	color: white;
 	background: #4caf50 !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).border.danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).border.danger:hover {
 	color: white;
 	background: #d32f2f !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.primary:hover, body:not(.v-touch) .v-upload:not(.v-disabled).borderless-colored:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.primary:hover, body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless-colored:hover {
 	background: rgba(0, 214, 242, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.friendly:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.friendly:hover {
 	background: rgba(65, 212, 71, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.danger:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.danger:hover {
 	background: rgba(241, 42, 42, 0.2) !important;
 }
 
-body:not(.v-touch) .v-upload:not(.v-disabled).borderless.custom:hover {
+body:not(.v-touch) .v-upload-immediate:not(.v-disabled).borderless.custom:hover {
 	background: rgba(0, 214, 242, 0.2) !important;
 }
 
@@ -2452,7 +2448,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
-.themedark .app-drawer-1 {
+.themedark [persistent].app-drawer-1 {
 	width: 256px;
 }
 
@@ -2470,11 +2466,6 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark .app-drawer-layout-1.small app-drawer[opened] .drawer-content {
 	width: 64px;
-}
-
-.themedark .app-drawer-1 .app-drawer#scrim {
-	background: transparent !important;
-	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .themedark .app-toolbar-1 {
@@ -2851,6 +2842,14 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: #494949;
 }
 
+.themedark .v-window.translucent .v-window.translucent .v-window-outerheader {
+	border-bottom: none !important;
+}
+
+.themedark .v-window.translucent .v-window.translucent .v-window-contents {
+	padding: 0px !important;
+}
+
 .themedark .v-window.translucent .v-window-contents {
 	animation: valo-animate-in-fade 0.4s;
 }
@@ -3065,6 +3064,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: #cfcfcf !important;
 }
 
+.themedark .app-layout-behaviour-left .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-hybrid {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3241,6 +3244,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	pointer-events: none;
 }
 
+.themedark .app-layout-behaviour-left-hybrid .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-responsive-hybrid {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3333,6 +3340,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	pointer-events: none;
 }
 
+.themedark .app-layout-behaviour-left-responsive-hybrid .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-responsive-hybrid-no-app-bar {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3419,6 +3430,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	right: 0px;
 	left: 0px;
 	pointer-events: none;
+}
+
+.themedark .app-layout-behaviour-left-responsive-hybrid-no-app-bar .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-left-responsive-hybrid-overlay-no-app-bar {
@@ -3508,6 +3523,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	pointer-events: none;
 }
 
+.themedark .app-layout-behaviour-left-responsive-hybrid-overlay-no-app-bar .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-overlay {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3543,6 +3562,11 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: visible;
 	background: #545454;
 	color: #cfcfcf !important;
+	width: 256px;
+}
+
+.themedark .app-layout-behaviour-left-overlay .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-left-responsive {
@@ -3613,6 +3637,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	right: 0px;
 	left: 0px;
 	pointer-events: none;
+}
+
+.themedark .app-layout-behaviour-left-responsive .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-left-responsive-overlay {
@@ -3796,6 +3824,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding-left: 0px;
 }
 
+.themedark .app-layout-behaviour-left-responsive-small .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
+}
+
 .themedark .app-layout-behaviour-left-responsive-small-no-app-bar {
 	--app-drawer-width: 256px;
 	--app-bar-height: 64px;
@@ -3890,6 +3922,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark .app-layout-behaviour-left-responsive-small-no-app-bar .app-layout-submenu-container {
 	padding-left: 0px;
+}
+
+.themedark .app-layout-behaviour-left-responsive-small-no-app-bar .app-drawer-1 .app-drawer#scrim {
+	background: transparent !important;
 }
 
 .themedark .app-layout-behaviour-top {
@@ -6284,6 +6320,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	left: 0;
 }
 
+.themedark .v-grid-body .v-grid-header > .v-grid-row {
+	position: relative;
+}
+
 .themedark .v-grid-row {
 	display: block;
 }
@@ -6459,6 +6499,8 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	-webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	border-right: 0 solid #323232;
+	position: relative;
+	z-index: 11;
 }
 
 .themedark .v-grid-cell.frozen  + th, .themedark .v-grid-cell.frozen  + td {
@@ -10837,6 +10879,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	left: 0;
 }
 
+.themedark .v-tree8-body .v-tree8-header > .v-tree8-row {
+	position: relative;
+}
+
 .themedark .v-tree8-row {
 	display: block;
 }
@@ -11012,6 +11058,8 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	-webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	border-right: 0 solid #323232;
+	position: relative;
+	z-index: 11;
 }
 
 .themedark .v-tree8-cell.frozen  + th, .themedark .v-tree8-cell.frozen  + td {
@@ -11897,6 +11945,10 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	left: 0;
 }
 
+.themedark .v-treegrid-body .v-treegrid-header > .v-treegrid-row {
+	position: relative;
+}
+
 .themedark .v-treegrid-row {
 	display: block;
 }
@@ -12072,6 +12124,8 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	-webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
 	border-right: 0 solid #323232;
+	position: relative;
+	z-index: 11;
 }
 
 .themedark .v-treegrid-cell.frozen  + th, .themedark .v-treegrid-cell.frozen  + td {
@@ -14198,6 +14252,14 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	text-align: right;
 }
 
+.themedark .v-tabsheet-right-aligned-tabs .v-tabsheet-spacertd {
+	display: inline-block !important;
+}
+
+.themedark .v-tabsheet-right-aligned-tabs .v-tabsheet-scroller {
+	padding-left: 9px;
+}
+
 .themedark .v-tabsheet-padded-tabbar  > .v-tabsheet-tabcontainer .v-tabsheet-tabs {
 	padding: 0 11px;
 }
@@ -14334,6 +14396,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	width: 100% !important;
 	height: auto !important;
 	padding: 11px;
+	display: inline-flex;
 }
 
 .themedark .v-colorpicker-preview-textfield {
@@ -16641,7 +16704,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
-.themedark .z-depth-0, .themedark .card-0, .themedark :not(.v-upload) > * > .v-button:not(.v-disabled), .themedark .v-textarea-borderless, .themedark .v-upload, .themedark .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
+.themedark .z-depth-0, .themedark .card-0, .themedark :not(.v-upload) > * > .v-button:not(.v-disabled), .themedark .v-textarea-borderless, .themedark .v-upload-immediate, .themedark .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
 	box-shadow: 0 0px 0px 0 transparent, 0 0px 0px 0 transparent, 0 0px 0px 0px transparent;
 }
 
@@ -16649,7 +16712,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 3px 1px -3px rgba(0, 0, 0, 0.15);
 }
 
-.themedark .z-depth-1, .themedark .floating-border, .themedark .card-1, .themedark .v-label-success:not(.borderless), .themedark .v-label-failure:not(.borderless), .themedark .v-table:not(.borderless) .v-table-footer, .themedark .v-select-twincol-buttons:not(.borderless) .v-button, .themedark .v-upload:not(.v-disabled):not(.floating-action-upload):not(.flat):not(.borderless):not(.border):not(.borderless-colored):not(.quiet):not(.link), .themedark :not(.v-component-group) > .v-textfield.floating, .themedark .v-filterselect.floating, .themedark .v-datefield.floating, .themedark .v-inline-datefield:not(.borderless), .themedark .v-textarea:not(.borderless), .themedark .v-richtextarea:not(.borderless), .themedark .v-table:not(.borderless), .themedark .v-grid:not(.borderless), .themedark .v-grid-editor, .themedark .v-select-twincol select:not(.borderless), .themedark select.v-select-select:not(.borderless), .themedark .v-splitpanel-horizontal:not(.borderless), .themedark .v-splitpanel-vertical:not(.borderless), .themedark .v-component-group.material, .themedark .v-Notification, .themedark .v-tooltip {
+.themedark .z-depth-1, .themedark .floating-border, .themedark .card-1, .themedark .v-label-success:not(.borderless), .themedark .v-label-failure:not(.borderless), .themedark .v-table:not(.borderless) .v-table-footer, .themedark .v-grid-sidebar-content, .themedark .v-select-twincol-buttons:not(.borderless) .v-button, .themedark .v-upload-immediate:not(.v-disabled):not(.floating-action-upload):not(.flat):not(.borderless):not(.border):not(.borderless-colored):not(.quiet):not(.link), .themedark :not(.v-component-group) > .v-textfield.floating, .themedark .v-filterselect.floating, .themedark .v-datefield.floating, .themedark .v-inline-datefield:not(.borderless), .themedark .v-textarea:not(.borderless), .themedark .v-richtextarea:not(.borderless), .themedark .v-table:not(.borderless), .themedark .v-grid:not(.borderless), .themedark .v-grid-editor, .themedark .v-select-twincol select:not(.borderless), .themedark select.v-select-select:not(.borderless), .themedark .v-splitpanel-horizontal:not(.borderless), .themedark .v-splitpanel-vertical:not(.borderless), .themedark .v-component-group.material, .themedark .v-Notification, .themedark .v-tooltip {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -16661,7 +16724,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-.themedark .z-depth-3, .themedark .card-3, .themedark .v-upload.floating-action-upload:not(.v-disabled):not(.flat), .themedark .valo-menu-responsive[width-range~="801px-"] .valo-menu-part, .themedark .valo-menu-responsive[width-range~="0-800px"] .valo-menu-title, .themedark .valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
+.themedark .z-depth-3, .themedark .card-3, .themedark .v-upload-immediate.floating-action-upload:not(.v-disabled):not(.flat), .themedark .valo-menu-responsive[width-range~="801px-"] .valo-menu-part, .themedark .valo-menu-responsive[width-range~="0-800px"] .valo-menu-title, .themedark .valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }
 
@@ -16758,12 +16821,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	cursor: pointer;
 }
 
-.themedark :not(.v-upload) > * > .v-button:not(.v-disabled):not(.valo-menu-toggle), .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled), .themedark .ripple, .themedark .v-upload:not(.v-disabled), .themedark .valo-menu-item:not(.v-disabled), .themedark .v-accordion-item-caption:not(.v-disabled) {
+.themedark :not(.v-upload) > * > .v-button:not(.v-disabled):not(.valo-menu-toggle), .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled), .themedark .ripple, .themedark .v-upload-immediate:not(.v-disabled), .themedark .valo-menu-item:not(.v-disabled), .themedark .v-accordion-item-caption:not(.v-disabled) {
 	position: relative;
 	transform: translate3d(0, 0, 0);
 }
 
-.themedark :not(.v-upload) > * > .v-button:not(.v-disabled):after, .themedark .v-upload:not(.v-disabled):after, .themedark .valo-menu-item:after, .themedark .ripple:after, .themedark .v-tabsheet-tabitem:after, .themedark .v-tabsheet-tabitem-focus:after, .themedark .v-datefield [class*="button"]:after, .themedark .v-filterselect .v-filterselect-button:after, .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedark .v-accordion-item-caption:not(.v-disabled):after {
+.themedark :not(.v-upload) > * > .v-button:not(.v-disabled):after, .themedark .v-upload-immediate:not(.v-disabled):after, .themedark .valo-menu-item:after, .themedark .ripple:after, .themedark .v-tabsheet-tabitem:after, .themedark .v-tabsheet-tabitem-focus:after, .themedark .v-datefield [class*="button"]:after, .themedark .v-filterselect .v-filterselect-button:after, .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedark .v-accordion-item-caption:not(.v-disabled):after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -16779,31 +16842,31 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	transition: background 0.5s, opacity 1s;
 }
 
-.themedark :not(.v-upload) > * > .v-button:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action):after, .themedark .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):after, .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedark .valo-menu-item:not(.v-disabled):after, .themedark .v-datefield [class*="button"]:after, .themedark .v-tabsheet-tabitem:after, .themedark .v-tabsheet-tabitem-focus:after, .themedark .ripple:after, .themedark .v-accordion-item-caption:not(.v-disabled):after {
+.themedark :not(.v-upload) > * > .v-button:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action):after, .themedark .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload):after, .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):after, .themedark .valo-menu-item:not(.v-disabled):after, .themedark .v-datefield [class*="button"]:after, .themedark .v-tabsheet-tabitem:after, .themedark .v-tabsheet-tabitem-focus:after, .themedark .ripple:after, .themedark .v-accordion-item-caption:not(.v-disabled):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedark .v-upload.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedark .v-filterselect .v-filterselect-button:after {
+.themedark .v-button.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedark .v-upload-immediate.borderless:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedark .v-filterselect .v-filterselect-button:after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.border:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedark .v-upload.border:not(.primary):not(.friendly):not(.danger):not(.custom):after {
+.themedark .v-button.border:not(.primary):not(.friendly):not(.danger):not(.custom):after, .themedark .v-upload-immediate .border:not(.primary):not(.friendly):not(.danger):not(.custom):after {
 	
 	background-image: -webkit-radial-gradient(circle, black 20%, transparent 10%);
 	background-image: radial-gradient( circle, black 20%, transparent 10%);
 }
 
-.themedark .v-button.primary:not(.borderless):after, .themedark .v-button.floating-action:after, .themedark .v-upload.floating-action-upload:after, .themedark .v-upload.primary:after {
+.themedark .v-button.primary:not(.borderless):after, .themedark .v-button.floating-action:after, .themedark .v-upload-immediate .floating-action-upload:after, .themedark .v-upload-immediate .primary:after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark :not(.v-component-group) > .v-button:not(.no-border-radius):not(.floating-action):not(.round):after, .themedark .v-upload:not(.no-border-radius):not(.floating-action-upload):not(.round):after {
+.themedark :not(.v-component-group) > .v-button:not(.no-border-radius):not(.floating-action):not(.round):after, .themedark .v-upload-immediate :not(.no-border-radius):not(.floating-action-upload):not(.round):after {
 	border-radius: 2px;
 }
 
@@ -16814,51 +16877,51 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	border-radius: 2px;
 }
 
-.themedark .v-button:not(.no-border-radius).floating-action:after, .themedark .v-upload:not(.no-border-radius).floating-action-upload:after {
+.themedark .v-button:not(.no-border-radius).floating-action:after, .themedark .v-upload-immediate :not(.no-border-radius).floating-action-upload:after {
 	border-radius: 100%;
 }
 
-.themedark .v-button.friendly:not(.borderless):after, .themedark .v-upload.friendly:not(.borderless):after {
+.themedark .v-button.friendly:not(.borderless):after, .themedark .v-upload-immediate .friendly:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.danger:not(.borderless):after, .themedark .v-upload.danger:not(.borderless):after {
+.themedark .v-button.danger:not(.borderless):after, .themedark .v-upload-immediate .danger:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.custom:not(.borderless):after, .themedark .v-upload.custom:not(.borderless):after {
+.themedark .v-button.custom:not(.borderless):after, .themedark .v-upload-immediate .custom:not(.borderless):after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.friendly.borderless:after, .themedark .v-upload.friendly.borderless:after {
+.themedark .v-button.friendly.borderless:after, .themedark .v-upload-immediate .friendly.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.danger.borderless:after, .themedark .v-upload.danger.borderless:after {
+.themedark .v-button.danger.borderless:after, .themedark .v-upload-immediate .danger.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.custom.borderless:after, .themedark .v-upload.custom.borderless:after {
+.themedark .v-button.custom.borderless:after, .themedark .v-upload-immediate .custom.borderless:after {
 	
 	background-image: -webkit-radial-gradient(circle, white 20%, transparent 10%);
 	background-image: radial-gradient( circle, white 20%, transparent 10%);
 }
 
-.themedark .v-button.round:after, .themedark .v-upload.round:after {
+.themedark .v-button.round:after, .themedark .v-upload-immediate .round:after {
 	border-radius: 30px;
 }
 
-.themedark .v-button:not(.v-disabled):active:after, .themedark .ripple:active:after, .themedark .v-datefield [class*="button"]:active:after, .themedark .v-upload:not(.v-disabled):active:after, .themedark .v-tabsheet-tabitem:active:after, .themedark .v-tabsheet-tabitem-focus:active:after, .themedark .v-filterselect .v-filterselect-button:active:after, .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):active:after, .themedark .valo-menu-item:not(.v-disabled):active:after, .themedark .v-accordion-item-caption:not(.v-disabled):active:after {
+.themedark .v-button:not(.v-disabled):active:after, .themedark .ripple:active:after, .themedark .v-datefield [class*="button"]:active:after, .themedark .v-upload-immediate :not(.v-disabled):active:after, .themedark .v-tabsheet-tabitem:active:after, .themedark .v-tabsheet-tabitem-focus:active:after, .themedark .v-filterselect .v-filterselect-button:active:after, .themedark .v-menubar-menuitem:not(.v-menubar-menuitem-disabled):active:after, .themedark .valo-menu-item:not(.v-disabled):active:after, .themedark .v-accordion-item-caption:not(.v-disabled):active:after {
 	opacity: 0.2;
 	background-size: 0% 0%;
 	transition: 0s;
@@ -17707,6 +17770,15 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	overflow: hidden;
 }
 
+.themedark .v-grid-sidebar-content {
+	border-radius: 2px;
+	padding: 4px 0 !important;
+}
+
+.themedark .v-grid-sidebar.v-contextmenu {
+	z-index: 10;
+}
+
 .themedark .v-grid-row-selected > .v-grid-cell {
 	color: inherit;
 	border-top: 1px solid #636363;
@@ -17952,6 +18024,69 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark .v-checkbox > input ~ label:after {
 	transition: all 0.1s ease !important;
+}
+
+.themedark .v-checkbox.switch {
+	padding-left: 0;
+	padding-right: 48px;
+}
+
+.themedark .v-checkbox.switch  > input ~ label:after {
+	content: "";
+	left: auto;
+	right: 0 !important;
+	z-index: 1;
+	border-radius: 16px;
+	width: 32px;
+	height: 16px;
+	border: 0 solid;
+	background-color: #171717;
+	opacity: 1;
+	transition: background-color 0.3s;
+}
+
+.themedark .v-checkbox.switch  > input:checked ~ label:after {
+	background: #3be9ff;
+	transition: background-color 0.3s;
+}
+
+.themedark .v-checkbox.switch  > input ~ label:before {
+	position: absolute;
+	z-index: 2;
+	left: auto;
+	top: -2px;
+	width: 20px;
+	height: 20px;
+	display: block;
+	padding: 0 0 0 0;
+	border: none !important;
+	border-radius: 100%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.themedark .v-checkbox.switch  > input:not(:checked) ~ label:before {
+	background-color: #474747 !important;
+	right: 16px;
+	transition: right 0.3s, background 0.3s;
+}
+
+.themedark .v-checkbox.switch  > input:checked ~ label:before {
+	background-color: #00d3ee !important;
+	right: -4px;
+	transition: right 0.3s, background 0.3s;
+}
+
+.themedark .v-checkbox.switch.v-readonly, .themedark .v-checkbox.switch.v-checkbox-disabled {
+	pointer-events: none;
+}
+
+.themedark .v-checkbox.switch.v-readonly input:checked ~ label:before, .themedark .v-checkbox.switch.v-checkbox-disabled input:checked ~ label:before {
+	background-color: #3be9ff !important;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.themedark .v-checkbox.switch.v-readonly input:checked ~ label:after, .themedark .v-checkbox.switch.v-checkbox-disabled input:checked ~ label:after {
+	background: #6eefff;
 }
 
 .themedark .v-radiobutton > input ~ label:before {
@@ -18286,7 +18421,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	content: "\E707";
 }
 
-.themedark .v-upload {
+.themedark .v-upload-immediate {
 	text-transform: uppercase;
 	transition: box-shadow 0.3s ease-out, background 0.3s;
 	height: 45px;
@@ -18297,7 +18432,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	cursor: pointer;
 }
 
-.themedark .v-upload.no-border-radius {
+.themedark .v-upload:not(.v-upload-immediate) {
+	padding: 12px;
+	border-radius: 2px;
+}
+
+.themedark .v-upload-immediate.no-border-radius {
 	border-radius: 0px !important;
 }
 
@@ -18308,7 +18448,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding: 0 20px;
 }
 
-.themedark .v-upload .v-button:before {
+.themedark .v-upload-immediate .v-button:before {
 	content: "";
 	display: inline-block;
 	width: 0;
@@ -18320,7 +18460,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	width: 100%;
 }
 
-.themedark .v-upload .v-button.v-disabled {
+.themedark .v-upload-immediate .v-button.v-disabled {
 	background: transparent;
 	color: #d3d3d3;
 	opacity: 1;
@@ -18330,7 +18470,7 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: #d3d3d3;
 }
 
-.themedark .v-upload.floating-action-upload .v-button.v-disabled .v-button-caption {
+.themedark .v-upload-immediate.floating-action-upload .v-button.v-disabled .v-button-caption {
 	color: transparent;
 }
 
@@ -18341,19 +18481,19 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	height: 56px;
 }
 
-.themedark .v-upload {
+.themedark .v-upload-immediate {
 	height: 45px;
 }
 
-.themedark .v-upload.tiny {
+.themedark .v-upload-immediate.tiny {
 	height: 34px;
 }
 
-.themedark .v-upload.small {
+.themedark .v-upload-immediate.small {
 	height: 38px;
 }
 
-.themedark .v-upload.large {
+.themedark .v-upload-immediate.large {
 	height: 54px;
 }
 
@@ -18402,98 +18542,98 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding-left: 19px;
 }
 
-.themedark .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
+.themedark .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
 	background: #474747;
 }
 
-.themedark .v-upload:not(.borderless):not(.border).primary {
+.themedark .v-upload-immediate:not(.borderless):not(.border).primary {
 	background: #00BCD4;
 	color: white;
 }
 
-.themedark .v-upload:not(.borderless):not(.border).friendly {
+.themedark .v-upload-immediate:not(.borderless):not(.border).friendly {
 	background: #4caf50;
 	color: white;
 }
 
-.themedark .v-upload:not(.borderless):not(.border).danger {
+.themedark .v-upload-immediate:not(.borderless):not(.border).danger {
 	background: #d32f2f;
 	color: white;
 }
 
-.themedark .v-upload:not(.borderless):not(.border).custom {
+.themedark .v-upload-immediate:not(.borderless):not(.border).custom {
 	background: #00BCD4;
 	color: white;
 }
 
-.themedark .v-upload:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
+.themedark .v-upload-immediate:not(.v-disabled):not(.borderless):not(.borderless-colored):not(.link):not(.quiet):not(.border):not(.primary):not(.friendly):not(.danger):not(.custom):not(.floating-action-upload) {
 	background: #474747;
 }
 
-.themedark .v-upload:not(.borderless):not(.border).primary {
+.themedark .v-upload-immediate:not(.borderless):not(.border).primary {
 	background: #00BCD4;
 	color: white;
 }
 
-.themedark .v-upload.borderless-colored, .themedark .v-upload.link {
+.themedark .v-upload-immediate.borderless-colored, .themedark .v-upload-immediate.link {
 	color: #00BCD4;
 }
 
-.themedark .v-upload.round {
+.themedark .v-upload-immediate.round {
 	border-radius: 30px;
 }
 
-.themedark .v-upload.border {
+.themedark .v-upload-immediate.border {
 	border: 1px solid #c5c5c5;
 	background: transparent;
 	color: #c5c5c5;
 }
 
-.themedark .v-upload.border.primary {
+.themedark .v-upload-immediate.border.primary {
 	border: 1px solid #00BCD4;
 	color: #00BCD4;
 }
 
-.themedark .v-upload.border:after {
+.themedark .v-upload-immediate.border:after {
 	border: 0px solid #00BCD4;
 }
 
-.themedark .v-upload.border.friendly {
+.themedark .v-upload-immediate.border.friendly {
 	border: 1px solid #4caf50;
 	color: #4caf50;
 }
 
-.themedark .v-upload.border.danger {
+.themedark .v-upload-immediate.border.danger {
 	border: 1px solid #d32f2f;
 	color: #d32f2f;
 }
 
-.themedark .v-upload.border.custom {
+.themedark .v-upload-immediate.border.custom {
 	border: 1px solid #00BCD4;
 	color: #00BCD4;
 }
 
-.themedark .v-upload.borderless {
+.themedark .v-upload-immediate.borderless {
 	color: #c5c5c5;
 }
 
-.themedark .v-upload.borderless.primary {
+.themedark .v-upload-immediate.borderless.primary {
 	color: #00BCD4;
 }
 
-.themedark .v-upload.borderless.friendly {
+.themedark .v-upload-immediate.borderless.friendly {
 	color: #4caf50;
 }
 
-.themedark .v-upload.borderless.danger {
+.themedark .v-upload-immediate.borderless.danger {
 	color: #d32f2f;
 }
 
-.themedark .v-upload.borderless.custom {
+.themedark .v-upload-immediate.borderless.custom {
 	color: #00BCD4;
 }
 
-.themedark .v-upload.floating-action-upload {
+.themedark .v-upload-immediate.floating-action-upload {
 	width: 56px;
 	height: 56px;
 	padding: 0px;
@@ -18502,28 +18642,28 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	color: white;
 }
 
-.themedark .v-upload.floating-action-upload .v-icon {
+.themedark .v-upload-immediate.floating-action-upload .v-icon {
 	line-height: 56px;
 	width: 56px;
 	text-align: center;
 }
 
-.themedark .v-upload.floating-action-upload.friendly {
+.themedark .v-upload-immediate.floating-action-upload.friendly {
 	background: #4caf50;
 	color: white;
 }
 
-.themedark .v-upload.floating-action-upload.danger {
+.themedark .v-upload-immediate.floating-action-upload.danger {
 	background: #d32f2f;
 	color: white;
 }
 
-.themedark .v-upload.floating-action-upload.custom {
+.themedark .v-upload-immediate.floating-action-upload.custom {
 	color: white;
 	background: #00BCD4;
 }
 
-.themedark .v-upload.v-disabled {
+.themedark .v-upload-immediate.v-disabled {
 	background: #6c6c6c;
 	color: #d3d3d3;
 	opacity: 0.7;

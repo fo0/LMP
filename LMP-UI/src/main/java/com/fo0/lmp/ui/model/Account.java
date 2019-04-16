@@ -18,4 +18,30 @@ public class Account {
 
 	private ETheme theme;
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public ETheme getTheme() {
+		return theme;
+	}
+
+	public void setTheme(ETheme theme) {
+		this.theme = theme;
+	}
+
+
+
 }

@@ -38,7 +38,7 @@ public class UtilsComponents {
 			ClickListener listenerDiscard) {
 		MButton apply = new MButton("Ok").withStyleName(ValoTheme.BUTTON_FRIENDLY).withIcon(FontAwesome.SAVE)
 				.withListener(listenerSave);
-		MButton discard = new MButton("Discard").withStyleName(ValoTheme.BUTTON_DANGER).withIcon(VaadinIcons.TRASH)
+		MButton discard = new MButton("Cancel").withStyleName(ValoTheme.BUTTON_DANGER).withIcon(FontAwesome.TIMES)
 				.withListener(listenerDiscard);
 		return new MHorizontalLayout(apply, discard);
 	}
@@ -50,7 +50,7 @@ public class UtilsComponents {
 		if (okCaption != null)
 			apply.withCaption(okCaption);
 
-		MButton discard = new MButton("Discard").withStyleName(ValoTheme.BUTTON_DANGER).withIcon(VaadinIcons.TRASH)
+		MButton discard = new MButton("Cancel").withStyleName(ValoTheme.BUTTON_DANGER).withIcon(FontAwesome.TIMES)
 				.withListener(listenerDiscard);
 		if (discardCaption != null)
 			discard.withCaption(discardCaption);

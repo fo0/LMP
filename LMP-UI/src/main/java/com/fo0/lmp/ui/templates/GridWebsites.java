@@ -4,33 +4,44 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Future;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.vaadin.viritin.grid.MGrid;
+import org.vaadin.viritin.label.MLabel;
+import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.data.WebsiteCertChecker;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.enums.EWindowSize;
-import com.fo0.lmp.ui.model.Website;
+import com.fo0.lmp.ui.model.Action;
+import com.fo0.lmp.ui.model.CertWebsite;
+import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.utils.ICON;
 import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsSSLCertExpiry;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.vaadin.server.FontAwesome;
+import com.vaadin.shared.data.sort.SortDirection;
+import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.renderers.HtmlRenderer;
 
-public class GridWebsites extends MGrid<Website> {
+public class GridWebsites extends MGrid<CertWebsite> {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -949632134596892202L;
-	private Set<Website> list = new HashSet<Website>();
+	private Set<CertWebsite> list = new HashSet<CertWebsite>();
 
-	public GridWebsites(Set<Website> websites) {
-		super(Website.class);
+	public GridWebsites(Set<CertWebsite> websites) {
+		super(CertWebsite.class);
+
 		if (list != null)
 			this.list = websites;
+
 		build();
 	}
 
@@ -38,7 +49,7 @@ public class GridWebsites extends MGrid<Website> {
 		try {
 			setItems(list);
 		} catch (Exception e2) {
-			list = new HashSet<Website>();
+			list = new HashSet<CertWebsite>();
 			setItems(list);
 		}
 
@@ -46,9 +57,9 @@ public class GridWebsites extends MGrid<Website> {
 
 		addColumn(e -> {
 			if (e.isActive()) {
-				return FontAwesome.CHECK.getHtml();
+				return ICON.CHECK.getHtml();
 			} else {
-				return FontAwesome.TIMES.getHtml();
+				return ICON.CANCEL.getHtml();
 			}
 		}, new HtmlRenderer()).setId("activecheck").setCaption("Active").setStyleGenerator(e -> {
 			if (e.isActive()) {
@@ -57,12 +68,12 @@ public class GridWebsites extends MGrid<Website> {
 				return STYLES.ICON_RED;
 			}
 		});
-		
+
 		addColumn(e -> {
 			if (e.isStatus()) {
-				return FontAwesome.CHECK.getHtml();
+				return ICON.CHECK.getHtml();
 			} else {
-				return FontAwesome.TIMES.getHtml();
+				return ICON.CANCEL.getHtml();
 			}
 		}, new HtmlRenderer()).setId("statuscheck").setCaption("Status").setStyleGenerator(e -> {
 			if (e.isStatus()) {
@@ -73,29 +84,43 @@ public class GridWebsites extends MGrid<Website> {
 		});
 
 		addComponentColumn(e -> {
+			MHorizontalLayout labels = new MHorizontalLayout();
+			if (e.getHost() != null) {
+				labels.add(new MLabel().withValue(ICON.HOST.getHtml()).withContentMode(ContentMode.HTML));
+			}
+
+			if (e.getAction() != null) {
+				labels.add(new MLabel().withValue(ICON.ACTION.getHtml()).withContentMode(ContentMode.HTML));
+			}
+
+			return labels;
+		}).setId("info").setCaption("Info");
+
+		addComponentColumn(e -> {
 			return addActionButton(e);
-		}).setId("action").setCaption("Action");
+		}).setId("menu").setCaption("Action");
 
 		// setColumns("label", "os", "address", "port", "activecheck", "action");
-		setColumns("url", "port", "activecheck", "statuscheck", "daysleft", "action");
+		setColumns("url", "port", "activecheck", "statuscheck", "daysleft", "info", "menu");
+		sort("url", SortDirection.ASCENDING);
 	}
 
-	public void setList(Set<Website> list) {
+	public void setList(Set<CertWebsite> list) {
 		this.list = list;
 	}
 
-	public Set<Website> getList() {
+	public Set<CertWebsite> getList() {
 		return list;
 	}
 
-	public void addWebsite(Website website) {
+	public void addWebsite(CertWebsite website) {
 		list.remove(website);
 		list.add(website);
 		getDataProvider().refreshAll();
 		WebsiteCertChecker.save(list);
 	}
 
-	public void addWebsite(Website website, boolean save) {
+	public void addWebsite(CertWebsite website, boolean save) {
 		list.remove(website);
 		list.add(website);
 		getDataProvider().refreshAll();
@@ -103,13 +128,19 @@ public class GridWebsites extends MGrid<Website> {
 			WebsiteCertChecker.save(list);
 	}
 
-	public void removeWebsite(Website website) {
+	public void removeWebsite(CertWebsite website) {
 		list.remove(website);
 		getDataProvider().refreshAll();
 		WebsiteCertChecker.save(list);
 	}
 
-	private MenuBar addActionButton(Website website) {
+	private void execute(Host host, Action action) {
+		UtilsWindow.createWindow("Multi-Console",
+				new MultiHostConsole(Stream.of(host).collect(Collectors.toSet()), true, action.getCommand()),
+				EWindowSize.Wide, true);
+	}
+
+	private MenuBar addActionButton(CertWebsite website) {
 		return UtilsComponents.multiActionButton(cmd -> {
 
 			switch (cmd.getText()) {
@@ -126,7 +157,6 @@ public class GridWebsites extends MGrid<Website> {
 				try {
 					website.setDaysleft(UtilsSSLCertExpiry.check(website.getUrl()));
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				addWebsite(website);
@@ -136,8 +166,8 @@ public class GridWebsites extends MGrid<Website> {
 				execute(website, ELinuxActions.PING);
 				break;
 
-			case "Custom":
-				execute(website, ELinuxActions.CUSTOM);
+			case "Update":
+				execute(website.getHost(), website.getAction());
 				break;
 
 			case "Edit":
@@ -147,10 +177,10 @@ public class GridWebsites extends MGrid<Website> {
 				break;
 			}
 
-		}, "Action", "Check", "Custom", "", "Edit", "Delete");
+		}, "Action", "Check", "Update", "", "Edit", "Delete");
 	}
 
-	private void execute(Website website, ELinuxActions action) {
+	private void execute(CertWebsite website, ELinuxActions action) {
 		// TODO: Checke alle Zertifikate
 //		UtilsWindow.createWindow("Multi-Console",
 //				new MultiHostConsole(Stream.of(website).collect(Collectors.toSet()), true, action.getCmd()),

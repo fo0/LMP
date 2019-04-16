@@ -1,5 +1,9 @@
 package com.fo0.lmp.ui.views.certificate;
 
+import java.io.IOException;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
@@ -7,10 +11,15 @@ import org.vaadin.viritin.layouts.MHorizontalLayout;
 import com.fo0.lmp.ui.abstracts.AVerticalView;
 import com.fo0.lmp.ui.data.WebsiteCertChecker;
 import com.fo0.lmp.ui.enums.EWindowSize;
-import com.fo0.lmp.ui.model.Website;
+import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.templates.AddWebsiteView;
 import com.fo0.lmp.ui.templates.GridWebsites;
+import com.fo0.lmp.ui.templates.MultiHostConsole;
+import com.fo0.lmp.ui.utils.ETheme;
+import com.fo0.lmp.ui.utils.UtilsSSLCertExpiry;
 import com.fo0.lmp.ui.utils.UtilsWindow;
+import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
+import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.Button.ClickListener;
 
@@ -39,7 +48,11 @@ public class CertificateView extends AVerticalView {
 	private MHorizontalLayout createButtonLayout() {
 		MHorizontalLayout layout = new MHorizontalLayout();
 		layout.add(createButton("Website", MaterialIcons.ADD, e -> {
-			UtilsWindow.createWindow("Add Website", new AddWebsiteView(Website.builder().build(), save -> {
+			UtilsWindow.createWindow("Add Website", new AddWebsiteView(CertWebsite.builder().build(), save -> {
+				try {
+					save.setDaysleft(UtilsSSLCertExpiry.check(save.getUrl()));
+				} catch (IOException ex) {
+				}
 				grid.addWebsite(save);
 			}), EWindowSize.Normal, true);
 		}));
@@ -49,17 +62,21 @@ public class CertificateView extends AVerticalView {
 //				new MultiHostConsole(grid.getList().stream().filter(x -> x.isActive()).collect(Collectors.toSet()),
 //						""));
 
-		MButton btn = new MButton();
+		MButton btnCheckAll = new MButton();
+		btnCheckAll.withCaption("CHECK ALL");
+		btnCheckAll.setIcon(MaterialIcons.CHECK);
+		btnCheckAll.addClickListener(e -> {
+			grid.getList().stream().filter(CertWebsite::isActive).forEach(i -> {
+				try {
+					i.setDaysleft(UtilsSSLCertExpiry.check(i.getUrl()));
+				} catch (IOException ex) {
+				}
+			});
+			grid.getDataProvider().refreshAll();
+			WebsiteCertChecker.save(grid.getList());
+		});
+		layout.add(btnCheckAll);
 
-		// btn.click();
-		btn.withCaption("CHECK ALL");
-		btn.setIcon(MaterialIcons.CHECK);
-		layout.add(btn);
-		// layout.add(createButton("MultiHost-Console", MaterialIcons.ADD, e -> {
-		// UtilsWindow.createWindow("Multi-Console",
-		// ,
-		// EWindowSize.Wide, true);
-		// }));
 		return layout;
 	}
 

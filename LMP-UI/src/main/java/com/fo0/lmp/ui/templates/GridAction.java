@@ -104,7 +104,7 @@ public class GridAction extends MGrid<Action> {
 				break;
 			}
 
-		}, "Action", "Delete", "Edit");
+		}, "Action", "Edit", "", "Delete");
 	}
 
 }

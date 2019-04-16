@@ -1,32 +1,39 @@
 package com.fo0.lmp.ui.templates;
 
+import java.util.Set;
+
 import org.vaadin.viritin.fields.MCheckBox;
 import org.vaadin.viritin.fields.MTextField;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
+import com.fo0.lmp.ui.data.ActionManager;
+import com.fo0.lmp.ui.data.LinuxHostManager;
 import com.fo0.lmp.ui.interfaces.DataListener;
-import com.fo0.lmp.ui.model.Website;
+import com.fo0.lmp.ui.model.Action;
+import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.utils.Utils;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsNotification;
 import com.vaadin.data.Binder;
+import com.vaadin.ui.ComboBox;
 
 public class AddWebsiteView extends AVerticalView {
 
 	private static final long serialVersionUID = -1341889021117026811L;
 
-	private Binder<Website> binder = new Binder<Website>(Website.class);
+	private Binder<CertWebsite> binder = new Binder<CertWebsite>(CertWebsite.class);
 
 	private MTextField label = new MTextField("Label").withFullWidth();
 	private MTextField url = new MTextField("Url").withFullWidth();
 	private MTextField port = new MTextField("Port").withFullWidth();
 	private MCheckBox active = new MCheckBox("Active");
-	private MCheckBox status = new MCheckBox("Status");
-	private MTextField daysleft = new MTextField("Daysleft").withFullWidth();
+	private ComboBox<Host> host = new ComboBox<Host>("Host");
+	private ComboBox<Action> action = new ComboBox<Action>("action");
 
-	private DataListener<Website> listener;
+	private DataListener<CertWebsite> listener;
 
-	public AddWebsiteView(Website Website, DataListener<Website> listener) {
+	public AddWebsiteView(CertWebsite Website, DataListener<CertWebsite> listener) {
 		super();
 		this.listener = listener;
 		binder.setBean(Website);
@@ -35,13 +42,18 @@ public class AddWebsiteView extends AVerticalView {
 
 	public AddWebsiteView() {
 		super();
-		binder.setBean(Website.builder().build());
+		binder.setBean(CertWebsite.builder().build());
 		initBuild();
 	}
 
 	@Override
 	public void build() {
-		addComponents(label, url, port, active, status, daysleft);
+		addComponents(label, url, port, host, action, active);
+		label.addBlurListener(e -> {
+			if (url.getValue().isEmpty())
+				url.setValue(label.getValue());
+		});
+
 		addComponents(UtilsComponents.Button_Apply_Discard_Layout(ok -> {
 			listener.event(binder.getBean());
 			UtilsNotification.notificationTray("Added Node", binder.getBean().toString());
@@ -49,16 +61,26 @@ public class AddWebsiteView extends AVerticalView {
 		}, discard -> {
 			UtilsNotification.discard();
 		}));
+
+		Set<Host> myHosts = LinuxHostManager.load();
+		if (myHosts != null)
+			host.setItems(myHosts);
+		host.setItemCaptionGenerator(Host::getLabel);
+
+		Set<Action> myActions = ActionManager.load();
+		if (myActions != null)
+			action.setItems(myActions);
+		action.setItemCaptionGenerator(Action::getDescription);
 	}
 
 	@Override
 	public void init() {
-		binder.forField(label).bind(Website::getLabel, Website::setLabel);
-		binder.forField(url).bind(Website::getUrl, Website::setUrl);
-		binder.forField(port).withConverter(Integer::valueOf, String::valueOf).bind(Website::getPort, Website::setPort);
-		binder.forField(active).bind(Website::isActive, Website::setActive);
-		binder.forField(status).bind(Website::isStatus, Website::setStatus);
-		binder.forField(daysleft).withConverter(Integer::valueOf, String::valueOf).bind(Website::getDaysleft,
-				Website::setDaysleft);
+		binder.forField(label).bind(CertWebsite::getLabel, CertWebsite::setLabel);
+		binder.forField(url).bind(CertWebsite::getUrl, CertWebsite::setUrl);
+		binder.forField(port).withConverter(Integer::valueOf, String::valueOf).bind(CertWebsite::getPort,
+				CertWebsite::setPort);
+		binder.forField(active).bind(CertWebsite::isActive, CertWebsite::setActive);
+		binder.forField(host).bind(CertWebsite::getHost, CertWebsite::setHost);
+		binder.forField(action).bind(CertWebsite::getAction, CertWebsite::setAction);
 	}
 }

@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.fo0.lmp.ui.model.Website;
+import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.logger.LOGSTATE;
 import com.fo0.logger.Logger;
 import com.google.gson.Gson;
@@ -21,10 +21,10 @@ import com.google.gson.reflect.TypeToken;
 public class WebsiteCertChecker {
 	private static String path = System.getProperty("jboss.server.config.dir") + "/websites.json";
 
-	public static Set<Website> load() {
+	public static Set<CertWebsite> load() {
 		createConfig();
 		try {
-			Set<Website> acc = parse(new File(path), Website.class);
+			Set<CertWebsite> acc = parse(new File(path), CertWebsite.class);
 
 			if (acc == null)
 				return null;
@@ -38,7 +38,7 @@ public class WebsiteCertChecker {
 		return null;
 	}
 
-	public static void save(Set<Website> Website) {
+	public static void save(Set<CertWebsite> Website) {
 		createConfig();
 		try {
 			write(Website, path);

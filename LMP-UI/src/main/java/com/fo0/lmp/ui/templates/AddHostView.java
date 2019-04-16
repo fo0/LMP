@@ -50,6 +50,10 @@ public class AddHostView extends AVerticalView {
 	@Override
 	public void build() {
 		addComponents(label, address, port, username, password, active);
+		label.addBlurListener(e -> {
+			if (address.getValue().isEmpty())
+				address.setValue(label.getValue());
+		});
 		addComponents(UtilsComponents.Button_Apply_Discard_Layout(ok -> {
 			listener.event(binder.getBean());
 			UtilsNotification.notificationTray("Added Node", binder.getBean().toString());

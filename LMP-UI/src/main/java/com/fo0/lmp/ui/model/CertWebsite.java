@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Website {
+public class CertWebsite {
 	
 	
 	private String label;
@@ -26,5 +26,8 @@ public class Website {
 	private boolean status = false;
 	
 	private int daysleft;
+	
+	private Host host;
+	private Action action;
 
 }

@@ -41,7 +41,7 @@ public class BackupImportConfigView extends AVerticalView {
 
 	private VaadinUploader createUploadButton() {
 		VaadinUploader uploader = new VaadinUploader();
-		uploader.setButtonCaption("Import");
+		uploader.setButtonCaption("Import-File");
 		uploader.addStyleName(MaterialTheme.BUTTON_FRIENDLY);
 
 		uploader.addStartListener(new StartListener() {

@@ -1,4 +1,4 @@
-package com.kevkev.lmp.views.certificate;
+package com.fo0.lmp.ui.views.certificate;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;

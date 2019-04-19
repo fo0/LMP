@@ -4,6 +4,7 @@ import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.github.appreciated.material.MaterialTheme;
+import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button.ClickListener;
@@ -38,8 +39,10 @@ public class UtilsComponents {
 			ClickListener listenerDiscard) {
 		MButton apply = new MButton("Ok").withStyleName(ValoTheme.BUTTON_FRIENDLY).withIcon(FontAwesome.SAVE)
 				.withListener(listenerSave);
+		apply.setClickShortcut(KeyCode.ENTER);
 		MButton discard = new MButton("Cancel").withStyleName(ValoTheme.BUTTON_DANGER).withIcon(FontAwesome.TIMES)
 				.withListener(listenerDiscard);
+		discard.setClickShortcut(KeyCode.ESCAPE);
 		return new MHorizontalLayout(apply, discard);
 	}
 
@@ -47,11 +50,13 @@ public class UtilsComponents {
 			ClickListener listenerSave, ClickListener listenerDiscard) {
 		MButton apply = new MButton("Ok").withStyleName(ValoTheme.BUTTON_FRIENDLY).withIcon(FontAwesome.SAVE)
 				.withListener(listenerSave);
+		apply.setClickShortcut(KeyCode.ENTER);
 		if (okCaption != null)
 			apply.withCaption(okCaption);
 
 		MButton discard = new MButton("Cancel").withStyleName(ValoTheme.BUTTON_DANGER).withIcon(FontAwesome.TIMES)
 				.withListener(listenerDiscard);
+		discard.setClickShortcut(KeyCode.ESCAPE);
 		if (discardCaption != null)
 			discard.withCaption(discardCaption);
 

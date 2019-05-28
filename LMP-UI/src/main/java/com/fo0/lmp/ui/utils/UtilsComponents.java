@@ -36,13 +36,13 @@ public class UtilsComponents {
 		return split;
 	}
 	
-	public static ContextMenu multiActionContextButton(Command cmd, String caption, String... items) {
-		
-		ContextMenu contextMenu = new ContextMenu(parentComponent, setAsMenuForParentComponent);
-		
-		
-		return null;
-	}
+//	public static ContextMenu multiActionContextButton(Command cmd, String caption, String... items) {
+//		
+//		ContextMenu contextMenu = new ContextMenu(parentComponent, setAsMenuForParentComponent);
+//		
+//		
+//		return null;
+//	}
 
 	public static MHorizontalLayout Button_Apply_Discard_Layout(ClickListener listenerSave,
 			ClickListener listenerDiscard) {

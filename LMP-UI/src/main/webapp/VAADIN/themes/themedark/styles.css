@@ -1077,7 +1077,7 @@
  */
 
 .v-vaadin-version:after {
-	content: "8.6.3";
+	content: "8.9.1";
 }
 
 .v-widget {
@@ -8194,7 +8194,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark .v-datefield-popup td.v-datefield-calendarpanel-month {
 	width: 180px;
+	cursor: default;
 	color: #00BCD4;
+}
+
+.themedark .v-datefield-popup td.v-datefield-calendarpanel-month.header-month-year {
+	cursor: pointer;
 }
 
 .themedark .v-datefield-popup .v-datefield-calendarpanel-year td.v-datefield-calendarpanel-month {
@@ -8375,7 +8380,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark td.v-datefield-calendarpanel-month {
 	width: 180px;
+	cursor: default;
 	color: #00BCD4;
+}
+
+.themedark td.v-datefield-calendarpanel-month.header-month-year {
+	cursor: pointer;
 }
 
 .themedark .v-datefield-calendarpanel-year td.v-datefield-calendarpanel-month {
@@ -9026,7 +9036,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark td.v-inline-datefield-calendarpanel-month {
 	width: 180px;
+	cursor: default;
 	color: #00BCD4;
+}
+
+.themedark td.v-inline-datefield-calendarpanel-month.header-month-year {
+	cursor: pointer;
 }
 
 .themedark .v-inline-datefield-calendarpanel-year td.v-inline-datefield-calendarpanel-month {
@@ -11762,6 +11777,70 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding-left: 15em;
 }
 
+.themedark .v-tree8-node.depth-16 {
+	padding-left: 16em;
+}
+
+.themedark .v-tree8-node.depth-17 {
+	padding-left: 17em;
+}
+
+.themedark .v-tree8-node.depth-18 {
+	padding-left: 18em;
+}
+
+.themedark .v-tree8-node.depth-19 {
+	padding-left: 19em;
+}
+
+.themedark .v-tree8-node.depth-20 {
+	padding-left: 20em;
+}
+
+.themedark .v-tree8-node.depth-21 {
+	padding-left: 21em;
+}
+
+.themedark .v-tree8-node.depth-22 {
+	padding-left: 22em;
+}
+
+.themedark .v-tree8-node.depth-23 {
+	padding-left: 23em;
+}
+
+.themedark .v-tree8-node.depth-24 {
+	padding-left: 24em;
+}
+
+.themedark .v-tree8-node.depth-25 {
+	padding-left: 25em;
+}
+
+.themedark .v-tree8-node.depth-26 {
+	padding-left: 26em;
+}
+
+.themedark .v-tree8-node.depth-27 {
+	padding-left: 27em;
+}
+
+.themedark .v-tree8-node.depth-28 {
+	padding-left: 28em;
+}
+
+.themedark .v-tree8-node.depth-29 {
+	padding-left: 29em;
+}
+
+.themedark .v-tree8-node.depth-30 {
+	padding-left: 30em;
+}
+
+.themedark .v-tree8-node.depth-31 {
+	padding-left: 31em;
+}
+
 .themedark .v-tree8-cell-content {
 	display: inline-block;
 	vertical-align: middle;
@@ -12826,6 +12905,70 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedark .v-treegrid-node.depth-15 {
 	padding-left: 15em;
+}
+
+.themedark .v-treegrid-node.depth-16 {
+	padding-left: 16em;
+}
+
+.themedark .v-treegrid-node.depth-17 {
+	padding-left: 17em;
+}
+
+.themedark .v-treegrid-node.depth-18 {
+	padding-left: 18em;
+}
+
+.themedark .v-treegrid-node.depth-19 {
+	padding-left: 19em;
+}
+
+.themedark .v-treegrid-node.depth-20 {
+	padding-left: 20em;
+}
+
+.themedark .v-treegrid-node.depth-21 {
+	padding-left: 21em;
+}
+
+.themedark .v-treegrid-node.depth-22 {
+	padding-left: 22em;
+}
+
+.themedark .v-treegrid-node.depth-23 {
+	padding-left: 23em;
+}
+
+.themedark .v-treegrid-node.depth-24 {
+	padding-left: 24em;
+}
+
+.themedark .v-treegrid-node.depth-25 {
+	padding-left: 25em;
+}
+
+.themedark .v-treegrid-node.depth-26 {
+	padding-left: 26em;
+}
+
+.themedark .v-treegrid-node.depth-27 {
+	padding-left: 27em;
+}
+
+.themedark .v-treegrid-node.depth-28 {
+	padding-left: 28em;
+}
+
+.themedark .v-treegrid-node.depth-29 {
+	padding-left: 29em;
+}
+
+.themedark .v-treegrid-node.depth-30 {
+	padding-left: 30em;
+}
+
+.themedark .v-treegrid-node.depth-31 {
+	padding-left: 31em;
 }
 
 .themedark .v-treegrid-cell-content {

@@ -36,7 +36,7 @@ public class MainUI extends UI implements DetachListener {
 
 	private static final long serialVersionUID = 4966998996112632022L;
 	public static final String NAME = "Linux Management Platform";
-	public static final String VERSION = "Version 1.2.2";
+	public static final String VERSION = "Version 1.3.0";
 	private Logger logger = LoggerFactory.getLogger(MainUI.class);
 	private static UIConfig config = null;
 

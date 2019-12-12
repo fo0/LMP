@@ -253,7 +253,7 @@ public class MultiHostConsole extends AVerticalView {
 			} else {
 				return FontAwesome.TIMES.getHtml();
 			}
-		}, new HtmlRenderer()).setId("error").setCaption("Error").setStyleGenerator(e -> {
+		}, new HtmlRenderer()).setId("status").setCaption("Status").setStyleGenerator(e -> {
 			if (!e.getConnector().isErrors()) {
 				return STYLES.ICON_GREEN;
 			} else {
@@ -276,7 +276,7 @@ public class MultiHostConsole extends AVerticalView {
 			UtilsWindow.createWindow("Host: " + e.getItem().getHost().getLabel(), console, EWindowSize.Normal, true);
 		});
 
-		gridHostStatus.setColumns("label", "error");
+		gridHostStatus.setColumns("label", "status");
 		gridHostStatus.setItems(gridData);
 		return new MPanel(gridHostStatus).withFullSize();
 	}

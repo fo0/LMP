@@ -1,7 +1,9 @@
-package com.fo0.lmp.ui.views.manage;
+package com.fo0.lmp.ui.views.host;
 
+import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
@@ -14,6 +16,7 @@ import com.fo0.lmp.ui.templates.AddHostView;
 import com.fo0.lmp.ui.templates.GridHosts;
 import com.fo0.lmp.ui.templates.MultiHostConsole;
 import com.fo0.lmp.ui.utils.ETheme;
+import com.fo0.lmp.ui.utils.Utils;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
 import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
@@ -36,10 +39,24 @@ public class ManageHosts extends AVerticalView {
 
 	@Override
 	public void init() {
-		// TODO: Tabs for every
-
-		grid = new GridHosts(LinuxHostManager.load());
+		Set<Host> hosts = LinuxHostManager.load();
+		grid = new GridHosts(hosts);
 		grid.withFullSize();
+
+		runWhileAttached(grid, () -> {
+			if (CollectionUtils.isEmpty(hosts)) {
+				return;
+			}
+
+			hosts.forEach(e -> {
+				// refresh status
+				e.setReachable(Utils.isAddressReachable(e.getAddress(), e.getPort(), 500));
+				grid.getDataProvider().refreshItem(e);
+			});
+
+			// save current state
+			LinuxHostManager.save(hosts);
+		}, 5000, 100);
 	}
 
 	private MHorizontalLayout createButtonLayout() {
@@ -52,8 +69,11 @@ public class ManageHosts extends AVerticalView {
 
 		WindowOpenerButton btn = new WindowOpenerButton(
 				PopupConfiguration.builder().width(850).height(550).build().addParam("theme", ETheme.Dark.getTheme()),
-				new MultiHostConsole(grid.getList().stream().filter(x -> x.isActive()).collect(Collectors.toSet()),
-						""));
+				() -> {
+					return new MultiHostConsole(grid.getList().stream().filter(x -> x.isActive())
+							.filter(x -> x.isReachable()).collect(Collectors.toSet()), "");
+				});
+
 		// btn.click();
 		btn.withCaption("Multi-Console");
 		btn.setIcon(MaterialIcons.OPEN_IN_NEW);

@@ -1,5 +1,8 @@
 package com.fo0.lmp.ui.templates;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.vaadin.aceeditor.AceEditor;
 import org.vaadin.aceeditor.AceMode;
 import org.vaadin.aceeditor.AceTheme;
@@ -55,7 +58,7 @@ public class HostConsole extends MVerticalLayout {
 		console.setValue(console.getValue() + value);
 		console.setReadOnly(true);
 		if (autoScroll) {
-			console.scrollToPosition(console.getValue().length());
+			console.scrollToRow(Integer.MAX_VALUE);
 		}
 	}
 

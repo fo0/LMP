@@ -28,7 +28,7 @@ public class LinuxHostManager {
 			Set<Host> acc = parse(new File(path), Host.class);
 
 			if (acc == null)
-				return null;
+				return new HashSet<>();
 			else
 				return acc;
 

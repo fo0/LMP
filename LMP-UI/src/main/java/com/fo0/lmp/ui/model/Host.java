@@ -23,7 +23,7 @@ public class Host {
 
 	private String password;
 	private boolean privateKey;
-	private String key;
+	private Key key;
 
 	@Builder.Default
 	private boolean active = true;

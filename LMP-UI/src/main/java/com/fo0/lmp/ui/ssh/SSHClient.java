@@ -3,19 +3,24 @@ package com.fo0.lmp.ui.ssh;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Set;
 
+import com.fo0.lmp.ui.data.KeyManager;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.interfaces.DataListener;
 import com.fo0.lmp.ui.interfaces.InputListener;
 import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.model.Key;
 import com.fo0.logger.LOGSTATE;
 import com.fo0.logger.Logger;
 import com.jcabi.ssh.Shell;
+import com.jcabi.ssh.Ssh;
 import com.jcabi.ssh.SshByPassword;
 
 public class SSHClient {
 
 	private Host host = null;
+	private Key key = null;
 
 	private Shell shell = null;
 
@@ -28,7 +33,19 @@ public class SSHClient {
 	}
 
 	public void connect() throws Exception {
-		shell = new SshByPassword(host.getAddress(), host.getPort(), host.getUsername(), host.getPassword());
+		if (host.getKey() != null) {
+			Set<Key> myKeys = KeyManager.load();
+			for (Key keyy : myKeys) {
+				if (keyy.getLabel().contains(host.getKey().getLabel())) {
+					key = keyy;
+					break;
+				}
+			}
+			shell = new Ssh(host.getAddress(), host.getPort(), host.getUsername(), key.getPrivateKey());
+		} else {
+
+			shell = new SshByPassword(host.getAddress(), host.getPort(), host.getUsername(), host.getPassword());
+		}
 	}
 
 	public Shell getShell() {
@@ -82,6 +99,17 @@ public class SSHClient {
 
 	public void command(String cmd) {
 		command(cmd, inputListener, outputListener, errorListener);
+	}
+
+	public String commandPlain(String cmd) {
+		String plain = null;
+		try {
+			plain = new Shell.Plain(shell).exec(cmd);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return plain;
 	}
 
 	public void close() {

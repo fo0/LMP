@@ -63,7 +63,16 @@ public class UtilsWindow {
 	}
 
 	public static MWindow createWindow(String caption, Component component, String width, String height) {
-		return new MWindow(caption, component).withSize(MSize.size(width, height)).withCenter();
+		return createWindow(caption, component, width, height, false);
+	}
+
+	public static MWindow createWindow(String caption, Component component, String width, String height,
+			boolean attach) {
+		MWindow w = new MWindow(caption, component).withSize(MSize.size(width, height)).withCenter();
+		if (attach)
+			UI.getCurrent().addWindow(w);
+
+		return w;
 	}
 
 	public static MWindow createWindow(MWindow window, String caption, Component component, String width,

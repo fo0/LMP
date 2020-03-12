@@ -10,7 +10,6 @@ import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
 import com.fo0.lmp.ui.data.LinuxHostManager;
-import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.templates.AddHostView;
 import com.fo0.lmp.ui.templates.GridHosts;
@@ -64,7 +63,7 @@ public class ManageHosts extends AVerticalView {
 		layout.add(createButton("Host", MaterialIcons.ADD, e -> {
 			UtilsWindow.createWindow("Add Host", new AddHostView(Host.builder().build(), save -> {
 				grid.addHost(save);
-			}), EWindowSize.Normal, true);
+			}), "782px", "700px", true);
 		}));
 
 		WindowOpenerButton btn = new WindowOpenerButton(
@@ -78,11 +77,6 @@ public class ManageHosts extends AVerticalView {
 		btn.withCaption("Multi-Console");
 		btn.setIcon(MaterialIcons.OPEN_IN_NEW);
 		layout.add(btn);
-		// layout.add(createButton("MultiHost-Console", MaterialIcons.ADD, e -> {
-		// UtilsWindow.createWindow("Multi-Console",
-		// ,
-		// EWindowSize.Wide, true);
-		// }));
 		return layout;
 	}
 

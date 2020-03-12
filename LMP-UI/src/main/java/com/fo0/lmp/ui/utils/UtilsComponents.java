@@ -4,9 +4,7 @@ import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.github.appreciated.material.MaterialTheme;
-import com.vaadin.contextmenu.ContextMenu;
 import com.vaadin.event.ShortcutAction.KeyCode;
-import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.MenuBar;

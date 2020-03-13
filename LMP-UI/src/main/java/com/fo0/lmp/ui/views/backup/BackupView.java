@@ -9,12 +9,14 @@ import org.vaadin.viritin.layouts.MPanel;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
 import com.fo0.lmp.ui.data.ActionManager;
+import com.fo0.lmp.ui.data.KeyManager;
 import com.fo0.lmp.ui.data.LinuxHostManager;
 import com.fo0.lmp.ui.data.WebsiteCertChecker;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Action;
 import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.model.Key;
 import com.fo0.lmp.ui.templates.BackupExportConfigView;
 import com.fo0.lmp.ui.templates.BackupImportConfigView;
 import com.fo0.lmp.ui.utils.Parser;
@@ -31,12 +33,13 @@ public class BackupView extends AVerticalView {
 
 	@Override
 	public void build() {
-		addComponent(createActionConfigayout());
+		addComponent(createActionConfigLayout());
 		addComponent(createHostConfigLayout());
-		addComponent(createCertConfigayout());
+		addComponent(createCertConfigLayout());
+		addComponent(createKeyConfigLayout());
 	}
 
-	public MPanel createCertConfigayout() {
+	public MPanel createCertConfigLayout() {
 		MHorizontalLayout layout = new MHorizontalLayout().withMargin(true).withSpacing(true);
 		layout.add(createButton("Export", MaterialIcons.BACKUP, e -> {
 			String s = "";
@@ -48,7 +51,7 @@ public class BackupView extends AVerticalView {
 					EWindowSize.Normal, true);
 		}));
 
-		layout.add(createButton("Import", MaterialIcons.IMPORTANT_DEVICES, e -> {
+		layout.add(createButton("Import", MaterialIcons.CLOUD_DOWNLOAD, e -> {
 			UtilsWindow.createWindow("Import Cert-Website Config", new BackupImportConfigView((config, override) -> {
 				Set<CertWebsite> hosts = Parser.parseSet(config, CertWebsite.class);
 				if (!override) {
@@ -63,7 +66,34 @@ public class BackupView extends AVerticalView {
 		return new MPanel(layout).withCaption("Cert-Website").withStyleName(MaterialTheme.CARD_1);
 	}
 
-	public MPanel createActionConfigayout() {
+	public MPanel createKeyConfigLayout() {
+		MHorizontalLayout layout = new MHorizontalLayout().withMargin(true).withSpacing(true);
+		layout.add(createButton("Export", MaterialIcons.BACKUP, e -> {
+			String s = "";
+			Set<Key> keys = KeyManager.load();
+			if (keys != null && !keys.isEmpty()) {
+				s = new GsonBuilder().setPrettyPrinting().create().toJson(keys);
+			}
+			UtilsWindow.createWindow("Export Keys-Config", new BackupExportConfigView(s, "keys.json.cfg"),
+					EWindowSize.Normal, true);
+		}));
+
+		layout.add(createButton("Import", MaterialIcons.CLOUD_DOWNLOAD, e -> {
+			UtilsWindow.createWindow("Import Keys Config", new BackupImportConfigView((config, override) -> {
+				Set<Key> keys = Parser.parseSet(config, Key.class);
+				if (!override) {
+					Set<Key> existingHosts = KeyManager.load();
+					if (existingHosts != null && !existingHosts.isEmpty())
+						keys.addAll(existingHosts);
+				}
+				KeyManager.save(keys);
+				UtilsNotification.saved("Imported Keys-Config");
+			}), EWindowSize.Normal, true);
+		}));
+		return new MPanel(layout).withCaption("Keys").withStyleName(MaterialTheme.CARD_1);
+	}
+
+	public MPanel createActionConfigLayout() {
 		MHorizontalLayout layout = new MHorizontalLayout().withMargin(true).withSpacing(true);
 		layout.add(createButton("Export", MaterialIcons.BACKUP, e -> {
 			String s = "";
@@ -75,7 +105,7 @@ public class BackupView extends AVerticalView {
 					EWindowSize.Normal, true);
 		}));
 
-		layout.add(createButton("Import", MaterialIcons.IMPORTANT_DEVICES, e -> {
+		layout.add(createButton("Import", MaterialIcons.CLOUD_DOWNLOAD, e -> {
 			UtilsWindow.createWindow("Import Action Config", new BackupImportConfigView((config, override) -> {
 				Set<Action> hosts = Parser.parseSet(config, Action.class);
 				if (!override) {
@@ -102,7 +132,7 @@ public class BackupView extends AVerticalView {
 					EWindowSize.Normal, true);
 		}));
 
-		layout.add(createButton("Import", MaterialIcons.IMPORTANT_DEVICES, e -> {
+		layout.add(createButton("Import", MaterialIcons.CLOUD_DOWNLOAD, e -> {
 			UtilsWindow.createWindow("Import Host Config", new BackupImportConfigView((config, override) -> {
 				Set<Host> hosts = Parser.parseSet(config, Host.class);
 				if (!override) {

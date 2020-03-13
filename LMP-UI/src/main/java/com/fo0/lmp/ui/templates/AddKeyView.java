@@ -1,7 +1,5 @@
 package com.fo0.lmp.ui.templates;
 
-import java.security.PrivateKey;
-
 import org.vaadin.viritin.fields.MTextField;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;

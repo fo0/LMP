@@ -1,8 +1,6 @@
 package com.fo0.lmp.ui.views.certificate;
 
 import java.io.IOException;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
@@ -14,12 +12,8 @@ import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.templates.AddWebsiteView;
 import com.fo0.lmp.ui.templates.GridWebsites;
-import com.fo0.lmp.ui.templates.MultiHostConsole;
-import com.fo0.lmp.ui.utils.ETheme;
 import com.fo0.lmp.ui.utils.UtilsSSLCertExpiry;
 import com.fo0.lmp.ui.utils.UtilsWindow;
-import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
-import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.Button.ClickListener;
 

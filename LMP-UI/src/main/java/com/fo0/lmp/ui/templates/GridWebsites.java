@@ -22,7 +22,6 @@ import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsSSLCertExpiry;
 import com.fo0.lmp.ui.utils.UtilsWindow;
-import com.vaadin.server.FontAwesome;
 import com.vaadin.shared.data.sort.SortDirection;
 import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.Component;

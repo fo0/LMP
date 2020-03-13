@@ -1,4 +1,4 @@
-package com.fo0.lmp.ui.views.manage;
+package com.fo0.lmp.ui.views.action;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;

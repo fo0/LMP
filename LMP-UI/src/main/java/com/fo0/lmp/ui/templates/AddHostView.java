@@ -16,7 +16,6 @@ import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.interfaces.DataListener;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.model.Key;
-import com.fo0.lmp.ui.ssh.SSHClient;
 import com.fo0.lmp.ui.utils.Utils;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsNotification;
@@ -55,6 +54,8 @@ public class AddHostView extends AVerticalView {
 
 	@Override
 	public void build() {
+		key.setWidth(100, Unit.PERCENTAGE);
+
 		addComponents(label, address, port, username, password, key, active);
 		label.addBlurListener(e -> {
 			if (address.getValue().isEmpty())
@@ -72,9 +73,26 @@ public class AddHostView extends AVerticalView {
 			UtilsWindow.createWindow("Result of Scan", console, EWindowSize.Wide, true);
 		})));
 
+		password.addValueChangeListener(e -> {
+			if (!e.getValue().isEmpty()) {
+				key.setEnabled(false);
+			} else {
+				key.setEnabled(true);
+			}
+		});
+
+		key.addValueChangeListener(e -> {
+			if (e.getValue() != null) {
+				password.setEnabled(false);
+			} else {
+				password.setEnabled(true);
+			}
+		});
+
 		Set<Key> myKeys = KeyManager.load();
 		if (myKeys != null)
 			key.setItems(myKeys);
+
 		key.setItemCaptionGenerator(Key::getLabel);
 	}
 

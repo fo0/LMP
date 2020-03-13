@@ -4,7 +4,6 @@ import org.vaadin.alump.materialicons.MaterialIcons;
 
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.server.Resource;
 
 public class ICON {
 	public static final FontAwesome SAVE = FontAwesome.SAVE;

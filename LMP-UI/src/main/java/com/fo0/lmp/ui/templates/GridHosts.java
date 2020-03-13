@@ -28,19 +28,12 @@ public class GridHosts extends MGrid<Host> {
 
 	public GridHosts(Set<Host> hosts) {
 		super(Host.class);
-		if (list != null)
-			this.list = hosts;
+		list = hosts;
+		setItems(list);
 		build();
 	}
 
 	private void build() {
-		try {
-			setItems(list);
-		} catch (Exception e2) {
-			list = new HashSet<Host>();
-			setItems(list);
-		}
-
 		addColumn(e -> "Linux").setId("os").setCaption("Platform");
 
 		addColumn(e -> {
@@ -57,11 +50,25 @@ public class GridHosts extends MGrid<Host> {
 			}
 		});
 
+		addColumn(e -> {
+			if (e.isReachable()) {
+				return FontAwesome.CHECK.getHtml();
+			} else {
+				return FontAwesome.TIMES.getHtml();
+			}
+		}, new HtmlRenderer()).setId("status").setCaption("Status").setStyleGenerator(e -> {
+			if (e.isReachable()) {
+				return STYLES.ICON_GREEN;
+			} else {
+				return STYLES.ICON_RED;
+			}
+		});
+
 		addComponentColumn(e -> {
 			return addActionButton(e);
 		}).setId("action").setCaption("Action");
 
-		setColumns("label", "os", "address", "port", "activecheck", "action");
+		setColumns("label", "os", "address", "port", "status", "activecheck", "action");
 	}
 
 	public void setList(Set<Host> list) {

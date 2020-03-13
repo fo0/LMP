@@ -1077,7 +1077,7 @@
  */
 
 .v-vaadin-version:after {
-	content: "8.6.3";
+	content: "8.9.3";
 }
 
 .v-widget {
@@ -8200,7 +8200,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedefault .v-datefield-popup td.v-datefield-calendarpanel-month {
 	width: 180px;
+	cursor: default;
 	color: #00BCD4;
+}
+
+.themedefault .v-datefield-popup td.v-datefield-calendarpanel-month.header-month-year {
+	cursor: pointer;
 }
 
 .themedefault .v-datefield-popup .v-datefield-calendarpanel-year td.v-datefield-calendarpanel-month {
@@ -8381,7 +8386,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedefault td.v-datefield-calendarpanel-month {
 	width: 180px;
+	cursor: default;
 	color: #00BCD4;
+}
+
+.themedefault td.v-datefield-calendarpanel-month.header-month-year {
+	cursor: pointer;
 }
 
 .themedefault .v-datefield-calendarpanel-year td.v-datefield-calendarpanel-month {
@@ -9032,7 +9042,12 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedefault td.v-inline-datefield-calendarpanel-month {
 	width: 180px;
+	cursor: default;
 	color: #00BCD4;
+}
+
+.themedefault td.v-inline-datefield-calendarpanel-month.header-month-year {
+	cursor: pointer;
 }
 
 .themedefault .v-inline-datefield-calendarpanel-year td.v-inline-datefield-calendarpanel-month {
@@ -11768,6 +11783,70 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 	padding-left: 15em;
 }
 
+.themedefault .v-tree8-node.depth-16 {
+	padding-left: 16em;
+}
+
+.themedefault .v-tree8-node.depth-17 {
+	padding-left: 17em;
+}
+
+.themedefault .v-tree8-node.depth-18 {
+	padding-left: 18em;
+}
+
+.themedefault .v-tree8-node.depth-19 {
+	padding-left: 19em;
+}
+
+.themedefault .v-tree8-node.depth-20 {
+	padding-left: 20em;
+}
+
+.themedefault .v-tree8-node.depth-21 {
+	padding-left: 21em;
+}
+
+.themedefault .v-tree8-node.depth-22 {
+	padding-left: 22em;
+}
+
+.themedefault .v-tree8-node.depth-23 {
+	padding-left: 23em;
+}
+
+.themedefault .v-tree8-node.depth-24 {
+	padding-left: 24em;
+}
+
+.themedefault .v-tree8-node.depth-25 {
+	padding-left: 25em;
+}
+
+.themedefault .v-tree8-node.depth-26 {
+	padding-left: 26em;
+}
+
+.themedefault .v-tree8-node.depth-27 {
+	padding-left: 27em;
+}
+
+.themedefault .v-tree8-node.depth-28 {
+	padding-left: 28em;
+}
+
+.themedefault .v-tree8-node.depth-29 {
+	padding-left: 29em;
+}
+
+.themedefault .v-tree8-node.depth-30 {
+	padding-left: 30em;
+}
+
+.themedefault .v-tree8-node.depth-31 {
+	padding-left: 31em;
+}
+
 .themedefault .v-tree8-cell-content {
 	display: inline-block;
 	vertical-align: middle;
@@ -12832,6 +12911,70 @@ body:not(.v-touch) .card-hoverable:hover, body.v-touch .card-hoverable:active {
 
 .themedefault .v-treegrid-node.depth-15 {
 	padding-left: 15em;
+}
+
+.themedefault .v-treegrid-node.depth-16 {
+	padding-left: 16em;
+}
+
+.themedefault .v-treegrid-node.depth-17 {
+	padding-left: 17em;
+}
+
+.themedefault .v-treegrid-node.depth-18 {
+	padding-left: 18em;
+}
+
+.themedefault .v-treegrid-node.depth-19 {
+	padding-left: 19em;
+}
+
+.themedefault .v-treegrid-node.depth-20 {
+	padding-left: 20em;
+}
+
+.themedefault .v-treegrid-node.depth-21 {
+	padding-left: 21em;
+}
+
+.themedefault .v-treegrid-node.depth-22 {
+	padding-left: 22em;
+}
+
+.themedefault .v-treegrid-node.depth-23 {
+	padding-left: 23em;
+}
+
+.themedefault .v-treegrid-node.depth-24 {
+	padding-left: 24em;
+}
+
+.themedefault .v-treegrid-node.depth-25 {
+	padding-left: 25em;
+}
+
+.themedefault .v-treegrid-node.depth-26 {
+	padding-left: 26em;
+}
+
+.themedefault .v-treegrid-node.depth-27 {
+	padding-left: 27em;
+}
+
+.themedefault .v-treegrid-node.depth-28 {
+	padding-left: 28em;
+}
+
+.themedefault .v-treegrid-node.depth-29 {
+	padding-left: 29em;
+}
+
+.themedefault .v-treegrid-node.depth-30 {
+	padding-left: 30em;
+}
+
+.themedefault .v-treegrid-node.depth-31 {
+	padding-left: 31em;
 }
 
 .themedefault .v-treegrid-cell-content {

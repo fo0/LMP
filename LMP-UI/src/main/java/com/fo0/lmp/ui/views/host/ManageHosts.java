@@ -16,6 +16,7 @@ import com.fo0.lmp.ui.templates.GridHosts;
 import com.fo0.lmp.ui.templates.MultiHostConsole;
 import com.fo0.lmp.ui.utils.ETheme;
 import com.fo0.lmp.ui.utils.Utils;
+import com.fo0.lmp.ui.utils.UtilsHosts;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
 import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
@@ -46,13 +47,13 @@ public class ManageHosts extends AVerticalView {
 			if (CollectionUtils.isEmpty(hosts)) {
 				return;
 			}
-			
+
 			hosts.parallelStream().forEach(e -> {
 				// refresh status
 				e.setReachable(Utils.isAddressReachable(e.getAddress(), e.getPort(), 500));
 				grid.getDataProvider().refreshItem(e);
 			});
-			
+
 			// save current state
 			LinuxHostManager.save(hosts);
 		}, -1, 100);
@@ -62,6 +63,8 @@ public class ManageHosts extends AVerticalView {
 		MHorizontalLayout layout = new MHorizontalLayout();
 		layout.add(createButton("Host", MaterialIcons.ADD, e -> {
 			UtilsWindow.createWindow("Add Host", new AddHostView(Host.builder().build(), save -> {
+				// Retrieve Host Informations like hostname, os
+				save = UtilsHosts.getHostInformation(save);
 				grid.addHost(save);
 			}), "782px", "700px", true);
 		}));

@@ -24,6 +24,9 @@ public class Host {
 	private String password;
 	private boolean privateKey;
 	private Key key;
+	
+	@Builder.Default
+	private String os = "not detected";
 
 	@Builder.Default
 	private boolean active = true;

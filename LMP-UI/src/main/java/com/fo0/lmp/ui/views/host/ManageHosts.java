@@ -46,16 +46,16 @@ public class ManageHosts extends AVerticalView {
 			if (CollectionUtils.isEmpty(hosts)) {
 				return;
 			}
-
-			hosts.forEach(e -> {
+			
+			hosts.parallelStream().forEach(e -> {
 				// refresh status
 				e.setReachable(Utils.isAddressReachable(e.getAddress(), e.getPort(), 500));
 				grid.getDataProvider().refreshItem(e);
 			});
-
+			
 			// save current state
 			LinuxHostManager.save(hosts);
-		}, 5000, 100);
+		}, -1, 100);
 	}
 
 	private MHorizontalLayout createButtonLayout() {

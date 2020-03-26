@@ -12,8 +12,10 @@ import com.fo0.lmp.ui.data.LinuxHostManager;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.ssh.SSHClient;
 import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.UtilsComponents;
+import com.fo0.lmp.ui.utils.UtilsHosts;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Component;
@@ -34,7 +36,7 @@ public class GridHosts extends MGrid<Host> {
 	}
 
 	private void build() {
-		addColumn(e -> "Linux").setId("os").setCaption("Platform");
+		//addColumn(e -> "Linux").setId("os").setCaption("Platform");
 
 		addColumn(e -> {
 			if (e.isActive()) {
@@ -127,6 +129,7 @@ public class GridHosts extends MGrid<Host> {
 
 			case "Edit":
 				UtilsWindow.createWindow("Edit", new AddHostView(host, update -> {
+					update = UtilsHosts.getHostInformation(update);
 					addHost(update);
 				}), EWindowSize.Normal, true);
 				break;

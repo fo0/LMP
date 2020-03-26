@@ -12,6 +12,8 @@ public enum ELinuxActions {
 
 	PING("ping localhost -c 1"),
 
+	DETECT_OS("lsb_release -is"),
+	
 	CUSTOM("");
 
 	private String cmd;

@@ -102,6 +102,9 @@ public class SSHClient {
 	}
 
 	public String commandPlain(String cmd) {
+		if (shell == null) {
+			Logger.log.error(LOGSTATE.FAILED + "connection not found");
+		}
 		String plain = null;
 		try {
 			plain = new Shell.Plain(shell).exec(cmd);

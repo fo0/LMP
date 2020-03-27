@@ -9,6 +9,7 @@ import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
+import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
 import com.fo0.lmp.ui.data.LinuxHostManager;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.templates.AddHostView;
@@ -16,7 +17,6 @@ import com.fo0.lmp.ui.templates.GridHosts;
 import com.fo0.lmp.ui.templates.MultiHostConsole;
 import com.fo0.lmp.ui.utils.ETheme;
 import com.fo0.lmp.ui.utils.Utils;
-import com.fo0.lmp.ui.utils.UtilsHosts;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
 import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
@@ -64,7 +64,7 @@ public class ManageHosts extends AVerticalView {
 		layout.add(createButton("Host", MaterialIcons.ADD, e -> {
 			UtilsWindow.createWindow("Add Host", new AddHostView(Host.builder().build(), save -> {
 				// Retrieve Host Informations like hostname, os
-				save = UtilsHosts.getHostInformation(save);
+				save = new HostInfoCollector(save).withCollect().getHost();
 				grid.addHost(save);
 			}), "782px", "700px", true);
 		}));

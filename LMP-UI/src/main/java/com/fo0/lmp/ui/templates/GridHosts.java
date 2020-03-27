@@ -134,13 +134,23 @@ public class GridHosts extends MGrid<Host> {
 
 			case "Edit":
 				UtilsWindow.createWindow("Edit", new AddHostView(host, update -> {
-					update = new HostInfoCollector(host).withCollect().getHost();
+					new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
+						update.setOs(e.getOperatingSystem());
+						update.setHostname(e.getHostname());
+						update.setDistro(e.getDistributor());
+						update.setVersion(e.getVersion());
+					});
 					addHost(update);
 				}), EWindowSize.Normal, true);
 				break;
 
 			case "Update Host-Informations":
-				addHost(new HostInfoCollector(host).withCollect().getHost());
+				new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
+					host.setOs(e.getOperatingSystem());
+					host.setHostname(e.getHostname());
+					host.setDistro(e.getDistributor());
+					host.setVersion(e.getVersion());
+				});
 				break;
 			}
 

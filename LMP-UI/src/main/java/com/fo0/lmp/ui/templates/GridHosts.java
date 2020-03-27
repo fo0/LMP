@@ -71,11 +71,11 @@ public class GridHosts extends MGrid<Host> {
 		}).setId("action").setCaption("Action");
 
 		setDescriptionGenerator(host -> {
-			return new StringBuilder().append("Distro: " + host.getDistro()).append("Version: " + host.getVersion())
-					.toString();
+			return new StringBuilder().append("Distro: " + host.getDistro()).append("\n")
+					.append("Version: " + host.getVersion()).append("\n").toString();
 		}, ContentMode.PREFORMATTED);
 
-		setColumns("label", "os", "hostname", "address", "port", "status", "activecheck", "action");
+		setColumns("label", "hostname", "os", "address", "port", "status", "activecheck", "action");
 	}
 
 	public void setList(Set<Host> list) {
@@ -138,9 +138,13 @@ public class GridHosts extends MGrid<Host> {
 					addHost(update);
 				}), EWindowSize.Normal, true);
 				break;
+
+			case "Update Host-Informations":
+				addHost(new HostInfoCollector(host).withCollect().getHost());
+				break;
 			}
 
-		}, "Action", "Update & Upgrade", "Custom", "", "Edit", "Delete");
+		}, "Action", "Update & Upgrade", "Custom", "", "Update Host-Informations", "Edit", "Delete");
 	}
 
 	private void execute(Host host, ELinuxActions action) {

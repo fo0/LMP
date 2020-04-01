@@ -17,6 +17,7 @@ import com.fo0.fcf.logger.Logger;
 import org.apache.commons.lang3.StringUtils;
 
 import com.fo0.lmp.ui.model.HostProperty;
+import com.google.common.collect.Sets;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -75,7 +76,7 @@ public class HostPropertyLoader {
 			Logger.log.error(LOGSTATE.FAILED + "to load HostProperty from file: " + path);
 			e.printStackTrace();
 		}
-		return null;
+		return Sets.newHashSet();
 	}
 
 	public static void save(Set<HostProperty> SSHHostProperty) {

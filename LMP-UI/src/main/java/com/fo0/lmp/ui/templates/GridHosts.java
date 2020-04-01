@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.util.Strings;
 import org.vaadin.viritin.grid.MGrid;
 
+import com.fo0.lmp.ui.collector.Collector;
 import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
 import com.fo0.lmp.ui.data.HostLoader;
 import com.fo0.lmp.ui.data.HostPropertyLoader;
@@ -70,10 +71,16 @@ public class GridHosts extends MGrid<Host> {
 
 	public void setList(Set<Host> list) {
 		this.list = list;
+		setItems(list);
 	}
 
 	public Set<Host> getList() {
 		return list;
+	}
+
+	public void refresh() {
+		setList(HostLoader.load());
+		getDataProvider().refreshAll();
 	}
 
 	public void addHost(Host host) {
@@ -135,12 +142,12 @@ public class GridHosts extends MGrid<Host> {
 				}), EWindowSize.Normal, true);
 				break;
 
-			case "Update Host-Informations":
-				new HostInfoCollector(host).collectAndSaveResult();
+			case "Collect Informations":
+				Collector.collect(host);
 				break;
 			}
 
-		}, "Action", "Update & Upgrade", "Custom", "", "Update Host-Informations", "Properties", "", "Edit", "Delete");
+		}, "Action", "Update & Upgrade", "Custom", "", "Collect Informations", "Properties", "", "Edit", "Delete");
 	}
 
 	private void execute(Host host, ELinuxActions action) {

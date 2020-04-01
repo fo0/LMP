@@ -9,6 +9,7 @@ import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
+import com.fo0.lmp.ui.collector.Collector;
 import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
 import com.fo0.lmp.ui.data.HostLoader;
 import com.fo0.lmp.ui.model.Host;
@@ -65,8 +66,8 @@ public class ManageHosts extends AVerticalView {
 			UtilsWindow.createWindow("Add Host", new AddHostView(Host.builder().build(), save -> {
 				// Retrieve Host Informations like hostname, os
 				HostLoader.save(save);
-				new HostInfoCollector(save).collectAndSaveResult();
-
+				Collector.collect(save);
+				grid.refresh();
 			}), "782px", "700px", true);
 		}));
 

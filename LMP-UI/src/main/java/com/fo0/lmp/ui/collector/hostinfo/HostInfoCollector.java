@@ -83,7 +83,7 @@ public class HostInfoCollector implements ICollector<HostInfo> {
 
 	@Override
 	public void mergeAndSave() {
-		Logger.log.debug(LOGSTATE.ADD + "collected properties to host: " + host.getId());
+		Logger.log.debug(LOGSTATE.ADD + "collected hostinfo properties to host: " + host.getId());
 		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.Description, info.getDescription());
 		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.Distro, info.getDistributor());
 		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.Hostname, info.getHostname());

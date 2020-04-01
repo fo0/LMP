@@ -30,12 +30,12 @@ public class HostInfoCollector implements ICollector<HostInfo> {
 		Map<String, String> lsb = collectLsbReleaseInfo(host);
 		if (MapUtils.isNotEmpty(lsb)) {
 			info.setCodeName(lsb.get("Codename"));
-			info.setDescription(lsb.get("Codename"));
+			info.setDescription(lsb.get("Description"));
 			info.setDistributor(lsb.get("Distributor ID"));
 			info.setVersion(lsb.get("Release"));
 		}
 
-		info.setHostname(collectUnameInfo(host));
+		info.setHostname(collectHostInformation(host));
 		info.setOperatingSystem(collectUnameInfo(host));
 	}
 

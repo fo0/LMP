@@ -81,7 +81,6 @@ public class ManageHosts extends AVerticalView {
 							.filter(x -> x.isReachable()).collect(Collectors.toSet()), "");
 				});
 
-		// btn.click();
 		btn.withCaption("Multi-Console");
 		btn.setIcon(MaterialIcons.OPEN_IN_NEW);
 		layout.add(btn);

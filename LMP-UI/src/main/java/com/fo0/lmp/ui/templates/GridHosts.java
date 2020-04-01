@@ -151,6 +151,7 @@ public class GridHosts extends MGrid<Host> {
 					host.setDistro(e.getDistributor());
 					host.setVersion(e.getVersion());
 				});
+				addHost(host);
 				break;
 			}
 

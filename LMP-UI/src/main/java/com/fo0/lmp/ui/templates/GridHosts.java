@@ -8,16 +8,16 @@ import java.util.stream.Stream;
 
 import org.vaadin.viritin.grid.MGrid;
 
+import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
 import com.fo0.lmp.ui.data.LinuxHostManager;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Host;
-import com.fo0.lmp.ui.ssh.SSHClient;
 import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.UtilsComponents;
-import com.fo0.lmp.ui.utils.UtilsHosts;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.vaadin.server.FontAwesome;
+import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.renderers.HtmlRenderer;
@@ -36,7 +36,7 @@ public class GridHosts extends MGrid<Host> {
 	}
 
 	private void build() {
-		//addColumn(e -> "Linux").setId("os").setCaption("Platform");
+		// addColumn(e -> "Linux").setId("os").setCaption("Platform");
 
 		addColumn(e -> {
 			if (e.isActive()) {
@@ -70,7 +70,12 @@ public class GridHosts extends MGrid<Host> {
 			return addActionButton(e);
 		}).setId("action").setCaption("Action");
 
-		setColumns("label", "os", "address", "port", "status", "activecheck", "action");
+		setDescriptionGenerator(host -> {
+			return new StringBuilder().append("Distro: " + host.getDistro()).append("\n")
+					.append("Version: " + host.getVersion()).append("\n").toString();
+		}, ContentMode.PREFORMATTED);
+
+		setColumns("label", "hostname", "os", "address", "port", "status", "activecheck", "action");
 	}
 
 	public void setList(Set<Host> list) {
@@ -129,13 +134,27 @@ public class GridHosts extends MGrid<Host> {
 
 			case "Edit":
 				UtilsWindow.createWindow("Edit", new AddHostView(host, update -> {
-					update = UtilsHosts.getHostInformation(update);
+					new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
+						update.setOs(e.getOperatingSystem());
+						update.setHostname(e.getHostname());
+						update.setDistro(e.getDistributor());
+						update.setVersion(e.getVersion());
+					});
 					addHost(update);
 				}), EWindowSize.Normal, true);
 				break;
+
+			case "Update Host-Informations":
+				new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
+					host.setOs(e.getOperatingSystem());
+					host.setHostname(e.getHostname());
+					host.setDistro(e.getDistributor());
+					host.setVersion(e.getVersion());
+				});
+				break;
 			}
 
-		}, "Action", "Update & Upgrade", "Custom", "", "Edit", "Delete");
+		}, "Action", "Update & Upgrade", "Custom", "", "Update Host-Informations", "Edit", "Delete");
 	}
 
 	private void execute(Host host, ELinuxActions action) {

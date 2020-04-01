@@ -21,6 +21,10 @@ import com.vaadin.ui.Window;
 
 public class Utils {
 
+	public static String removeEscapeCharacters(String s) {
+		return s.replaceAll("\\r\\n|\\r|\\n", " ");
+	}
+
 	public static void doClick(Component c) {
 		c.setId(RandomStringUtils.randomAlphabetic(10));
 		Page.getCurrent().getJavaScript().execute(

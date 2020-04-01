@@ -31,7 +31,7 @@ public class GridHostProperty extends MGrid<KeyValue> {
 			return addActionButton(e);
 		}).setId("action").setCaption("Action");
 
-		setColumns("key", "value");
+		setColumns("key", "value", "action");
 	}
 
 	public void setList(Set<KeyValue> list) {

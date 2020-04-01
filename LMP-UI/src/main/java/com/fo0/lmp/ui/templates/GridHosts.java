@@ -1,6 +1,7 @@
 package com.fo0.lmp.ui.templates;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
@@ -41,34 +42,24 @@ public class GridHosts extends MGrid<Host> {
 	}
 
 	private void build() {
-		// addColumn(e -> "Linux").setId("os").setCaption("Platform");
+		Map<String, HostProperty> properties = HostPropertyLoader.load().stream()
+				.collect(Collectors.toMap(key -> key.getId(), value -> value));
 
 		addColumn(e -> {
-			if (e.isActive()) {
-				return FontAwesome.CHECK.getHtml();
-			} else {
-				return FontAwesome.TIMES.getHtml();
-			}
+			HostProperty p = properties.get(e.getId());
+			return p != null ? p.getManagedProperty(EHostProperty.Hostname) : Strings.EMPTY;
+		}).setId("hostproperty.hostname").setCaption("Hostname");
+
+		addColumn(e -> {
+			return e.isActive() ? FontAwesome.CHECK.getHtml() : FontAwesome.TIMES.getHtml();
 		}, new HtmlRenderer()).setId("activecheck").setCaption("Active").setStyleGenerator(e -> {
-			if (e.isActive()) {
-				return STYLES.ICON_GREEN;
-			} else {
-				return STYLES.ICON_RED;
-			}
+			return e.isActive() ? STYLES.ICON_GREEN : STYLES.ICON_RED;
 		});
 
 		addColumn(e -> {
-			if (e.isReachable()) {
-				return FontAwesome.CHECK.getHtml();
-			} else {
-				return FontAwesome.TIMES.getHtml();
-			}
+			return e.isReachable() ? FontAwesome.CHECK.getHtml() : FontAwesome.TIMES.getHtml();
 		}, new HtmlRenderer()).setId("status").setCaption("Status").setStyleGenerator(e -> {
-			if (e.isReachable()) {
-				return STYLES.ICON_GREEN;
-			} else {
-				return STYLES.ICON_RED;
-			}
+			return e.isReachable() ? STYLES.ICON_GREEN : STYLES.ICON_RED;
 		});
 
 		addComponentColumn(e -> {
@@ -85,7 +76,7 @@ public class GridHosts extends MGrid<Host> {
 			}
 		}, ContentMode.PREFORMATTED);
 
-		setColumns("label", "address", "port", "status", "activecheck", "action");
+		setColumns("label", "address", "hostproperty.hostname", "port", "status", "activecheck", "action");
 	}
 
 	public void setList(Set<Host> list) {

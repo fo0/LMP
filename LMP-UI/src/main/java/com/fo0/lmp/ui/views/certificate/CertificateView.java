@@ -7,7 +7,7 @@ import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.WebsiteCertChecker;
+import com.fo0.lmp.ui.data.WebsiteCertificateLoader;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.templates.AddWebsiteView;
@@ -35,7 +35,7 @@ public class CertificateView extends AVerticalView {
 	public void init() {
 		// TODO: Tabs for every
 
-		grid = new GridWebsites(WebsiteCertChecker.load());
+		grid = new GridWebsites(WebsiteCertificateLoader.load());
 		grid.withFullSize();
 	}
 
@@ -67,7 +67,7 @@ public class CertificateView extends AVerticalView {
 				}
 			});
 			grid.getDataProvider().refreshAll();
-			WebsiteCertChecker.save(grid.getList());
+			WebsiteCertificateLoader.save(grid.getList());
 		});
 		layout.add(btnCheckAll);
 

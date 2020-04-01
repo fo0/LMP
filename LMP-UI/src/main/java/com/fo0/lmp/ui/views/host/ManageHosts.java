@@ -10,7 +10,7 @@ import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
 import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
-import com.fo0.lmp.ui.data.LinuxHostManager;
+import com.fo0.lmp.ui.data.HostLoader;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.templates.AddHostView;
 import com.fo0.lmp.ui.templates.GridHosts;
@@ -39,7 +39,7 @@ public class ManageHosts extends AVerticalView {
 
 	@Override
 	public void init() {
-		Set<Host> hosts = LinuxHostManager.load();
+		Set<Host> hosts = HostLoader.load();
 		grid = new GridHosts(hosts);
 		grid.withFullSize();
 
@@ -55,7 +55,7 @@ public class ManageHosts extends AVerticalView {
 			});
 
 			// save current state
-			LinuxHostManager.save(hosts);
+			HostLoader.save(hosts);
 		}, -1, 100);
 	}
 
@@ -64,13 +64,7 @@ public class ManageHosts extends AVerticalView {
 		layout.add(createButton("Host", MaterialIcons.ADD, e -> {
 			UtilsWindow.createWindow("Add Host", new AddHostView(Host.builder().build(), save -> {
 				// Retrieve Host Informations like hostname, os
-				new HostInfoCollector(save).collectAndGetResult().ifPresent(rs -> {
-					save.setOs(rs.getOperatingSystem());
-					save.setHostname(rs.getHostname());
-					save.setDistro(rs.getDistributor());
-					save.setVersion(rs.getVersion());
-				});
-				grid.addHost(save);
+				new HostInfoCollector(save).collectAndSaveResult();
 			}), "782px", "700px", true);
 		}));
 

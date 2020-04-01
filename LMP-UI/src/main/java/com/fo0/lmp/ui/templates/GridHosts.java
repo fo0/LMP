@@ -6,13 +6,18 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.logging.log4j.util.Strings;
 import org.vaadin.viritin.grid.MGrid;
 
 import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
-import com.fo0.lmp.ui.data.LinuxHostManager;
+import com.fo0.lmp.ui.data.HostLoader;
+import com.fo0.lmp.ui.data.HostPropertyLoader;
+import com.fo0.lmp.ui.enums.EHostProperty;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.enums.EWindowSize;
+import com.fo0.lmp.ui.manager.HostPropertyManager;
 import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.model.HostProperty;
 import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsWindow;
@@ -71,11 +76,16 @@ public class GridHosts extends MGrid<Host> {
 		}).setId("action").setCaption("Action");
 
 		setDescriptionGenerator(host -> {
-			return new StringBuilder().append("Distro: " + host.getDistro()).append("\n")
-					.append("Version: " + host.getVersion()).append("\n").toString();
+			HostProperty p = HostPropertyManager.getPropertiesForHost(host.getId());
+			if (p != null) {
+				return new StringBuilder().append("Distro: " + p.getManagedProperty(EHostProperty.Distro)).append("\n")
+						.append("Version: " + p.getManagedProperty(EHostProperty.Version)).append("\n").toString();
+			} else {
+				return Strings.EMPTY;
+			}
 		}, ContentMode.PREFORMATTED);
 
-		setColumns("label", "hostname", "os", "address", "port", "status", "activecheck", "action");
+		setColumns("label", "address", "port", "status", "activecheck", "action");
 	}
 
 	public void setList(Set<Host> list) {
@@ -90,7 +100,7 @@ public class GridHosts extends MGrid<Host> {
 		list.remove(host);
 		list.add(host);
 		getDataProvider().refreshAll();
-		LinuxHostManager.save(list);
+		HostLoader.save(list);
 	}
 
 	public void addHost(Host host, boolean save) {
@@ -98,13 +108,14 @@ public class GridHosts extends MGrid<Host> {
 		list.add(host);
 		getDataProvider().refreshAll();
 		if (save)
-			LinuxHostManager.save(list);
+			HostLoader.save(list);
 	}
 
 	public void removeHost(Host host) {
 		list.remove(host);
 		getDataProvider().refreshAll();
-		LinuxHostManager.save(list);
+		HostLoader.deleteById(host.getId());
+		HostPropertyManager.deletePropertyById(host.getId());
 	}
 
 	private MenuBar addActionButton(Host host) {
@@ -115,7 +126,6 @@ public class GridHosts extends MGrid<Host> {
 				new ConfirmDialog("Delete Host: " + host.getLabel(), ok -> {
 					removeHost(host);
 				}, discard -> {
-					removeHost(host);
 				});
 
 				break;
@@ -132,30 +142,25 @@ public class GridHosts extends MGrid<Host> {
 				execute(host, ELinuxActions.CUSTOM);
 				break;
 
+			case "Properties":
+				UtilsWindow.createWindow("Edit",
+						new GridHostProperty(HostPropertyLoader.getHostPropertyByIdOrCreate(host.getId()))
+								.withFullSize(),
+						EWindowSize.Normal, true);
+				break;
+
 			case "Edit":
 				UtilsWindow.createWindow("Edit", new AddHostView(host, update -> {
-					new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
-						update.setOs(e.getOperatingSystem());
-						update.setHostname(e.getHostname());
-						update.setDistro(e.getDistributor());
-						update.setVersion(e.getVersion());
-					});
-					addHost(update);
+					new HostInfoCollector(update).collectAndSaveResult();
 				}), EWindowSize.Normal, true);
 				break;
 
 			case "Update Host-Informations":
-				new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
-					host.setOs(e.getOperatingSystem());
-					host.setHostname(e.getHostname());
-					host.setDistro(e.getDistributor());
-					host.setVersion(e.getVersion());
-				});
-				addHost(host);
+				new HostInfoCollector(host).collectAndSaveResult();
 				break;
 			}
 
-		}, "Action", "Update & Upgrade", "Custom", "", "Update Host-Informations", "Edit", "Delete");
+		}, "Action", "Update & Upgrade", "Custom", "", "Update Host-Informations", "Properties", "", "Edit", "Delete");
 	}
 
 	private void execute(Host host, ELinuxActions action) {

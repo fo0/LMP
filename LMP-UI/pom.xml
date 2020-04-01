@@ -109,9 +109,16 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.fo0.logger</groupId>
-			<artifactId>Logger</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<groupId>com.fo0.commons</groupId>
+			<artifactId>FCommons</artifactId>
+			<version>3.1.8</version>
+			<type>pom</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fo0.commons</groupId>
+			<artifactId>FCUtils</artifactId>
+			<version>3.1.8</version>
 		</dependency>
 
 		<dependency>

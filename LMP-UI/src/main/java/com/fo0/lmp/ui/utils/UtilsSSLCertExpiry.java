@@ -28,16 +28,19 @@ public class UtilsSSLCertExpiry {
 		// http://stackoverflow.com/questions/7443235/getting-java-to-accept-all-certs-over-https
 		TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {
 
+			@Override
 			public X509Certificate[] getAcceptedIssuers() {
 				// TODO Auto-generated method stub
 				return null;
 			}
 
+			@Override
 			public void checkServerTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
 				// TODO Auto-generated method stub
 
 			}
 
+			@Override
 			public void checkClientTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
 				// TODO Auto-generated method stub
 

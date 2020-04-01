@@ -6,9 +6,9 @@ import org.vaadin.simplefiledownloader.SimpleFileDownloader;
 import org.vaadin.viritin.button.MButton;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.github.appreciated.material.MaterialTheme;
 import com.vaadin.server.StreamResource;
 import com.vaadin.ui.TextArea;
+import com.vaadin.ui.themes.ValoTheme;
 
 public class BackupExportConfigView extends AVerticalView {
 
@@ -38,7 +38,7 @@ public class BackupExportConfigView extends AVerticalView {
 		SimpleFileDownloader downloader = new SimpleFileDownloader();
 		addExtension(downloader);
 
-		MButton button = new MButton("Download Config").withStyleName(MaterialTheme.BUTTON_FRIENDLY);
+		MButton button = new MButton("Download Config").withStyleName(ValoTheme.BUTTON_FRIENDLY);
 		button.addClickListener(event -> {
 			final StreamResource resource = new StreamResource(() -> {
 				return new ByteArrayInputStream(config.getBytes());

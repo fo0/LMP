@@ -9,8 +9,8 @@ import java.nio.file.Path;
 import java.util.Map.Entry;
 import java.util.Properties;
 
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
 
 public class Configuration {
 

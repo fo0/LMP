@@ -9,44 +9,81 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.file.Paths;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-import com.fo0.lmp.ui.model.Action;
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
+import org.apache.commons.lang3.StringUtils;
+
+import com.fo0.lmp.ui.model.HostProperty;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-public class ActionManager {
+public class HostPropertyLoader {
 
-	private static String path = System.getProperty("jboss.server.config.dir") + "/Actions.json";
+	private static String path = System.getProperty("jboss.server.config.dir") + "/hostproperties.json";
 
-	public static Set<Action> load() {
+	public static void deleteById(String id) {
+		Set<HostProperty> properties = load();
+		properties.removeIf(e -> StringUtils.equals(e.getId(), id));
+		save(properties);
+	}
+
+	public static void delete(HostProperty hostProperty) {
+		Set<HostProperty> properties = load();
+		properties.remove(hostProperty);
+		save(properties);
+	}
+
+	public static void save(HostProperty hostProperty) {
+		Set<HostProperty> properties = load();
+		properties.remove(hostProperty);
+		properties.add(hostProperty);
+		save(properties);
+	}
+
+	public static HostProperty getHostPropertyByIdOrCreate(String id) {
+		HostProperty p = getHostPropertyById(id);
+		if (p == null) {
+			p = HostProperty.builder().id(id).build();
+			Logger.log.debug(LOGSTATE.CREATE + "could not find hostproperty, creating new and save: " + p.getId());
+			Set<HostProperty> properties = load();
+			properties.add(p);
+			save(properties);
+		}
+
+		return p;
+	}
+
+	public static HostProperty getHostPropertyById(String id) {
+		return load().stream().filter(e -> StringUtils.equals(e.getId(), id)).findFirst().orElse(null);
+	}
+
+	public static Set<HostProperty> load() {
 		createConfig();
 		try {
-			Set<Action> acc = parse(new File(path), Action.class);
+			Set<HostProperty> acc = parse(new File(path), HostProperty.class);
 
 			if (acc == null)
-				return new HashSet<Action>();
+				return new HashSet<>();
 			else
 				return acc;
 
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load SSHAction from file: " + path);
+			Logger.log.error(LOGSTATE.FAILED + "to load HostProperty from file: " + path);
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	public static void save(Set<Action> SSHAction) {
+	public static void save(Set<HostProperty> SSHHostProperty) {
 		createConfig();
 		try {
-			write(SSHAction, path);
+			write(SSHHostProperty, path);
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load SSHAction from file: " + path);
+			Logger.log.error(LOGSTATE.FAILED + "to load HostProperty from file: " + path);
 			e.printStackTrace();
 		}
 	}
@@ -102,10 +139,6 @@ public class ActionManager {
 			Logger.log.debug(LOGSTATE.FAILED + "to read json Object " + obj.getClass() + " " + e);
 			e.printStackTrace();
 		}
-	}
-
-	public static Map<String, String> createMapWithDescriptions() {
-		return load().stream().collect(Collectors.toMap(Action::getCommand, Action::getDescription));
 	}
 
 }

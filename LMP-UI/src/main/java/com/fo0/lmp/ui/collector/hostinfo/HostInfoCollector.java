@@ -5,11 +5,16 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.fo0.lmp.ui.collector.interfaces.ICollector;
+import com.fo0.lmp.ui.enums.EHostProperty;
+import com.fo0.lmp.ui.manager.HostPropertyManager;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.ssh.SSHClient;
 import com.fo0.lmp.ui.utils.Utils;
@@ -74,6 +79,16 @@ public class HostInfoCollector implements ICollector<HostInfo> {
 	@Override
 	public Optional<HostInfo> getResult() {
 		return Optional.of(info);
+	}
+
+	@Override
+	public void mergeAndSave() {
+		Logger.log.debug(LOGSTATE.ADD + "collected properties to host: " + host.getId());
+		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.Description, info.getDescription());
+		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.Distro, info.getDistributor());
+		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.Hostname, info.getHostname());
+		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.OS, info.getOperatingSystem());
+		HostPropertyManager.addManagedPropertyToHost(host.getId(), EHostProperty.Version, info.getVersion());
 	}
 
 }

@@ -2,8 +2,9 @@ package com.fo0.lmp.ui.utils;
 
 import java.util.Base64;
 
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
 import com.google.gson.Gson;
 import com.vaadin.ui.UI;
 

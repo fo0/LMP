@@ -10,7 +10,7 @@ import org.vaadin.viritin.fields.MCheckBox;
 import org.vaadin.viritin.fields.MTextField;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.KeyManager;
+import com.fo0.lmp.ui.data.KeyLoader;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.interfaces.DataListener;
@@ -61,6 +61,7 @@ public class AddHostView extends AVerticalView {
 			if (address.getValue().isEmpty())
 				address.setValue(label.getValue());
 		});
+		
 		addComponents(UtilsComponents.Button_Apply_Discard_Layout(ok -> {
 			listener.event(binder.getBean());
 			UtilsNotification.notificationTray("Added Node", binder.getBean().toString());
@@ -89,7 +90,7 @@ public class AddHostView extends AVerticalView {
 			}
 		});
 
-		Set<Key> myKeys = KeyManager.load();
+		Set<Key> myKeys = KeyLoader.load();
 		if (myKeys != null)
 			key.setItems(myKeys);
 

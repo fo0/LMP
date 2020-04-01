@@ -59,8 +59,7 @@ public class MainUI extends UI implements DetachListener {
 		setErrorHandler(e -> {
 			e.getThrowable().printStackTrace();
 		});
-		com.fo0.logger.CONSTANTS.LOGGER_LEVEL = "DEBUG";
-		com.fo0.logger.CONSTANTS.LOGGER_ENABLE_COLOR = "true";
+
 		CONSTANTS.bootstrap(new UIConfig("false"));
 		config = CONSTANTS.getConfig();
 

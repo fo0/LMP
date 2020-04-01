@@ -5,14 +5,15 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Set;
 
-import com.fo0.lmp.ui.data.KeyManager;
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
+import com.fo0.lmp.ui.data.KeyLoader;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.interfaces.DataListener;
 import com.fo0.lmp.ui.interfaces.InputListener;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.model.Key;
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
 import com.jcabi.ssh.Shell;
 import com.jcabi.ssh.Ssh;
 import com.jcabi.ssh.SshByPassword;
@@ -34,7 +35,7 @@ public class SSHClient {
 
 	public void connect() throws Exception {
 		if (host.getKey() != null) {
-			Set<Key> myKeys = KeyManager.load();
+			Set<Key> myKeys = KeyLoader.load();
 			for (Key keyy : myKeys) {
 				if (keyy.getLabel().contains(host.getKey().getLabel())) {
 					key = keyy;

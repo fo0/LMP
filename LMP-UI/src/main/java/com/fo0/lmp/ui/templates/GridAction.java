@@ -6,7 +6,7 @@ import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 import org.vaadin.viritin.grid.MGrid;
 
-import com.fo0.lmp.ui.data.ActionManager;
+import com.fo0.lmp.ui.data.ActionLoader;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Action;
 import com.fo0.lmp.ui.utils.STYLES;
@@ -72,7 +72,7 @@ public class GridAction extends MGrid<Action> {
 		list.remove(Action);
 		list.add(Action);
 		getDataProvider().refreshAll();
-		ActionManager.save(list);
+		ActionLoader.save(list);
 	}
 
 	public void add(Action Action, boolean save) {
@@ -80,13 +80,13 @@ public class GridAction extends MGrid<Action> {
 		list.add(Action);
 		getDataProvider().refreshAll();
 		if (save)
-			ActionManager.save(list);
+			ActionLoader.save(list);
 	}
 
 	public void remove(Action Action) {
 		list.remove(Action);
 		getDataProvider().refreshAll();
-		ActionManager.save(list);
+		ActionLoader.save(list);
 	}
 
 	private MenuBar addActionButton(Action Action) {

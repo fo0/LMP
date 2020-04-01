@@ -11,14 +11,15 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
 import com.fo0.lmp.ui.model.Key;
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-public class KeyManager {
+public class KeyLoader {
 
 	private static String path = System.getProperty("jboss.server.config.dir") + "/keys.json";
 

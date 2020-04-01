@@ -13,6 +13,7 @@ import com.jarektoro.responsivelayout.ResponsiveLayout;
 import com.jarektoro.responsivelayout.ResponsiveRow;
 import com.vaadin.data.Binder;
 import com.vaadin.ui.CheckBox;
+import com.vaadin.ui.themes.ValoTheme;
 
 public class SettingsView extends AVerticalView {
 
@@ -40,14 +41,14 @@ public class SettingsView extends AVerticalView {
 		layoutOptions.withComponents(new MHorizontalLayout(autoLogin));
 
 		layoutButtons.withComponents(new MHorizontalLayout(
-				new MButton(MaterialIcons.SAVE).withStyleName(MaterialTheme.BUTTON_FRIENDLY).withListener(e -> {
+				new MButton(MaterialIcons.SAVE).withStyleName(ValoTheme.BUTTON_FRIENDLY).withListener(e -> {
 					try {
 						MainUI.setConfig(binder.getBean());
 						getController().getMenu().addNotificationAndTray("Changed Settings", "");
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
-				}), new MButton(MaterialIcons.DELETE).withStyleName(MaterialTheme.BUTTON_DANGER).withListener(e -> {
+				}), new MButton(MaterialIcons.DELETE).withStyleName(ValoTheme.BUTTON_DANGER).withListener(e -> {
 					UtilsNotification.notificationTray("Discarded Settings", "");
 				})));
 

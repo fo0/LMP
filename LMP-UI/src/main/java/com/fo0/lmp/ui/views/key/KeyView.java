@@ -5,7 +5,7 @@ import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.KeyManager;
+import com.fo0.lmp.ui.data.KeyLoader;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Key;
 import com.fo0.lmp.ui.templates.AddKeyView;
@@ -32,7 +32,7 @@ public class KeyView extends AVerticalView {
 	public void init() {
 		// TODO: Tabs for every
 
-		grid = new GridKeys(KeyManager.load());
+		grid = new GridKeys(KeyLoader.load());
 		grid.withFullSize();
 	}
 

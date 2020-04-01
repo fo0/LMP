@@ -26,12 +26,12 @@ import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.Utils;
 import com.fo0.lmp.ui.utils.UtilsNotification;
 import com.fo0.lmp.ui.utils.UtilsWindow;
-import com.github.appreciated.material.MaterialTheme;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.event.ShortcutAction.ModifierKey;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.renderers.HtmlRenderer;
+import com.vaadin.ui.themes.ValoTheme;
 
 import eu.maxschuster.vaadin.autocompletetextfield.AutocompleteTextField;
 import eu.maxschuster.vaadin.autocompletetextfield.shared.ScrollBehavior;
@@ -149,7 +149,7 @@ public class MultiHostConsole extends AVerticalView {
 		selectedHosts = new ComboBoxMultiselect<Host>();
 		selectedHosts.setItemCaptionGenerator(e -> e.getLabel());
 		selectedHosts.setItems(this.hosts);
-		selectedHosts.setStyleName(MaterialTheme.COMBOBOX_BORDERLESS);
+		selectedHosts.setStyleName(ValoTheme.COMBOBOX_BORDERLESS);
 
 		if (singleHost) {
 			selectedHosts.setVisible(false);
@@ -175,10 +175,10 @@ public class MultiHostConsole extends AVerticalView {
 			startAction(searchfield.getValue());
 		}, searchfield, KeyCode.ENTER, ModifierKey.CTRL);
 
-		searchfield.setStyleName(MaterialTheme.COMBOBOX_BORDERLESS);
+		searchfield.setStyleName(ValoTheme.COMBOBOX_BORDERLESS);
 		searchfield.setWidth(100, Unit.PERCENTAGE);
 
-		start = new MButton().withIcon(MaterialIcons.PLAY_ARROW).withStyleName(MaterialTheme.BUTTON_FRIENDLY);
+		start = new MButton().withIcon(MaterialIcons.PLAY_ARROW).withStyleName(ValoTheme.BUTTON_FRIENDLY);
 		start.withListener(e -> {
 			if (hosts.isEmpty()) {
 				UtilsNotification.error("Please select at least one host");
@@ -197,7 +197,7 @@ public class MultiHostConsole extends AVerticalView {
 			});
 		});
 
-		stop = new MButton().withIcon(MaterialIcons.STOP).withStyleName(MaterialTheme.BUTTON_DANGER).withListener(e -> {
+		stop = new MButton().withIcon(MaterialIcons.STOP).withStyleName(ValoTheme.BUTTON_DANGER).withListener(e -> {
 			new ConfirmDialog("Stop: " + searchfield.getValue(), ok -> {
 				try {
 					UtilsNotification.notificationTray("Stopping Action", searchfield.getValue());

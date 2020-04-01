@@ -9,9 +9,10 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.file.Paths;
 
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
 import com.fo0.lmp.ui.model.Account;
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -30,8 +31,7 @@ public class AccountManager {
 				return acc;
 
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load account from file: " + path);
-			e.printStackTrace();
+			Logger.log.error(LOGSTATE.FAILED + "to load account from file: " + path, e);
 		}
 		return null;
 	}

@@ -1,5 +1,7 @@
 package com.fo0.lmp.ui.templates;
 
+import com.fo0.fcf.logger.LOGSTATE;
+
 import org.apache.commons.io.IOUtils;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.fields.MCheckBox;
@@ -8,9 +10,9 @@ import org.vaadin.viritin.layouts.MHorizontalLayout;
 import com.fo0.lmp.ui.abstracts.AVerticalView;
 import com.fo0.lmp.ui.templates.VaadinUploader.FinishListener;
 import com.fo0.lmp.ui.templates.VaadinUploader.StartListener;
-import com.fo0.logger.LOGSTATE;
 import com.github.appreciated.material.MaterialTheme;
 import com.vaadin.ui.TextArea;
+import com.vaadin.ui.themes.ValoTheme;
 
 public class BackupImportConfigView extends AVerticalView {
 
@@ -42,7 +44,7 @@ public class BackupImportConfigView extends AVerticalView {
 	private VaadinUploader createUploadButton() {
 		VaadinUploader uploader = new VaadinUploader();
 		uploader.setButtonCaption("Import-File");
-		uploader.addStyleName(MaterialTheme.BUTTON_FRIENDLY);
+		uploader.addStyleName(ValoTheme.BUTTON_FRIENDLY);
 
 		uploader.addStartListener(new StartListener() {
 

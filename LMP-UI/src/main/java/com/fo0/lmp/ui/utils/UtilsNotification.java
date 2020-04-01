@@ -1,12 +1,13 @@
 package com.fo0.lmp.ui.utils;
 
-import com.fo0.logger.LOGSTATE;
-import com.github.appreciated.material.MaterialTheme;
+import com.fo0.fcf.logger.LOGSTATE;
+
 import com.vaadin.server.Page;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.shared.Position;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
+import com.vaadin.ui.themes.ValoTheme;
 
 public class UtilsNotification {
 
@@ -55,7 +56,7 @@ public class UtilsNotification {
 
 	public static Notification notificationTray(String text, String description) {
 		return notification(null, text, description, Type.TRAY_NOTIFICATION,
-				MaterialTheme.NOTIFICATION_TRAY + " " + STYLES.NOTIFICATION_CAPTION_BLUE);
+				ValoTheme.NOTIFICATION_TRAY + " " + STYLES.NOTIFICATION_CAPTION_BLUE);
 	}
 
 	public static Notification notification(String text, String description, Type type) {

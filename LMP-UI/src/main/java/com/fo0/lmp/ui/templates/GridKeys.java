@@ -6,7 +6,7 @@ import java.util.concurrent.Future;
 
 import org.vaadin.viritin.grid.MGrid;
 
-import com.fo0.lmp.ui.data.KeyManager;
+import com.fo0.lmp.ui.data.KeyLoader;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Key;
 import com.fo0.lmp.ui.utils.UtilsComponents;
@@ -55,7 +55,7 @@ public class GridKeys extends MGrid<Key> {
 		list.remove(key);
 		list.add(key);
 		getDataProvider().refreshAll();
-		KeyManager.save(list);
+		KeyLoader.save(list);
 	}
 
 	public void addKey(Key key, boolean save) {
@@ -63,13 +63,13 @@ public class GridKeys extends MGrid<Key> {
 		list.add(key);
 		getDataProvider().refreshAll();
 		if (save)
-			KeyManager.save(list);
+			KeyLoader.save(list);
 	}
 
 	public void removekey(Key key) {
 		list.remove(key);
 		getDataProvider().refreshAll();
-		KeyManager.save(list);
+		KeyLoader.save(list);
 	}
 
 	private MenuBar addActionButton(Key key) {

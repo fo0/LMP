@@ -9,42 +9,45 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.file.Paths;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-import com.fo0.lmp.ui.model.Host;
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
+import com.fo0.lmp.ui.model.Action;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-public class LinuxHostManager {
+public class ActionLoader {
 
-	private static String path = System.getProperty("jboss.server.config.dir") + "/hosts.json";
+	private static String path = System.getProperty("jboss.server.config.dir") + "/Actions.json";
 
-	public static Set<Host> load() {
+	public static Set<Action> load() {
 		createConfig();
 		try {
-			Set<Host> acc = parse(new File(path), Host.class);
+			Set<Action> acc = parse(new File(path), Action.class);
 
 			if (acc == null)
-				return new HashSet<>();
+				return new HashSet<Action>();
 			else
 				return acc;
 
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load SSHHost from file: " + path);
+			Logger.log.error(LOGSTATE.FAILED + "to load SSHAction from file: " + path);
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	public static void save(Set<Host> SSHHost) {
+	public static void save(Set<Action> SSHAction) {
 		createConfig();
 		try {
-			write(SSHHost, path);
+			write(SSHAction, path);
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load SSHHost from file: " + path);
+			Logger.log.error(LOGSTATE.FAILED + "to load SSHAction from file: " + path);
 			e.printStackTrace();
 		}
 	}
@@ -100,6 +103,10 @@ public class LinuxHostManager {
 			Logger.log.debug(LOGSTATE.FAILED + "to read json Object " + obj.getClass() + " " + e);
 			e.printStackTrace();
 		}
+	}
+
+	public static Map<String, String> createMapWithDescriptions() {
+		return load().stream().collect(Collectors.toMap(Action::getCommand, Action::getDescription));
 	}
 
 }

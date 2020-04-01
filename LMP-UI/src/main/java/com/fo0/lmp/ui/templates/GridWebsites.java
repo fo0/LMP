@@ -11,7 +11,7 @@ import org.vaadin.viritin.grid.MGrid;
 import org.vaadin.viritin.label.MLabel;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
-import com.fo0.lmp.ui.data.WebsiteCertChecker;
+import com.fo0.lmp.ui.data.WebsiteCertificateLoader;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Action;
@@ -116,7 +116,7 @@ public class GridWebsites extends MGrid<CertWebsite> {
 		list.remove(website);
 		list.add(website);
 		getDataProvider().refreshAll();
-		WebsiteCertChecker.save(list);
+		WebsiteCertificateLoader.save(list);
 	}
 
 	public void addWebsite(CertWebsite website, boolean save) {
@@ -124,13 +124,13 @@ public class GridWebsites extends MGrid<CertWebsite> {
 		list.add(website);
 		getDataProvider().refreshAll();
 		if (save)
-			WebsiteCertChecker.save(list);
+			WebsiteCertificateLoader.save(list);
 	}
 
 	public void removeWebsite(CertWebsite website) {
 		list.remove(website);
 		getDataProvider().refreshAll();
-		WebsiteCertChecker.save(list);
+		WebsiteCertificateLoader.save(list);
 	}
 
 	private void execute(Host host, Action action) {

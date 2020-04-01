@@ -1,23 +1,29 @@
 package com.fo0.lmp.ui.templates;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.logging.log4j.util.Strings;
 import org.vaadin.viritin.grid.MGrid;
 
+import com.fo0.lmp.ui.collector.Collector;
 import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
-import com.fo0.lmp.ui.data.LinuxHostManager;
+import com.fo0.lmp.ui.data.HostLoader;
+import com.fo0.lmp.ui.data.HostPropertyLoader;
+import com.fo0.lmp.ui.enums.EHostProperty;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.enums.EWindowSize;
+import com.fo0.lmp.ui.manager.HostPropertyManager;
 import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.model.HostProperty;
 import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.renderers.HtmlRenderer;
@@ -36,61 +42,52 @@ public class GridHosts extends MGrid<Host> {
 	}
 
 	private void build() {
-		// addColumn(e -> "Linux").setId("os").setCaption("Platform");
+		Map<String, HostProperty> properties = HostPropertyLoader.load().stream()
+				.collect(Collectors.toMap(key -> key.getId(), value -> value));
 
 		addColumn(e -> {
-			if (e.isActive()) {
-				return FontAwesome.CHECK.getHtml();
-			} else {
-				return FontAwesome.TIMES.getHtml();
-			}
+			HostProperty p = properties.get(e.getId());
+			return p != null ? p.getManagedProperty(EHostProperty.Hostname) : Strings.EMPTY;
+		}).setId("hostproperty.hostname").setCaption("Hostname");
+
+		addColumn(e -> {
+			return e.isActive() ? FontAwesome.CHECK.getHtml() : FontAwesome.TIMES.getHtml();
 		}, new HtmlRenderer()).setId("activecheck").setCaption("Active").setStyleGenerator(e -> {
-			if (e.isActive()) {
-				return STYLES.ICON_GREEN;
-			} else {
-				return STYLES.ICON_RED;
-			}
+			return e.isActive() ? STYLES.ICON_GREEN : STYLES.ICON_RED;
 		});
 
 		addColumn(e -> {
-			if (e.isReachable()) {
-				return FontAwesome.CHECK.getHtml();
-			} else {
-				return FontAwesome.TIMES.getHtml();
-			}
+			return e.isReachable() ? FontAwesome.CHECK.getHtml() : FontAwesome.TIMES.getHtml();
 		}, new HtmlRenderer()).setId("status").setCaption("Status").setStyleGenerator(e -> {
-			if (e.isReachable()) {
-				return STYLES.ICON_GREEN;
-			} else {
-				return STYLES.ICON_RED;
-			}
+			return e.isReachable() ? STYLES.ICON_GREEN : STYLES.ICON_RED;
 		});
 
 		addComponentColumn(e -> {
 			return addActionButton(e);
 		}).setId("action").setCaption("Action");
 
-		setDescriptionGenerator(host -> {
-			return new StringBuilder().append("Distro: " + host.getDistro()).append("\n")
-					.append("Version: " + host.getVersion()).append("\n").toString();
-		}, ContentMode.PREFORMATTED);
-
-		setColumns("label", "hostname", "os", "address", "port", "status", "activecheck", "action");
+		setColumns("label", "address", "hostproperty.hostname", "port", "status", "activecheck", "action");
 	}
 
 	public void setList(Set<Host> list) {
 		this.list = list;
+		setItems(list);
 	}
 
 	public Set<Host> getList() {
 		return list;
 	}
 
+	public void refresh() {
+		setList(HostLoader.load());
+		getDataProvider().refreshAll();
+	}
+
 	public void addHost(Host host) {
 		list.remove(host);
 		list.add(host);
 		getDataProvider().refreshAll();
-		LinuxHostManager.save(list);
+		HostLoader.save(list);
 	}
 
 	public void addHost(Host host, boolean save) {
@@ -98,13 +95,14 @@ public class GridHosts extends MGrid<Host> {
 		list.add(host);
 		getDataProvider().refreshAll();
 		if (save)
-			LinuxHostManager.save(list);
+			HostLoader.save(list);
 	}
 
 	public void removeHost(Host host) {
 		list.remove(host);
 		getDataProvider().refreshAll();
-		LinuxHostManager.save(list);
+		HostLoader.deleteById(host.getId());
+		HostPropertyManager.deletePropertyById(host.getId());
 	}
 
 	private MenuBar addActionButton(Host host) {
@@ -115,7 +113,6 @@ public class GridHosts extends MGrid<Host> {
 				new ConfirmDialog("Delete Host: " + host.getLabel(), ok -> {
 					removeHost(host);
 				}, discard -> {
-					removeHost(host);
 				});
 
 				break;
@@ -132,29 +129,25 @@ public class GridHosts extends MGrid<Host> {
 				execute(host, ELinuxActions.CUSTOM);
 				break;
 
+			case "Properties":
+				UtilsWindow.createWindow("Edit",
+						new GridHostProperty(HostPropertyLoader.getHostPropertyByIdOrCreate(host.getId()))
+								.withFullSize(),
+						EWindowSize.Normal, true);
+				break;
+
 			case "Edit":
 				UtilsWindow.createWindow("Edit", new AddHostView(host, update -> {
-					new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
-						update.setOs(e.getOperatingSystem());
-						update.setHostname(e.getHostname());
-						update.setDistro(e.getDistributor());
-						update.setVersion(e.getVersion());
-					});
-					addHost(update);
+					new HostInfoCollector(update).collectAndSaveResult();
 				}), EWindowSize.Normal, true);
 				break;
 
-			case "Update Host-Informations":
-				new HostInfoCollector(host).collectAndGetResult().ifPresent(e -> {
-					host.setOs(e.getOperatingSystem());
-					host.setHostname(e.getHostname());
-					host.setDistro(e.getDistributor());
-					host.setVersion(e.getVersion());
-				});
+			case "Collect Informations":
+				Collector.collect(host);
 				break;
 			}
 
-		}, "Action", "Update & Upgrade", "Custom", "", "Update Host-Informations", "Edit", "Delete");
+		}, "Action", "Update & Upgrade", "Custom", "", "Collect Informations", "Properties", "", "Edit", "Delete");
 	}
 
 	private void execute(Host host, ELinuxActions action) {

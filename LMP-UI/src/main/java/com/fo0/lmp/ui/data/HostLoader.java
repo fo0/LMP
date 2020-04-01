@@ -58,12 +58,22 @@ public class HostLoader {
 		return null;
 	}
 
-	public static void save(Set<Host> SSHHost) {
+	public static void save(Host host) {
+		Set<Host> h = load();
+		
+		if (h.contains(host))
+			h.remove(host);
+		
+		h.add(host);
+		save(h);
+	}
+
+	public static void save(Set<Host> hosts) {
 		createConfig();
 		try {
-			write(SSHHost, path);
+			write(hosts, path);
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load SSHHost from file: " + path, e);
+			Logger.log.error(LOGSTATE.FAILED + "to load Hosts from file: " + path, e);
 		}
 	}
 

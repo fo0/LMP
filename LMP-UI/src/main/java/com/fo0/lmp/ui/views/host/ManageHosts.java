@@ -64,7 +64,9 @@ public class ManageHosts extends AVerticalView {
 		layout.add(createButton("Host", MaterialIcons.ADD, e -> {
 			UtilsWindow.createWindow("Add Host", new AddHostView(Host.builder().build(), save -> {
 				// Retrieve Host Informations like hostname, os
+				HostLoader.save(save);
 				new HostInfoCollector(save).collectAndSaveResult();
+
 			}), "782px", "700px", true);
 		}));
 

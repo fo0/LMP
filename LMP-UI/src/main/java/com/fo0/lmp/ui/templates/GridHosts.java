@@ -23,7 +23,6 @@ import com.fo0.lmp.ui.utils.STYLES;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.renderers.HtmlRenderer;
@@ -65,16 +64,6 @@ public class GridHosts extends MGrid<Host> {
 		addComponentColumn(e -> {
 			return addActionButton(e);
 		}).setId("action").setCaption("Action");
-
-		setDescriptionGenerator(host -> {
-			HostProperty p = HostPropertyManager.getPropertiesForHost(host.getId());
-			if (p != null) {
-				return new StringBuilder().append("Distro: " + p.getManagedProperty(EHostProperty.Distro)).append("\n")
-						.append("Version: " + p.getManagedProperty(EHostProperty.Version)).append("\n").toString();
-			} else {
-				return Strings.EMPTY;
-			}
-		}, ContentMode.PREFORMATTED);
 
 		setColumns("label", "address", "hostproperty.hostname", "port", "status", "activecheck", "action");
 	}

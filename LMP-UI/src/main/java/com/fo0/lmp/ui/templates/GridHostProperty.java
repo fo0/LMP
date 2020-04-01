@@ -42,13 +42,13 @@ public class GridHostProperty extends MGrid<KeyValue> {
 		return list;
 	}
 
-	private MenuBar addActionButton(KeyValue host) {
+	private MenuBar addActionButton(KeyValue keyValue) {
 		return UtilsComponents.multiActionButton(cmd -> {
 
 			switch (cmd.getText()) {
 			case "Delete":
-				new ConfirmDialog("Delete Host: " + host.getKey(), ok -> {
-					list.remove(ok);
+				new ConfirmDialog("Delete Host: " + keyValue.getKey(), ok -> {
+					list.remove(keyValue);
 					getDataProvider().refreshAll();
 				}, discard -> {
 				});

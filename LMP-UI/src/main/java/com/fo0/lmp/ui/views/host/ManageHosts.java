@@ -1,19 +1,23 @@
-package com.fo0.lmp.ui.views.manage;
+package com.fo0.lmp.ui.views.host;
 
+import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.LinuxHostManager;
-import com.fo0.lmp.ui.enums.EWindowSize;
+import com.fo0.lmp.ui.collector.Collector;
+import com.fo0.lmp.ui.collector.hostinfo.HostInfoCollector;
+import com.fo0.lmp.ui.data.HostLoader;
 import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.templates.AddHostView;
 import com.fo0.lmp.ui.templates.GridHosts;
 import com.fo0.lmp.ui.templates.MultiHostConsole;
 import com.fo0.lmp.ui.utils.ETheme;
+import com.fo0.lmp.ui.utils.Utils;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
 import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
@@ -36,33 +40,47 @@ public class ManageHosts extends AVerticalView {
 
 	@Override
 	public void init() {
-		// TODO: Tabs for every
-
-		grid = new GridHosts(LinuxHostManager.load());
+		Set<Host> hosts = HostLoader.load();
+		grid = new GridHosts(hosts);
 		grid.withFullSize();
+
+		runWhileAttached(grid, () -> {
+			if (CollectionUtils.isEmpty(hosts)) {
+				return;
+			}
+
+			hosts.parallelStream().forEach(e -> {
+				// refresh status
+				e.setReachable(Utils.isAddressReachable(e.getAddress(), e.getPort(), 500));
+				grid.getDataProvider().refreshItem(e);
+			});
+
+			// save current state
+			HostLoader.save(hosts);
+		}, -1, 100);
 	}
 
 	private MHorizontalLayout createButtonLayout() {
 		MHorizontalLayout layout = new MHorizontalLayout();
 		layout.add(createButton("Host", MaterialIcons.ADD, e -> {
 			UtilsWindow.createWindow("Add Host", new AddHostView(Host.builder().build(), save -> {
-				grid.addHost(save);
-			}), EWindowSize.Normal, true);
+				// Retrieve Host Informations like hostname, os
+				HostLoader.save(save);
+				Collector.collect(save);
+				grid.refresh();
+			}), "782px", "700px", true);
 		}));
 
 		WindowOpenerButton btn = new WindowOpenerButton(
 				PopupConfiguration.builder().width(850).height(550).build().addParam("theme", ETheme.Dark.getTheme()),
-				new MultiHostConsole(grid.getList().stream().filter(x -> x.isActive()).collect(Collectors.toSet()),
-						""));
-		// btn.click();
+				() -> {
+					return new MultiHostConsole(grid.getList().stream().filter(x -> x.isActive())
+							.filter(x -> x.isReachable()).collect(Collectors.toSet()), "");
+				});
+
 		btn.withCaption("Multi-Console");
 		btn.setIcon(MaterialIcons.OPEN_IN_NEW);
 		layout.add(btn);
-		// layout.add(createButton("MultiHost-Console", MaterialIcons.ADD, e -> {
-		// UtilsWindow.createWindow("Multi-Console",
-		// ,
-		// EWindowSize.Wide, true);
-		// }));
 		return layout;
 	}
 

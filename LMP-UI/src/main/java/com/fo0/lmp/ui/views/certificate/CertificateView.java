@@ -1,25 +1,19 @@
 package com.fo0.lmp.ui.views.certificate;
 
 import java.io.IOException;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.WebsiteCertChecker;
+import com.fo0.lmp.ui.data.WebsiteCertificateLoader;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.templates.AddWebsiteView;
 import com.fo0.lmp.ui.templates.GridWebsites;
-import com.fo0.lmp.ui.templates.MultiHostConsole;
-import com.fo0.lmp.ui.utils.ETheme;
 import com.fo0.lmp.ui.utils.UtilsSSLCertExpiry;
 import com.fo0.lmp.ui.utils.UtilsWindow;
-import com.fo0.vaadin.browserwindowopener.main.PopupConfiguration;
-import com.fo0.vaadin.browserwindowopener.main.WindowOpenerButton;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.Button.ClickListener;
 
@@ -41,7 +35,7 @@ public class CertificateView extends AVerticalView {
 	public void init() {
 		// TODO: Tabs for every
 
-		grid = new GridWebsites(WebsiteCertChecker.load());
+		grid = new GridWebsites(WebsiteCertificateLoader.load());
 		grid.withFullSize();
 	}
 
@@ -73,7 +67,7 @@ public class CertificateView extends AVerticalView {
 				}
 			});
 			grid.getDataProvider().refreshAll();
-			WebsiteCertChecker.save(grid.getList());
+			WebsiteCertificateLoader.save(grid.getList());
 		});
 		layout.add(btnCheckAll);
 

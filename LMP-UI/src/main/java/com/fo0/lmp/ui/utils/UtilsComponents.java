@@ -3,9 +3,7 @@ package com.fo0.lmp.ui.utils;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
-import com.github.appreciated.material.MaterialTheme;
 import com.vaadin.event.ShortcutAction.KeyCode;
-import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.MenuBar;
@@ -21,7 +19,7 @@ public class UtilsComponents {
 	 */
 	public static MenuBar multiActionButton(Command cmd, String caption, String... items) {
 		MenuBar split = new MenuBar();
-		split.addStyleName(MaterialTheme.MENUBAR_BORDERLESS);
+		split.addStyleName(ValoTheme.MENUBAR_BORDERLESS);
 		MenuBar.MenuItem dropdown = split.addItem(caption, cmd);
 		dropdown = split.addItem("", null);
 		for (String string : items) {
@@ -34,6 +32,14 @@ public class UtilsComponents {
 		}
 		return split;
 	}
+	
+//	public static ContextMenu multiActionContextButton(Command cmd, String caption, String... items) {
+//		
+//		ContextMenu contextMenu = new ContextMenu(parentComponent, setAsMenuForParentComponent);
+//		
+//		
+//		return null;
+//	}
 
 	public static MHorizontalLayout Button_Apply_Discard_Layout(ClickListener listenerSave,
 			ClickListener listenerDiscard) {
@@ -63,4 +69,4 @@ public class UtilsComponents {
 		return new MHorizontalLayout(apply, discard);
 	}
 
-}
+}	

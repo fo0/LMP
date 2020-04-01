@@ -1,6 +1,9 @@
 package com.fo0.lmp.ui.views.backup;
 
+import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
@@ -8,19 +11,23 @@ import org.vaadin.viritin.layouts.MHorizontalLayout;
 import org.vaadin.viritin.layouts.MPanel;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.ActionManager;
-import com.fo0.lmp.ui.data.LinuxHostManager;
-import com.fo0.lmp.ui.data.WebsiteCertChecker;
+import com.fo0.lmp.ui.data.ActionLoader;
+import com.fo0.lmp.ui.data.HostLoader;
+import com.fo0.lmp.ui.data.HostPropertyLoader;
+import com.fo0.lmp.ui.data.KeyLoader;
+import com.fo0.lmp.ui.data.WebsiteCertificateLoader;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Action;
 import com.fo0.lmp.ui.model.CertWebsite;
 import com.fo0.lmp.ui.model.Host;
+import com.fo0.lmp.ui.model.HostProperty;
+import com.fo0.lmp.ui.model.Key;
 import com.fo0.lmp.ui.templates.BackupExportConfigView;
 import com.fo0.lmp.ui.templates.BackupImportConfigView;
-import com.fo0.lmp.ui.utils.Parser;
 import com.fo0.lmp.ui.utils.UtilsNotification;
 import com.fo0.lmp.ui.utils.UtilsWindow;
 import com.github.appreciated.material.MaterialTheme;
+import com.google.common.collect.Sets;
 import com.google.gson.GsonBuilder;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.Button.ClickListener;
@@ -31,90 +38,51 @@ public class BackupView extends AVerticalView {
 
 	@Override
 	public void build() {
-		addComponent(createActionConfigayout());
-		addComponent(createHostConfigLayout());
-		addComponent(createCertConfigayout());
+		addComponent(createImportAndExportLayout("Actions", "actions.json.cfg", Action.class, () -> ActionLoader.load(),
+				resultSet -> ActionLoader.save(resultSet)));
+
+		addComponent(createImportAndExportLayout("Hosts", "hosts.json.cfg", Host.class, () -> HostLoader.load(),
+				resultSet -> HostLoader.save(resultSet)));
+
+		addComponent(createImportAndExportLayout("Host-Properties", "host-properties.json.cfg", HostProperty.class,
+				() -> HostPropertyLoader.load(), resultSet -> HostPropertyLoader.save(resultSet)));
+
+		addComponent(createImportAndExportLayout("Website-Certificates", "website-certificates.json.cfg", CertWebsite.class,
+						() -> WebsiteCertificateLoader.load(), resultSet -> WebsiteCertificateLoader.save(resultSet)));
+
+		addComponent(createImportAndExportLayout("Keys", "keys.json.cfg", Key.class, () -> KeyLoader.load(),
+				resultSet -> KeyLoader.save(resultSet)));
 	}
 
-	public MPanel createCertConfigayout() {
+	public <T> MPanel createImportAndExportLayout(String caption, String filename, Class<T> type,
+			Supplier<Set<T>> loader, Consumer<Set<T>> save) {
 		MHorizontalLayout layout = new MHorizontalLayout().withMargin(true).withSpacing(true);
-		layout.add(createButton("Export", MaterialIcons.BACKUP, e -> {
+		layout.add(createButton("Export", MaterialIcons.CLOUD_UPLOAD, e -> {
 			String s = "";
-			Set<CertWebsite> actions = WebsiteCertChecker.load();
+			Set<T> actions = loader.get();
 			if (actions != null && !actions.isEmpty()) {
 				s = new GsonBuilder().setPrettyPrinting().create().toJson(actions);
 			}
-			UtilsWindow.createWindow("Export Cert-Website Config", new BackupExportConfigView(s, "website.json.cfg"),
-					EWindowSize.Normal, true);
+
+			UtilsWindow.createWindow(String.format("Export %s Config", caption),
+					new BackupExportConfigView(s, filename), EWindowSize.Normal, true);
 		}));
 
-		layout.add(createButton("Import", MaterialIcons.IMPORTANT_DEVICES, e -> {
-			UtilsWindow.createWindow("Import Cert-Website Config", new BackupImportConfigView((config, override) -> {
-				Set<CertWebsite> hosts = Parser.parseSet(config, CertWebsite.class);
-				if (!override) {
-					Set<CertWebsite> existingHosts = WebsiteCertChecker.load();
-					if (existingHosts != null && !existingHosts.isEmpty())
-						hosts.addAll(existingHosts);
-				}
-				WebsiteCertChecker.save(hosts);
-				UtilsNotification.saved("Imported Cert-Website Config");
-			}), EWindowSize.Normal, true);
-		}));
-		return new MPanel(layout).withCaption("Cert-Website").withStyleName(MaterialTheme.CARD_1);
-	}
+		layout.add(createButton("Import", MaterialIcons.CLOUD_DOWNLOAD, e -> {
+			UtilsWindow.createWindow(String.format("Import Cert-Website Config", caption),
+					new BackupImportConfigView((config, override) -> {
+						List<T> hosts = com.fo0.fcf.utils.parser.Parser.JSON.parseList(config, type);
+						if (!override) {
+							Set<T> existingHosts = loader.get();
+							if (existingHosts != null && !existingHosts.isEmpty())
+								hosts.addAll(existingHosts);
+						}
 
-	public MPanel createActionConfigayout() {
-		MHorizontalLayout layout = new MHorizontalLayout().withMargin(true).withSpacing(true);
-		layout.add(createButton("Export", MaterialIcons.BACKUP, e -> {
-			String s = "";
-			Set<Action> actions = ActionManager.load();
-			if (actions != null && !actions.isEmpty()) {
-				s = new GsonBuilder().setPrettyPrinting().create().toJson(actions);
-			}
-			UtilsWindow.createWindow("Export Action Config", new BackupExportConfigView(s, "actions.json.cfg"),
-					EWindowSize.Normal, true);
+						save.accept(Sets.newHashSet(hosts));
+						UtilsNotification.saved(String.format("Imported %s Config", caption));
+					}), EWindowSize.Normal, true);
 		}));
-
-		layout.add(createButton("Import", MaterialIcons.IMPORTANT_DEVICES, e -> {
-			UtilsWindow.createWindow("Import Action Config", new BackupImportConfigView((config, override) -> {
-				Set<Action> hosts = Parser.parseSet(config, Action.class);
-				if (!override) {
-					Set<Action> existingHosts = ActionManager.load();
-					if (existingHosts != null && !existingHosts.isEmpty())
-						hosts.addAll(existingHosts);
-				}
-				ActionManager.save(hosts);
-				UtilsNotification.saved("Imported Host Config");
-			}), EWindowSize.Normal, true);
-		}));
-		return new MPanel(layout).withCaption("Action").withStyleName(MaterialTheme.CARD_1);
-	}
-
-	public MPanel createHostConfigLayout() {
-		MHorizontalLayout layout = new MHorizontalLayout().withMargin(true).withSpacing(true);
-		layout.add(createButton("Export", MaterialIcons.BACKUP, e -> {
-			String s = "";
-			Set<Host> hosts = LinuxHostManager.load();
-			if (hosts != null && !hosts.isEmpty()) {
-				s = new GsonBuilder().setPrettyPrinting().create().toJson(hosts);
-			}
-			UtilsWindow.createWindow("Export Host Config", new BackupExportConfigView(s, "hosts.json.cfg"),
-					EWindowSize.Normal, true);
-		}));
-
-		layout.add(createButton("Import", MaterialIcons.IMPORTANT_DEVICES, e -> {
-			UtilsWindow.createWindow("Import Host Config", new BackupImportConfigView((config, override) -> {
-				Set<Host> hosts = Parser.parseSet(config, Host.class);
-				if (!override) {
-					Set<Host> existingHosts = LinuxHostManager.load();
-					if (existingHosts != null && !existingHosts.isEmpty())
-						hosts.addAll(existingHosts);
-				}
-				LinuxHostManager.save(hosts);
-				UtilsNotification.saved("Imported Host Config");
-			}), EWindowSize.Normal, true);
-		}));
-		return new MPanel(layout).withCaption("Host").withStyleName(MaterialTheme.CARD_1);
+		return new MPanel(layout).withCaption(caption).withStyleName(MaterialTheme.CARD_1);
 	}
 
 	@Override

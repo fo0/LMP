@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 
-import com.fo0.lmp.ui.data.ActionManager;
+import com.fo0.lmp.ui.data.ActionLoader;
 import com.fo0.lmp.ui.enums.ELinuxActions;
 import com.fo0.lmp.ui.utils.STYLES;
 import com.vaadin.server.Resource;
@@ -33,7 +33,7 @@ public class SearchSuggestionProvider extends CollectionSuggestionProvider {
 	@Override
 	public Collection<AutocompleteSuggestion> querySuggestions(AutocompleteQuery query) {
 		Collection<AutocompleteSuggestion> suggestions = super.querySuggestions(query);
-		Map<String, String> map = ActionManager.createMapWithDescriptions();
+		Map<String, String> map = ActionLoader.createMapWithDescriptions();
 
 		for (AutocompleteSuggestion suggestion : suggestions) {
 			String description = map.get(suggestion.getValue());
@@ -71,7 +71,7 @@ public class SearchSuggestionProvider extends CollectionSuggestionProvider {
 	}
 
 	private static Stream<String> customCommands() {
-		return ActionManager.load().stream().filter(e -> e.isActive()).map(e -> e.getCommand());
+		return ActionLoader.load().stream().filter(e -> e.isActive()).map(e -> e.getCommand());
 	}
 
 }

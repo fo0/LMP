@@ -6,12 +6,12 @@ import org.vaadin.viritin.fields.MCheckBox;
 import org.vaadin.viritin.fields.MTextField;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.ActionManager;
-import com.fo0.lmp.ui.data.LinuxHostManager;
+import com.fo0.lmp.ui.data.ActionLoader;
+import com.fo0.lmp.ui.data.HostLoader;
 import com.fo0.lmp.ui.interfaces.DataListener;
 import com.fo0.lmp.ui.model.Action;
-import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.model.CertWebsite;
+import com.fo0.lmp.ui.model.Host;
 import com.fo0.lmp.ui.utils.Utils;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsNotification;
@@ -62,12 +62,12 @@ public class AddWebsiteView extends AVerticalView {
 			UtilsNotification.discard();
 		}));
 
-		Set<Host> myHosts = LinuxHostManager.load();
+		Set<Host> myHosts = HostLoader.load();
 		if (myHosts != null)
 			host.setItems(myHosts);
 		host.setItemCaptionGenerator(Host::getLabel);
 
-		Set<Action> myActions = ActionManager.load();
+		Set<Action> myActions = ActionLoader.load();
 		if (myActions != null)
 			action.setItems(myActions);
 		action.setItemCaptionGenerator(Action::getDescription);

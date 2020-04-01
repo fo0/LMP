@@ -1,5 +1,7 @@
 package com.fo0.lmp.ui.views.login;
 
+import com.fo0.fcf.logger.Logger;
+
 import org.vaadin.viritin.MSize;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
@@ -13,7 +15,6 @@ import com.fo0.lmp.ui.model.Account;
 import com.fo0.lmp.ui.utils.Utils;
 import com.fo0.lmp.ui.utils.UtilsComponents;
 import com.fo0.lmp.ui.utils.UtilsNotification;
-import com.fo0.logger.Logger;
 import com.github.appreciated.material.MaterialTheme;
 import com.vaadin.data.Binder;
 import com.vaadin.event.ShortcutAction.KeyCode;

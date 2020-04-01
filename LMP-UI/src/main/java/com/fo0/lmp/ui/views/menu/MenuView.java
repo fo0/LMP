@@ -1,17 +1,16 @@
 package com.fo0.lmp.ui.views.menu;
 
-import org.vaadin.alump.materialicons.MaterialIcons;
-
 import com.fo0.lmp.ui.abstracts.AVerticalView;
 import com.fo0.lmp.ui.main.MainUI;
 import com.fo0.lmp.ui.utils.ICON;
 import com.fo0.lmp.ui.utils.UtilsNotification;
+import com.fo0.lmp.ui.views.action.ActionListView;
 import com.fo0.lmp.ui.views.backup.BackupView;
 import com.fo0.lmp.ui.views.certificate.CertificateView;
 import com.fo0.lmp.ui.views.dashboard.DashboardView;
 import com.fo0.lmp.ui.views.error.ErrorView;
-import com.fo0.lmp.ui.views.manage.ActionListView;
-import com.fo0.lmp.ui.views.manage.ManageHosts;
+import com.fo0.lmp.ui.views.host.ManageHosts;
+import com.fo0.lmp.ui.views.key.KeyView;
 import com.fo0.lmp.ui.views.register.RegisterView;
 import com.fo0.lmp.ui.views.settings.SettingsView;
 import com.github.appreciated.app.layout.AppLayout;
@@ -21,8 +20,6 @@ import com.github.appreciated.app.layout.builder.design.AppLayoutDesign;
 import com.github.appreciated.app.layout.builder.entities.DefaultNotification;
 import com.github.appreciated.app.layout.builder.entities.DefaultNotificationHolder;
 import com.github.appreciated.app.layout.component.MenuHeader;
-import com.vaadin.icons.VaadinIcons;
-import com.vaadin.server.FontAwesome;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.UI;
 
@@ -60,6 +57,7 @@ public class MenuView extends AVerticalView {
 				.add("Hosts", ICON.HOST, ManageHosts.class)
 				.add("Action", ICON.ACTION, ActionListView.class)
 				.add("Certificate", ICON.CERTIFICATE, CertificateView.class)
+				.add("Keys", ICON.CERTIFICATE, KeyView.class)
 				.add("Backup", ICON.BACKUP, BackupView.class)
 				.add("Account", ICON.REGISTER, RegisterView.class).withNavigatorConsumer(e -> {
 					e.setErrorView(ErrorView.class);

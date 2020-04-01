@@ -25,6 +25,7 @@ public class UploadBufferReceiver implements StreamResource.StreamSource, Upload
 	private String fileName;
 	private boolean slow = false;
 
+	@Override
 	public InputStream getStream() {
 		if (outputBuffer == null) {
 			return null;

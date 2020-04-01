@@ -1,11 +1,11 @@
-package com.fo0.lmp.ui.views.manage;
+package com.fo0.lmp.ui.views.action;
 
 import org.vaadin.alump.materialicons.MaterialIcons;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 
 import com.fo0.lmp.ui.abstracts.AVerticalView;
-import com.fo0.lmp.ui.data.ActionManager;
+import com.fo0.lmp.ui.data.ActionLoader;
 import com.fo0.lmp.ui.enums.EWindowSize;
 import com.fo0.lmp.ui.model.Action;
 import com.fo0.lmp.ui.templates.AddActionView;
@@ -40,7 +40,7 @@ public class ActionListView extends AVerticalView {
 
 	@Override
 	public void init() {
-		grid = new GridAction(ActionManager.load());
+		grid = new GridAction(ActionLoader.load());
 		grid.setSizeFull();
 	}
 

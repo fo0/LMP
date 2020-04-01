@@ -55,7 +55,7 @@ public class HostConsole extends MVerticalLayout {
 		console.setValue(console.getValue() + value);
 		console.setReadOnly(true);
 		if (autoScroll) {
-			console.scrollToPosition(console.getValue().length());
+			console.scrollToRow(Integer.MAX_VALUE);
 		}
 	}
 

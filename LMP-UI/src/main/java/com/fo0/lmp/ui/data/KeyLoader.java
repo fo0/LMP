@@ -9,44 +9,43 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.file.Paths;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-import com.fo0.lmp.ui.model.Action;
-import com.fo0.logger.LOGSTATE;
-import com.fo0.logger.Logger;
+import com.fo0.fcf.logger.LOGSTATE;
+import com.fo0.fcf.logger.Logger;
+
+import com.fo0.lmp.ui.model.Key;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-public class ActionManager {
+public class KeyLoader {
 
-	private static String path = System.getProperty("jboss.server.config.dir") + "/Actions.json";
+	private static String path = System.getProperty("jboss.server.config.dir") + "/keys.json";
 
-	public static Set<Action> load() {
+	public static Set<Key> load() {
 		createConfig();
 		try {
-			Set<Action> acc = parse(new File(path), Action.class);
+			Set<Key> acc = parse(new File(path), Key.class);
 
 			if (acc == null)
-				return new HashSet<Action>();
+				return null;
 			else
 				return acc;
 
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load SSHAction from file: " + path);
+			Logger.log.error(LOGSTATE.FAILED + "to load SSHKey from file: " + path);
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	public static void save(Set<Action> SSHAction) {
+	public static void save(Set<Key> SSHKey) {
 		createConfig();
 		try {
-			write(SSHAction, path);
+			write(SSHKey, path);
 		} catch (Exception e) {
-			Logger.log.error(LOGSTATE.FAILED + "to load SSHAction from file: " + path);
+			Logger.log.error(LOGSTATE.FAILED + "to load SSHKey from file: " + path);
 			e.printStackTrace();
 		}
 	}
@@ -102,10 +101,6 @@ public class ActionManager {
 			Logger.log.debug(LOGSTATE.FAILED + "to read json Object " + obj.getClass() + " " + e);
 			e.printStackTrace();
 		}
-	}
-
-	public static Map<String, String> createMapWithDescriptions() {
-		return load().stream().collect(Collectors.toMap(Action::getCommand, Action::getDescription));
 	}
 
 }
